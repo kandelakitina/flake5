@@ -3,7 +3,7 @@
     xserver = {
       enable = true;
       displayManager = {
-        xfce.enable = true;
+        lightdm.enable = true;
         defaultSession = "xfce";
       };
       desktopManager = {
