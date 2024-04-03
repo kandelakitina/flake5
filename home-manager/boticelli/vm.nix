@@ -10,6 +10,8 @@
   
     inputs.nix-colors.homeManagerModules.default
 
+    ../../modules/home-manager/alacritty.nix
+
   ];
 
   nixpkgs = {
