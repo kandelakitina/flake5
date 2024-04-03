@@ -20,6 +20,7 @@
 
     ../../modules/nixos/impermanence.nix
     # ../../modules/nixos/gnome.nix
+    ../../modules/nixos/xfce.nix
   ];
 
   nixpkgs = {
