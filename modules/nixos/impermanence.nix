@@ -6,6 +6,9 @@
 }: let
   removeTmpFilesOlderThan = 14;
 in {
+  imports = [
+    inputs.impermanence.nixosModules.impermanence
+  ];
   
   boot.initrd.postDeviceCommands = ''
     mkdir /btrfs_tmp
