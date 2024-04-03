@@ -77,8 +77,11 @@
 
     boticelli = {
 
-      initialPassword = "password";
+      ignoreShellProgramCheck = true;
       isNormalUser = true;
+      shell = pkgs.fish;
+
+      initialPassword = "password";
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
