@@ -15,3 +15,7 @@
 ### Impermanence
 
 Impermanence is added by default. But `/home` is mounted separately from `/root` in disko configuration, so `/home` is always persistent.
+
+### Nix colors
+
+Nix-colors allows setting color options and them usem them in config. Colorschemes are defined in `home-manager/user/host.nix`, i.e. as part of home manager options, under `colorscheme` variable. I store my custom colorschemes in `modules/home-manager/colorschemes`.
