@@ -1,5 +1,3 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   inputs,
   lib,
@@ -7,13 +5,11 @@
   pkgs,
   ...
 }: {
-  # You can import other home-manager modules here
-  imports = [
-    # If you want to use home-manager modules from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModule
 
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
+  imports = [
+  
+    inputs.nix-colors.homeManagerModules.default
+
   ];
 
   nixpkgs = {
@@ -44,6 +40,8 @@
     username = "boticelli";
     homeDirectory = "/home/boticelli";
   };
+
+  colorscheme = import ../../modules/home-manager/colorschemes/iterm.nix;
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;

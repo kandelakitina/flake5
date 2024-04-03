@@ -12,9 +12,11 @@
     # nix-colors.url = "github:misterio77/nix-colors";
 
     disko.url = "github:nix-community/disko";
-    
+
     impermanence.url = "github:nix-community/impermanence";
     persist-retro.url = "github:Geometer1729/persist-retro";
+
+    nix-colors.url = "github:misterio77/nix-colors";
 
   };
 
