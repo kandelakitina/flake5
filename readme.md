@@ -23,3 +23,7 @@ Nix-colors allows setting color options and them usem them in config. Colorschem
 ### Fish
 
 Don't forget to turn on default shell for your user in `  users.users.boticelli.shell = pkgs.fish;`
+
+### Alacritty
+
+Alacritty have a weird requirement for the naming of Ubuntu terminal font - `UbuntuMono Nerd Font`
