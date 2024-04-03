@@ -19,6 +19,7 @@
     (import ../../diskoConfigs/btfrs.nix { device = "/dev/vda"; })
 
     ../../modules/nixos/impermanence.nix
+    ../../modules/nixos/gnome.nix
   ];
 
   nixpkgs = {
@@ -68,6 +69,8 @@
   networking.hostName = "vm";
 
   boot.loader.systemd-boot.enable = true;
+
+  services.spice-vdagentd.enable = true; # Clipboard share in VM
 
   users.users = {
 
