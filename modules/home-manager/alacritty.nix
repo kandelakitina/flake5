@@ -16,12 +16,12 @@
         }
       ];
 
-      # font = {
-      #   normal = {
-      #     family = config.my.settings.fonts.monospace;
-      #   };
-      #   size = config.my.settings.fonts.size;
-      # };
+      font = {
+        normal = {
+          family = "Ubuntu Mono Nerd Font";
+        };
+        size = 18;
+      };
 
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
