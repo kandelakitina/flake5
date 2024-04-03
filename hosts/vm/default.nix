@@ -16,7 +16,7 @@
     ./hardware-configuration.nix
 
     inputs.disko.nixosModules.disko
-    (import ../../../diskoConfigs/btfrs.nix { device = "/dev/vda"; })
+    (import ../../diskoConfigs/btfrs.nix { device = "/dev/vda"; })
   ];
 
   nixpkgs = {
