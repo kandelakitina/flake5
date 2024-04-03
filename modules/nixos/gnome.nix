@@ -1,7 +1,5 @@
 {
   services = {
-
-    # Gnome settings
     xserver = {
       enable = true;
       displayManager = {

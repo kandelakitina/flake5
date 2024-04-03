@@ -14,3 +14,4 @@
 
 ### Impermanence
 
+Impermanence is added by default. But `/home` is mounted separately from `/root` in disko configuration, so `/home` is always persistent.
