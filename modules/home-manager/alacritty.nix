@@ -18,7 +18,7 @@
 
       font = {
         normal = {
-          family = "Ubuntu";
+          family = "UbuntuMono Nerd Font";
         };
         size = 18;
       };
