@@ -55,7 +55,9 @@
         in {
           disabled = false;
           when = "test -z $IN_NIX_SHELL";
-          command = "${(lib.getExe pkgs.nix-inspect)} ${(lib.concatStringsSep " " excluded)}";
+          
+          # TODO: Add nix-inspect from mysterio provate pkgs
+          # command = "${(lib.getExe pkgs.nix-inspect)} ${(lib.concatStringsSep " " excluded)}";
           format = "[($output <- )$symbol]($style) ";
           symbol = " ";
           style = "bold blue";
