@@ -14,6 +14,7 @@
     ../../modules/home-manager/starship.nix
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/fonts.nix
+    ../../modules/home-manager/git.nix
 
   ];
 
