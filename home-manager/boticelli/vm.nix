@@ -11,6 +11,7 @@
     inputs.nix-colors.homeManagerModules.default
 
     ../../modules/home-manager/alacritty.nix
+    ../../modules/home-manager/starship.nix
 
   ];
 
