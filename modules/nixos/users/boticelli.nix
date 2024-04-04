@@ -12,7 +12,7 @@ in {
   users.mutableUsers = false; # Required for password to be set via sops during system activation!
 
   # sops.secrets.boticelli-password = {
-  #   sopsFile = ../../../secrets.yaml;
+  #   sopsFile = ../../../secrets.yaml ;
   # };
 
   users.users.boticelli = {
