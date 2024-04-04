@@ -47,6 +47,12 @@
     };
   };
 
+  home.sessionVariables = {
+    EDITOR = "hx";
+    BROWSER = "firefox";
+    TERMINAL = "alacritty";
+  };
+
   # TODO: Set your username
   home = {
     username = "boticelli";
