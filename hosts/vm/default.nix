@@ -22,6 +22,8 @@
     # ../../modules/nixos/gnome.nix
     ../../modules/nixos/xfce.nix
     ../../modules/nixos/sops.nix
+    ../../modules/nixos/users/boticelli.nix
+
   ];
 
   nixpkgs = {
@@ -73,24 +75,6 @@
   boot.loader.systemd-boot.enable = true;
 
   services.spice-vdagentd.enable = true; # Clipboard share in VM
-
-  users.users = {
-
-    boticelli = {
-
-      ignoreShellProgramCheck = true;
-      isNormalUser = true;
-      shell = pkgs.fish;
-
-      initialPassword = "password";
-      openssh.authorizedKeys.keyFiles = [
-        # TODO: Add your SSH public key(s)
-        ../../keys/boticelli_ed25519.pub
-      ];
-      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel"];
-    };
-  };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
