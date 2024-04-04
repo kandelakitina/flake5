@@ -18,6 +18,8 @@
 
     nix-colors.url = "github:misterio77/nix-colors";
 
+    sops-nix.url = "github:mic92/sops-nix"; 
+
   };
 
   outputs = {

@@ -1,0 +1,12 @@
+
+keys:
+  - &users
+    - &boticelli age1mghp94m6wwj7s27rcajhky4rsg2cgangjfkmdl9kfw5jaqg35pes7keke7
+  - &hosts
+    - &vm age1553vlxut88qq3sfyjmttkvcf8th4rlxwpjs8lxc7u94qk2lexytsd7ct6h
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+    - age:
+      - *boticelli
+      - *vm
