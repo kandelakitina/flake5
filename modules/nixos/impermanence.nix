@@ -42,7 +42,6 @@ in {
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
-      "/etc/ssh"
     ];
   };
 }
