@@ -5,9 +5,7 @@
   pkgs,
   ...
 }: {
-
   imports = [
-  
     inputs.nix-colors.homeManagerModules.default
 
     ../../modules/home-manager/cliTools
@@ -21,7 +19,6 @@
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/cheatsheets.nix
     ../../modules/home-manager/nnn.nix
-
   ];
 
   nixpkgs = {
@@ -51,6 +48,11 @@
     EDITOR = "hx";
     BROWSER = "firefox";
     TERMINAL = "alacritty";
+  };
+
+  home.shellAliases = {
+    hms = "home-manager switch --flake";
+    nrs = "sudo nixos-rebuild switch --flake";
   };
 
   # TODO: Set your username

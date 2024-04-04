@@ -91,7 +91,5 @@
     cat = "bat";
     curl = "curlie";
     sudo = "sudo -E -s";
-    hms = "home-manager switch --flake .#";
-    nrs = "sudo nixos-rebuild switch --flake .#";
   };
 }
