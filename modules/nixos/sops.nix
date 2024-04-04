@@ -7,6 +7,7 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
+  # secrets will be output to /run/secrets
   sops = {
     defaultSopsFile = ../../secrets.yaml;
     validateSopsFiles = false;
@@ -19,8 +20,8 @@
     age = {
       # automatically import host SSH keys as age keys
       sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
-      # this will use an age key that is expected to already be in the filesystem
-      keyFile = "/home/boticelli/.config/sops/age/keys.txt";
+      # this is where the age key derived from the above SSH will live
+      keyFile = "/var/lib/sops-nix/key.txt";
       # generate a new key if the key specified above does not exist
       generateKey = true;
     };

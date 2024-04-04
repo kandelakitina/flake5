@@ -6,13 +6,14 @@
 }: let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in {
+
   # Decrypt boticelli-password to /run/secrets-for-users/ so it can be used to create the user
   sops.secrets.boticelli-password.neededForUsers = true;
   users.mutableUsers = false; # Required for password to be set via sops during system activation!
 
-  sops.secrets.boticelli-password = {
-    sopsFile = ../../../secrets.yaml;
-  };
+  # sops.secrets.boticelli-password = {
+  #   sopsFile = ../../../secrets.yaml;
+  # };
 
   users.users.boticelli = {
     isNormalUser = true;
