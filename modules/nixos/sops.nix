@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     inputs.sops-nix.nixosModules.sops
   ];
@@ -21,4 +25,10 @@
       generateKey = true;
     };
   };
+
+  home.packages = with pkgs; [
+    sops
+    age
+  ];
+
 }
