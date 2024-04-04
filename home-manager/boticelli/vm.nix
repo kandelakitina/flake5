@@ -10,11 +10,16 @@
   
     inputs.nix-colors.homeManagerModules.default
 
+    ../../modules/home-manager/cliTools
+    ../../modules/home-manager/helix
+    ../../modules/home-manager/zellij
+
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/starship.nix
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/git.nix
+    ../../modules/home-manager/nnn.nix
 
   ];
 
