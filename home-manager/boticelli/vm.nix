@@ -19,6 +19,7 @@
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/git.nix
+    ../../modules/home-manager/cheatsheets.nix
     ../../modules/home-manager/nnn.nix
 
   ];
