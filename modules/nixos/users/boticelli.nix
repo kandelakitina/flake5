@@ -11,10 +11,6 @@ in {
   sops.secrets.boticelli-password.neededForUsers = true;
   users.mutableUsers = false; # Required for password to be set via sops during system activation!
 
-  # sops.secrets.boticelli-password = {
-  #   sopsFile = ../../../secrets.yaml ;
-  # };
-
   users.users.boticelli = {
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets.boticelli-password.path;
