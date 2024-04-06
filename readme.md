@@ -14,16 +14,26 @@
 
 ### Impermanence
 
-Impermanence is added by default. But `/home` is mounted separately from `/root` in disko configuration, so `/home` is always persistent.
+Impermanence is added by default. But `/home` is mounted separately from `/root`
+in disko configuration, so `/home` is always persistent.
 
 ### Nix colors
 
-Nix-colors allows setting color options and them usem them in config. Colorschemes are defined in `home-manager/user/host.nix`, i.e. as part of home manager options, under `colorscheme` variable. I store my custom colorschemes in `modules/home-manager/colorschemes`.
+Nix-colors allows setting color options and them usem them in config.
+Colorschemes are defined in `home-manager/user/host.nix`, i.e. as part of home
+manager options, under `colorscheme` variable. I store my custom colorschemes in
+`modules/home-manager/colorschemes`.
 
 ### Fish
 
-Don't forget to turn on default shell for your user in `  users.users.boticelli.shell = pkgs.fish;`
+Don't forget to turn on default shell for your user in
+`users.users.boticelli.shell = pkgs.fish;`
 
 ### Alacritty
 
-Alacritty have a weird requirement for the naming of Ubuntu terminal font - `UbuntuMono Nerd Font`
+Alacritty have a weird requirement for the naming of Ubuntu terminal font -
+`UbuntuMono Nerd Font`
+
+## SOPS
+
+TODO: add a guide to SOPS
