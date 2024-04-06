@@ -13,12 +13,13 @@
     ../../modules/home-manager/zellij
 
     ../../modules/home-manager/alacritty.nix
-    ../../modules/home-manager/starship.nix
+    ../../modules/home-manager/cheatsheets.nix
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/git.nix
-    ../../modules/home-manager/cheatsheets.nix
     ../../modules/home-manager/nnn.nix
+    ../../modules/home-manager/sops.nix
+    ../../modules/home-manager/starship.nix
   ];
 
   nixpkgs = {

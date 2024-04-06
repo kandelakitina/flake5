@@ -1,4 +1,6 @@
 keys:
+  - &users:
+    - &boticelli age1ekt4k4n7apktrk2sluf8yjzt0enuzfryk4zvw0mkshhlhr476yhqpygl3k
   - &hosts:
     - &vm age1pytyc9za9af6d90fsnm8jneyqq33wkejt5xrqhh099scfd2l6eas8mxqz3
 creation_rules:
@@ -6,3 +8,4 @@ creation_rules:
     key_groups:
     - age:
       - *vm
+      - *boticelli
