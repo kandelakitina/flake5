@@ -19,11 +19,11 @@
 
     age = {
       # automatically import host SSH keys as age keys
-      sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
+      # sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
       # this is where the age key derived from the above SSH will live
-      keyFile = "/var/lib/sops-nix/key.txt";
+      # keyFile = "/var/lib/sops-nix/key.txt";
       # generate a new key if the key specified above does not exist
-      generateKey = true;
+      # generateKey = true;
     };
   };
 
