@@ -21,7 +21,7 @@ in {
     red = yellow; # Keybinds on buttons
     black = backgroundDeepBlue; # Bars background and "LOCK" etc
     green = magenta; # Panes' borders, tabs button, secondary keys in Tips
-    bg = backgroundDeepBlue; # ???
+    bg = magenta; # ???
     yellow = yellow; 
     blue = blue;
     magenta = magenta;

@@ -22,6 +22,7 @@
     # ../../modules/nixos/gnome.nix
     ../../modules/nixos/xfce.nix
     ../../modules/nixos/sops.nix
+    ../../modules/nixos/v2ray.nix
 
     ../../modules/nixos/users/boticelli.nix
 

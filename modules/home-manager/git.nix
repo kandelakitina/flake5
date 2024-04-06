@@ -1,13 +1,10 @@
-{config, pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.git = {
     enable = true;
-    userName = "boticelli";
-    userEmail = "kandelakitina@gmail.com";
-
-    # signing = {
-    #   signByDefault = true;
-    #   key = "D528 BD50 F4E9 F031 AACB 1F7A 9833 E49C 848D 6C90";
-    # };
 
     extraConfig = {
       core = {
@@ -85,14 +82,13 @@
       ];
     };
   };
-  
+
   home.packages = with pkgs; [
     delta
   ];
-  
+
   home.shellAliases = {
     g = "git";
     lg = "lazygit";
   };
-  
 }

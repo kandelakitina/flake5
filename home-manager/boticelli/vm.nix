@@ -56,6 +56,12 @@
     nrs = "sudo nixos-rebuild switch --flake";
   };
 
+  news = {
+    display = "silent";
+    json = lib.mkForce {};
+    entries = lib.mkForce [];
+  };
+
   # TODO: Set your username
   home = {
     username = "boticelli";
@@ -63,6 +69,7 @@
   };
 
   colorscheme = import ../../modules/home-manager/colorschemes/iterm.nix;
+  # colorscheme = import ../../modules/home-manager/colorschemes/dracula.nix;
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
@@ -71,6 +78,10 @@
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
+  programs.git = {
+    userName = "boticelli";
+    userEmail = "kandelakitina@gmail.com";
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
