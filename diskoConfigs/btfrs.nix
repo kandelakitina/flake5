@@ -81,4 +81,6 @@
   };
   fileSystems."/persist".neededForBoot = true;
   fileSystems."/var/log".neededForBoot = true;
+  fileSystems."/etc/ssh".neededForBoot = true;
+  # fileSystems."/var/lib/sops-nix".neededForBoot = true;
 }

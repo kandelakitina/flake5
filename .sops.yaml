@@ -1,6 +1,6 @@
 keys:
   - &hosts:
-    - &vm age1dhwv4n4wwgr4y9usmndswf26cv0ndy3jd2qlh2gugw402z4pk9as8u2shl
+    - &vm age1pytyc9za9af6d90fsnm8jneyqq33wkejt5xrqhh099scfd2l6eas8mxqz3
 creation_rules:
   - path_regex: secrets.yaml$
     key_groups:

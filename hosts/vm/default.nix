@@ -18,7 +18,7 @@
     inputs.disko.nixosModules.disko
     (import ../../diskoConfigs/btfrs.nix { device = "/dev/vda"; })
 
-    # ../../modules/nixos/impermanence.nix
+    ../../modules/nixos/impermanence.nix
     # ../../modules/nixos/gnome.nix
     ../../modules/nixos/xfce.nix
     ../../modules/nixos/sops.nix
