@@ -2,7 +2,6 @@
   description = "Boticelli's Flake Config 5";
 
   inputs = {
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
     home-manager.url = "github:nix-community/home-manager/release-23.11";
@@ -18,8 +17,10 @@
 
     nix-colors.url = "github:misterio77/nix-colors";
 
-    sops-nix.url = "github:mic92/sops-nix"; 
+    sops-nix.url = "github:mic92/sops-nix";
 
+    # simple flake to solve 'command-not-found' issue
+    flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
   };
 
   outputs = {

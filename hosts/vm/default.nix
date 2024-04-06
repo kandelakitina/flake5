@@ -9,8 +9,8 @@
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
 
-    # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
+    # simple flake to solve 'command-not-found' issue
+    inputs.flake-programs-sqlite.nixosModules.programs-sqlite
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -22,6 +22,7 @@
     # ../../modules/nixos/gnome.nix
     ../../modules/nixos/xfce.nix
     ../../modules/nixos/sops.nix
+
     ../../modules/nixos/users/boticelli.nix
 
   ];
