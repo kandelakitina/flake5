@@ -20,9 +20,9 @@
 
   time.timeZone = "Europe/Moscow";
 
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us,ru";
-    xkbOptions = "grp:alt_shift_toggle,caps:escape";
+    options = "grp:alt_shift_toggle,caps:escape";
   };
 
   console.keyMap = "us";
