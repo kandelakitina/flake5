@@ -9,7 +9,7 @@
         TERM = "xterm-256color";
       };
 
-      mouse_bindings = [
+      mouse.bindings = [
         {
           mouse = "Right";
           action = "Paste";
@@ -54,10 +54,10 @@
             foreground = "#${config.colorscheme.palette.base00}";
             background = "#${config.colorscheme.palette.base0B}";
           };
-          footer_bar = {
-            foreground = "#${config.colorscheme.palette.base00}";
-            background = "#A5ADCE";
-          };
+          # footer_bar = {
+          #   foreground = "#${config.colorscheme.palette.base00}";
+          #   background = "#A5ADCE";
+          # };
         };
         hints = {
           start = {
