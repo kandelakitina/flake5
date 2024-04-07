@@ -45,5 +45,7 @@
         modules = [./home-manager/boticelli/vm.nix];
       };
     };
+
+    overlays = import ./overlays {inherit inputs;};
   };
 }
