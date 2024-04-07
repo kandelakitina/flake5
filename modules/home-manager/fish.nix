@@ -1,16 +1,18 @@
 # TODO install https://github.com/joshmedeski/sesh
 
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
 
   programs.fish = {
     enable = true;
+    shellInit = ''
+      set -x COPILOT_API_KEY (cat /home/boticelli/.local/copilot/apikey.txt)
+    '';
     functions = {
       # make fff file manager cd on quit
       # f = ''
