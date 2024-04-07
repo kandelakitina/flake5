@@ -35,25 +35,43 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    lib = nixpkgs.lib // home-manager.lib;
+
+    # This is a helper to expand configs for many systems:
+    systems = [
+      "x86_64-linux"
+      # "aarch64-linux"
+    ];
+    forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
+    pkgsFor = lib.genAttrs systems (
+      system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        }
+    );
   in {
+    inherit lib;
+
+    overlays = import ./overlays {inherit inputs outputs;};
+    packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
+    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
+    formatter = forEachSystem (pkgs: pkgs.nixfmt-rfc-style);
+
     nixosConfigurations = {
-      vm = nixpkgs.lib.nixosSystem {
+      vm = lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [./hosts/vm];
       };
     };
 
     homeConfigurations = {
-      "boticelli@vm" = home-manager.lib.homeManagerConfiguration {
+      "boticelli@vm" = lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home-manager/boticelli/vm.nix];
       };
     };
 
-    overlays = import ./overlays {inherit inputs;};
-
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-    
   };
 }
