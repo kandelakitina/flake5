@@ -21,6 +21,11 @@
 
     # simple flake to solve 'command-not-found' issue
     flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
+
+    firefox-gnome-theme = {
+      url = "github:rafaelmardojai/firefox-gnome-theme";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -47,5 +52,8 @@
     };
 
     overlays = import ./overlays {inherit inputs;};
+
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+    
   };
 }

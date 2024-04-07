@@ -34,6 +34,22 @@
         "type": "github"
       }
     },
+    "firefox-gnome-theme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1711290399,
+        "narHash": "sha256-e1xuHAHgeC8EU7cAIa3XfvzgI4Y7rzyTkAt9sBsgrfc=",
+        "owner": "rafaelmardojai",
+        "repo": "firefox-gnome-theme",
+        "rev": "33015314c12190230295cff61ced148e0f7ffe1c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rafaelmardojai",
+        "repo": "firefox-gnome-theme",
+        "type": "github"
+      }
+    },
     "flake-programs-sqlite": {
       "inputs": {
         "nixpkgs": "nixpkgs_2",
@@ -221,6 +237,7 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "firefox-gnome-theme": "firefox-gnome-theme",
         "flake-programs-sqlite": "flake-programs-sqlite",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
