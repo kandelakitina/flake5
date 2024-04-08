@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{inputs, ...}: {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
   ];
@@ -16,5 +16,12 @@
         path = "/home/boticelli/.local/copilot/apikey.txt";
       };
     };
+  };
+
+  programs.fish = {
+    enable = true;
+    shellInit = ''
+      set -x COPILOT_API_KEY (cat /home/boticelli/.local/copilot/apikey.txt)
+    '';
   };
 }

@@ -1,18 +1,14 @@
 # TODO install https://github.com/joshmedeski/sesh
-
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
-
   programs.fish = {
     enable = true;
-    shellInit = ''
-      set -x COPILOT_API_KEY (cat /home/boticelli/.local/copilot/apikey.txt)
-    '';
     functions = {
       # make fff file manager cd on quit
       # f = ''
@@ -48,11 +44,23 @@
     plugins = [
       # Enable a plugin (here grc for colorized command output) from nixpkgs
       # { name = "grc"; src = pkgs.fishPlugins.grc.src; }
-      { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
-      { name = "done"; src = pkgs.fishPlugins.done.src; }
-      { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
+      {
+        name = "fzf-fish";
+        src = pkgs.fishPlugins.fzf-fish.src;
+      }
+      {
+        name = "done";
+        src = pkgs.fishPlugins.done.src;
+      }
+      {
+        name = "autopair";
+        src = pkgs.fishPlugins.autopair.src;
+      }
       # Learn bindings on https://github.com/wfxr/forgit
-      { name = "forgit"; src = pkgs.fishPlugins.forgit.src; }
+      {
+        name = "forgit";
+        src = pkgs.fishPlugins.forgit.src;
+      }
       {
         name = "zoxide.fish";
         src = pkgs.fetchFromGitHub {
