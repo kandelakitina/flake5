@@ -84,11 +84,6 @@
           name = "json";
           formatter = deno "json";
         }
-        # {
-        #   name = "markdown";
-        #   auto-format = true;
-        #   formatter = deno "md";
-        # }
         {
           name = "markdown";
           language-servers = ["marksman" "gpt"];
