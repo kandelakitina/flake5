@@ -21,7 +21,7 @@ in {
         idle-timeout = 1;
         completion-replace = true;
         true-color = true;
-        rulers = [80];
+        # rulers = [80];
 
         cursor-shape = {
           insert = "bar";

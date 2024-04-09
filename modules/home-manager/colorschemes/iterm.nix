@@ -1,11 +1,12 @@
 {
-  slug = "iterm";
+  slug = "boticelliZero";
   palette = {
     base00 = "#101421"; # Deep Blue
-    base01 = "#80470b"; # Brown *
+    base01 = "#232630"; # Dark Grey *
     base02 = "#565656"; # Light Black *
     base03 = "#7b5cb0"; # Magenta
-    base04 = "#353535"; # Grey
+    # base04 = "#888a90"; # Grey
+    base04 = "#5c5c5c"; # Grey
     base05 = "#f0f0f0"; # White
     base06 = "#e5e9f0"; # White (default) *
     base07 = "#a47de9"; # Light Magenta (purple) *

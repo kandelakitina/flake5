@@ -1,5 +1,6 @@
 {colorScheme}: let
   background = "#${colorScheme.palette.base00}";
+  darkGrey = "#${colorScheme.palette.base01}";
   purple = "#${colorScheme.palette.base03}";
   grey = "#${colorScheme.palette.base04}";
   white = "#${colorScheme.palette.base05}";
@@ -70,7 +71,7 @@ in {
     modifiers = ["italic"];
   };
   "ui.background" = {
-    fg = grey;
+    fg = yellow;
     bg = background;
   };
   "ui.cursor" = {
@@ -78,7 +79,9 @@ in {
     bg = yellow;
     modifiers = ["dim"];
   };
-  "ui.cursorline" = {bg = grey;};
+  "ui.cursorline" = {
+    bg = darkGrey;
+  };
   "ui.cursor.match" = {
     fg = green;
     modifiers = ["underlined"];
@@ -91,7 +94,7 @@ in {
   "ui.debug" = {fg = red;};
   "ui.help" = {
     fg = blue;
-    bg = grey;
+    bg = background;
   };
   "ui.highlight.frameline" = {
     fg = grey;
@@ -100,12 +103,12 @@ in {
   "ui.linenr" = {fg = blue;};
   "ui.linenr.selected" = {fg = blue;};
   "ui.menu" = {
-    fg = blue;
-    bg = grey;
+    fg = purple;
+    bg = background;
   };
   "ui.menu.selected" = {
-    fg = cyan;
-    bg = grey;
+    fg = yellow;
+    bg = background;
   };
   "ui.popup" = {
     fg = blue;
@@ -114,35 +117,34 @@ in {
   "ui.selection" = {
     fg = background;
     bg = purple;
-    modifiers = ["dim"];
+    # modifiers = ["dim"];
   };
   "ui.selection.primary" = {
     fg = background;
     bg = purple;
   };
   "ui.statusline" = {
-    fg = blue;
-    bg = grey;
+    fg = purple;
+    bg = darkGrey;
   };
   "ui.statusline.inactive" = {
-    fg = blue;
-    bg = grey;
+    fg = grey;
+    bg = background;
   };
   "ui.statusline.insert" = {
-    fg = grey;
+    fg = background;
     bg = red;
   };
   "ui.statusline.normal" = {
-    fg = grey;
-    bg = white;
+    fg = blue;
+    bg = background;
   };
   "ui.statusline.select" = {
-    fg = grey;
+    fg = white;
     bg = purple;
   };
   "ui.text" = {fg = blue;};
   "ui.text.focus" = {fg = white;};
-  "ui.virtual.ruler" = {bg = grey;};
   "ui.window" = {fg = blue;};
   "variable.builtin" = {
     fg = cyan;
