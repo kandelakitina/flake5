@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.nix-colors.homeManagerModules.default
+    inputs.impermanence.nixosModules.home-manager.impermanence
 
     ../../modules/home-manager/cliTools
     ../../modules/home-manager/helix
@@ -46,6 +47,21 @@
       TERMINAL = "alacritty";
     };
 
+    persistence = {
+      "/persist/home/boticelli" = {
+        directories = [
+          "Documents"
+          "Downloads"
+          ".config/copilot"
+          ".config/sops/age"
+          "flake5"
+          ".local/bin"
+          ".ssh"
+          "vault"
+        ];
+        allowOther = true;
+      };
+    };
   };
 
   news = {

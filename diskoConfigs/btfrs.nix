@@ -1,7 +1,4 @@
-{
-  device ? throw "Set this to your disk device, e.g. /dev/sda",
-  ...
-}: {
+{device ? throw "Set this to your disk device, e.g. /dev/sda", ...}: {
   disko.devices = {
     disk.main = {
       inherit device;
@@ -56,10 +53,10 @@
                 "/root" = {
                   mountpoint = "/";
                 };
-                "/home" = {
-                  mountpoint = "/home";
-                  mountOptions = ["subvol=home" "noatime"];
-                };
+                # "/home" = {
+                #   mountpoint = "/home";
+                #   mountOptions = ["subvol=home" "noatime"];
+                # };
                 "/nix" = {
                   mountpoint = "/nix";
                   mountOptions = ["subvol=nix" "noatime"];
