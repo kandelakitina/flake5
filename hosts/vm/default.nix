@@ -31,9 +31,12 @@
 
     ../../modules/nixos/users/boticelli.nix
 
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   # FIXME: Add the rest of your current configuration
+
+  home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
   networking.hostName = "vm";
 
