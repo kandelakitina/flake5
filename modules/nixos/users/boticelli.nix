@@ -44,5 +44,5 @@ in {
   # '';
 
   # Import this user's personal/home configurations
-  # home-manager.users.ta = import ../../home/ta/${config.networking.hostName}.nix;
+  home-manager.users.boticelli = import ../../../home-manager/boticelli/${config.networking.hostName}.nix;
 }
