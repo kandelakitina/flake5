@@ -17,46 +17,35 @@
     # ../../modules/home-manager/firefox.nix
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/fonts.nix
-    ../../modules/home-manager/git.nix
     ../../modules/home-manager/gh.nix
+    ../../modules/home-manager/git.nix
+    ../../modules/home-manager/nix.nix
     ../../modules/home-manager/nnn.nix
-    ../../modules/home-manager/zk.nix
     ../../modules/home-manager/sops.nix
     ../../modules/home-manager/starship.nix
+    ../../modules/home-manager/zk.nix
   ];
 
-  nixpkgs = {
-    # You can add overlays here
-    overlays = [
-      # If you want to use overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
+  colorScheme = import ../../modules/home-manager/colorschemes/iterm.nix;
+  # colorscheme = import ../../modules/home-manager/colorschemes/dracula.nix;
 
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
-    ];
-    # Configure your nixpkgs instance
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = _: true;
-      permittedInsecurePackages = [
-        "electron-24.8.6"
-      ];
+  # Enable home-manager and git
+  programs.git = {
+    userName = "boticelli";
+    userEmail = "kandelakitina@gmail.com";
+  };
+
+  home = {
+    username = "boticelli";
+    homeDirectory = "/home/${config.home.username}";
+    sessionPath = ["$HOME/.local/bin"];
+    sessionVariables = {
+      FLAKE = "$HOME/flake5";
+      EDITOR = "hx";
+      BROWSER = "firefox";
+      TERMINAL = "alacritty";
     };
-  };
 
-  home.sessionVariables = {
-    EDITOR = "hx";
-    BROWSER = "firefox";
-    TERMINAL = "alacritty";
-  };
-
-  home.shellAliases = {
-    hms = "home-manager switch --flake";
-    nrs = "sudo nixos-rebuild switch --flake";
   };
 
   news = {
@@ -64,27 +53,12 @@
     json = lib.mkForce {};
     entries = lib.mkForce [];
   };
-
-  # TODO: Set your username
-  home = {
-    username = "boticelli";
-    homeDirectory = "/home/boticelli";
-  };
-
-  colorScheme = import ../../modules/home-manager/colorschemes/iterm.nix;
-  # colorscheme = import ../../modules/home-manager/colorschemes/dracula.nix;
+  programs.home-manager.enable = true;
+  programs.git.enable = true;
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
-
-  # Enable home-manager and git
-  programs.home-manager.enable = true;
-  programs.git.enable = true;
-  programs.git = {
-    userName = "boticelli";
-    userEmail = "kandelakitina@gmail.com";
-  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
