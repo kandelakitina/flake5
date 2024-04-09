@@ -41,6 +41,7 @@ in {
       "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
+      "/var/lib/sops-nix"
       "/etc/NetworkManager/system-connections"
       "/etc/ssh"
       # "/var/lib/sops-nix"
@@ -49,14 +50,14 @@ in {
 
   programs.fuse.userAllowOther = true;
 
-  system.activationScripts.persistent-dirs.text = let
-    mkHomePersist = user:
-      lib.optionalString user.createHome ''
-        mkdir -p /persist/${user.home}
-        chown ${user.name}:${user.group} /persist/${user.home}
-        chmod ${user.homeMode} /persist/${user.home}
-      '';
-    users = lib.attrValues config.users.users;
-  in
-    lib.concatLines (map mkHomePersist users);
+  # system.activationScripts.persistent-dirs.text = let
+  #   mkHomePersist = user:
+  #     lib.optionalString user.createHome ''
+  #       mkdir -p /persist/${user.home}
+  #       chown ${user.name}:${user.group} /persist/${user.home}
+  #       chmod ${user.homeMode} /persist/${user.home}
+  #     '';
+  #   users = lib.attrValues config.users.users;
+  # in
+  #   lib.concatLines (map mkHomePersist users);
 }
