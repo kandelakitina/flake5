@@ -29,27 +29,60 @@ in {
   "keyword.directive" = {fg = yellow;};
   "keyword" = {fg = purple;};
   "label" = {fg = red;};
-  "markup.bold" = {
-    fg = white;
+
+  # Markup
+  "markup.heading.marker" = grey;
+  "markup.heading.1" = {
+    fg = red;
     modifiers = ["bold"];
   };
-  "markup.heading" = {
+  "markup.heading.2" = {
+    fg = yellow;
+    modifiers = ["bold"];
+  };
+  "markup.heading.3" = {
+    fg = purple;
+    modifiers = ["bold"];
+  };
+  "markup.heading.4" = {
+    fg = cyan;
+    modifiers = ["bold"];
+  };
+  "markup.heading.5" = {
+    fg = green;
+    modifiers = ["bold"];
+  };
+  "markup.heading.6" = {
     fg = blue;
+    modifiers = ["bold"];
+  };
+  "markup.list" = purple;
+  "markup.bold" = {
+    fg = cyan;
     modifiers = ["bold"];
   };
   "markup.italic" = {
     fg = purple;
     modifiers = ["italic"];
   };
-  "markup.link.text" = {fg = purple;};
-  "markup.link.url" = {fg = yellow;};
-  "markup.list" = {fg = yellow;};
-  "markup.quote" = {
-    fg = white;
-    modifiers = ["italic"];
+  "markup.link.url" = {
+    fg = blue;
+    modifiers = ["underlined"];
   };
-  "markup.raw" = {fg = blue;};
-  "markup.strikethrough" = {modifiers = ["crossed_out"];};
+  "markup.link.label" = {
+    fg = cyan;
+    modifiers = ["underlined"];
+  };
+  "markup.link.text" = purple;
+  "markup.quote" = green;
+  "markup.raw.block" = {
+    fg = blue;
+    bg = darkGrey;
+  };
+  "markup.raw.inline" = {
+    fg = blue;
+  };
+
   "module" = {fg = purple;};
   "namespace" = {fg = yellow;};
   "operator" = {fg = red;};
@@ -143,8 +176,12 @@ in {
     fg = white;
     bg = purple;
   };
-  "ui.text" = {fg = blue;};
+  "ui.text" = {fg = white;};
   "ui.text.focus" = {fg = white;};
+  "ui.virtual.jump-label" = {
+    fg = red;
+    # bg = yellow;
+  };
   "ui.window" = {fg = blue;};
   "variable.builtin" = {
     fg = cyan;

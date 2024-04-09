@@ -20,6 +20,7 @@
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/gh.nix
     ../../modules/home-manager/nnn.nix
+    ../../modules/home-manager/nb.nix
     ../../modules/home-manager/sops.nix
     ../../modules/home-manager/starship.nix
   ];

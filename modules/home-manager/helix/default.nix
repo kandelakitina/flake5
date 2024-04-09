@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{config, ...}: let
   inherit (config) colorScheme;
 in {
   imports = [./languages.nix];
@@ -47,10 +43,10 @@ in {
             "spacer"
             "diagnostics"
             "version-control"
-            "file-name"
             "read-only-indicator"
             "file-modification-indicator"
             "spinner"
+            "file-name"
           ];
           right = [
             "file-encoding"
