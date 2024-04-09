@@ -12,7 +12,7 @@
 in {
   "attribute" = {fg = yellow;};
   "comment" = {
-    fg = purple;
+    fg = grey;
     modifiers = ["italic" "dim"];
   };
   "constant.character.escape" = {fg = purple;};
@@ -71,12 +71,12 @@ in {
     modifiers = ["italic"];
   };
   "ui.background" = {
-    fg = yellow;
+    fg = white;
     bg = background;
   };
   "ui.cursor" = {
     fg = background;
-    bg = yellow;
+    bg = white;
     modifiers = ["dim"];
   };
   "ui.cursorline" = {
@@ -103,11 +103,11 @@ in {
   "ui.linenr" = {fg = blue;};
   "ui.linenr.selected" = {fg = blue;};
   "ui.menu" = {
-    fg = purple;
+    fg = blue;
     bg = background;
   };
   "ui.menu.selected" = {
-    fg = yellow;
+    fg = white;
     bg = background;
   };
   "ui.popup" = {
@@ -124,7 +124,7 @@ in {
     bg = purple;
   };
   "ui.statusline" = {
-    fg = purple;
+    fg = blue;
     bg = darkGrey;
   };
   "ui.statusline.inactive" = {
