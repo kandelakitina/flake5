@@ -18,6 +18,7 @@
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/git.nix
+    ../../modules/home-manager/gh.nix
     ../../modules/home-manager/nnn.nix
     ../../modules/home-manager/sops.nix
     ../../modules/home-manager/starship.nix
@@ -69,7 +70,7 @@
     homeDirectory = "/home/boticelli";
   };
 
-  colorscheme = import ../../modules/home-manager/colorschemes/iterm.nix;
+  colorScheme = import ../../modules/home-manager/colorschemes/iterm.nix;
   # colorscheme = import ../../modules/home-manager/colorschemes/dracula.nix;
 
   # Add stuff for your user as you see fit:

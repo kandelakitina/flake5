@@ -13,7 +13,7 @@
         path = "/home/boticelli/.ssh/boticelli_ed25519_key";
       };
       copilot = {
-        path = "/home/boticelli/.local/copilot/apikey.txt";
+        path = "/home/boticelli/.config/copilot/apikey.txt";
       };
     };
   };
@@ -21,7 +21,7 @@
   programs.fish = {
     enable = true;
     shellInit = ''
-      set -x COPILOT_API_KEY (cat /home/boticelli/.local/copilot/apikey.txt)
+      set -x COPILOT_API_KEY (cat /home/boticelli/.config/copilot/apikey.txt)
     '';
   };
 }

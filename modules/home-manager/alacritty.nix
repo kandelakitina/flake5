@@ -1,10 +1,22 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  background = "#${config.colorScheme.palette.base00}";
+  purple = "#${config.colorScheme.palette.base03}";
+  grey = "#${config.colorScheme.palette.base04}";
+  white = "#${config.colorScheme.palette.base05}";
+  red = "#${config.colorScheme.palette.base08}";
+  yellow = "#${config.colorScheme.palette.base09}";
+  green = "#${config.colorScheme.palette.base0B}";
+  cyan = "#${config.colorScheme.palette.base0C}";
+  blue = "#${config.colorScheme.palette.base0D}";
+in {
   programs.alacritty = {
     enable = true;
     settings = {
-
       env = {
         TERM = "xterm-256color";
       };
@@ -32,85 +44,81 @@
 
       colors = {
         primary = {
-          background = "#${config.colorscheme.palette.base00}";
-          foreground = "#${config.colorscheme.palette.base05}";
-          dim_foreground = "#${config.colorscheme.palette.base05}";
-          bright_foreground = "#${config.colorscheme.palette.base05}";
+          background = background;
+          foreground = white;
+          dim_foreground = grey;
+          bright_foreground = white;
         };
         cursor = {
-          text = "#${config.colorscheme.palette.base00}";
-          cursor = "#${config.colorscheme.palette.base06}";
+          text = background;
+          cursor = white;
         };
         vi_mode_cursor = {
-          text = "#${config.colorscheme.palette.base00}";
-          cursor = "#${config.colorscheme.palette.base07}";
+          text = background;
+          cursor = white;
         };
         search = {
           matches = {
-            foreground = "#${config.colorscheme.palette.base00}";
-            background = "#A5ADCE";
+            foreground = background;
+            background = blue;
           };
           focused_match = {
-            foreground = "#${config.colorscheme.palette.base00}";
-            background = "#${config.colorscheme.palette.base0B}";
+            foreground = background;
+            background = green;
           };
-          # footer_bar = {
-          #   foreground = "#${config.colorscheme.palette.base00}";
-          #   background = "#A5ADCE";
-          # };
         };
         hints = {
           start = {
-            foreground = "#${config.colorscheme.palette.base00}";
-            background = "#${config.colorscheme.palette.base0A}";
+            foreground = background;
+            background = yellow;
           };
           end = {
-            foreground = "#${config.colorscheme.palette.base00}";
-            background = "#A5ADCE";
+            foreground = background;
+            background = blue;
           };
         };
         selection = {
-          text = "#${config.colorscheme.palette.base00}";
-          background = "#${config.colorscheme.palette.base06}";
+          text = background;
+          background = white;
         };
         normal = {
-          black = "#51576D";
-          red = "#${config.colorscheme.palette.base08}";
-          green = "#${config.colorscheme.palette.base0B}";
-          yellow = "#${config.colorscheme.palette.base0A}";
-          blue = "#${config.colorscheme.palette.base0D}";
-          magenta = "#7b5cb0";
-          cyan = "#${config.colorscheme.palette.base0C}";
-          white = "#B5BFE2";
+          black = background;
+          red = red;
+          green = green;
+          yellow = yellow;
+          blue = blue;
+          magenta = purple;
+          cyan = cyan;
+          white = white;
         };
         bright = {
-          black = "#626880";
-          red = "#${config.colorscheme.palette.base08}";
-          green = "#${config.colorscheme.palette.base0B}";
-          yellow = "#${config.colorscheme.palette.base0A}";
-          blue = "#${config.colorscheme.palette.base0D}";
-          magenta = "#a47de9";
-          cyan = "#${config.colorscheme.palette.base0C}";
-          white = "#A5ADCE";
+          black = background;
+          red = red;
+          green = green;
+          yellow = yellow;
+          blue = blue;
+          magenta = purple;
+          cyan = cyan;
+          white = white;
         };
         dim = {
-          black = "#51576D";
-          red = "#${config.colorscheme.palette.base08}";
-          green = "#${config.colorscheme.palette.base0B}";
-          yellow = "#${config.colorscheme.palette.base0A}";
-          blue = "#${config.colorscheme.palette.base0D}";
-          magenta = "#F4B8E4";
-          cyan = "#${config.colorscheme.palette.base0C}";
-          white = "#B5BFE2";
+          black = background;
+          red = red;
+          green = green;
+          yellow = yellow;
+          blue = blue;
+          magenta = purple;
+          cyan = cyan;
+          white = grey;
         };
         indexed_colors = [
           {
             index = 16;
-            color = "#EF9F76";
+            color = yellow;
           }
           {
             index = 17;
-            color = "#${config.colorscheme.palette.base06}";
+            color = white;
           }
         ];
       };

@@ -1,23 +1,20 @@
-{ config, pkgs, ... }:
-let
-  inherit (config) colorScheme;
-in
 {
+  config,
+  pkgs,
+  ...
+}: let
+  inherit (config) colorScheme;
+in {
   imports = [./languages.nix];
 
   programs.helix = {
     enable = true;
 
-    themes = import ./themes.nix { inherit colorScheme; };
+    themes = import ./themes {inherit colorScheme;};
 
     settings = {
-      theme = "nix-${colorScheme.slug}";
-      # "catppuccin_"
-      # + (
-      #   if config.theme.name == "light"
-      #   then "latte"
-      #   else "mocha"
-      # );
+      theme = "boticelliZero";
+
       editor = {
         color-modes = true;
         cursorline = true;
@@ -63,7 +60,6 @@ in
           ];
         };
 
-
         whitespace.characters = {
           newline = "↴";
           tab = "⇥";
@@ -86,18 +82,18 @@ in
         space.w = ":w";
         space.q = ":bc";
 
-        "C-j" = [ "extend_to_line_bounds" "delete_selection" "paste_after" ];
-        "C-k" = [ "extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before" ];
+        "C-j" = ["extend_to_line_bounds" "delete_selection" "paste_after"];
+        "C-k" = ["extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before"];
 
         # "C-(" = [ "rotate_selection_contents_backward" ];
         # "C-)" = [ "rotate_selection_contents_forward" ];
-        "C-U" = [ "later" ];
+        "C-U" = ["later"];
         # "C-|" = [ "shell_pipe_to" ];
-        "C-!" = [ "shell_append_output" ];
-        "C-_" = [ "merge_consecutive_selections" ];
-        "V" = [ "copy_selection_on_prev_line" ];
-        "C-m" = [ "join_selections_space" ];
-        "C-r" = [ "remove_selections" ];
+        "C-!" = ["shell_append_output"];
+        "C-_" = ["merge_consecutive_selections"];
+        "V" = ["copy_selection_on_prev_line"];
+        "C-m" = ["join_selections_space"];
+        "C-r" = ["remove_selections"];
       };
 
       keys.normal.space.u = {
@@ -107,18 +103,18 @@ in
       };
     };
 
-    extraPackages = with pkgs;
-    with nodePackages; [
-      vscode-langservers-extracted
-      vscode-css-languageserver-bin
-      typescript
-      typescript-language-server
-      marksman
-      nil
-      nixpkgs-fmt
-      lua-language-server
-      bash-language-server
-    ];
+    # extraPackages = with pkgs;
+    # with nodePackages; [
+    #   vscode-langservers-extracted
+    #   vscode-css-languageserver-bin
+    #   typescript
+    #   typescript-language-server
+    #   marksman
+    #   nil
+    #   nixpkgs-fmt
+    #   lua-language-server
+    #   bash-language-server
+    # ];
 
     # package = inputs.helix.packages.${pkgs.system}.default.overrideAttrs (old: {
     #   makeWrapperArgs = with pkgs;
@@ -139,6 +135,5 @@ in
     #       ])
     #     ];
     # });
-
   };
 }
