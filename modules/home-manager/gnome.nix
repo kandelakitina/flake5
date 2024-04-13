@@ -7,15 +7,17 @@
       package = pkgs.papirus-icon-theme;
     };
 
-    theme = {
-      name = "palenight";
-      package = pkgs.palenight-theme;
-    };
+    # theme = {
+    # name = "palenight";
+    # package = pkgs.palenight-theme;
+    # };
 
-    cursorTheme = {
-      name = "Numix-Cursor";
-      package = pkgs.numix-cursor-theme;
-    };
+    # cursorTheme = {
+    # name = "Bibata-Cursor";
+    # package = pkgs.bibata-cursors;
+    # name = "Numix-Cursor";
+    # package = pkgs.numix-cursor-theme;
+    # };
 
     gtk3.extraConfig = {
       Settings = ''
@@ -28,6 +30,18 @@
         gtk-application-prefer-dark-theme=1
       '';
     };
+
+    font = {
+      name = "Ubuntu Nerd Font";
+      size = 13;
+    };
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    name = "Bibata-Modern-Ice";
+    package = pkgs.bibata-cursors;
+    # size = 32;
   };
 
   home.packages = with pkgs; [
@@ -65,7 +79,10 @@
     # };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      enable-hot-corners = false;
+      enable-hot-corners = true;
+      # document-font-name = "UbuntuMono Nerd Font Propo 12";
+      # font-name = "UbuntuMono Nerd Font Propo 12";
+      # monospace-name = "UbuntuMono Nerd Font Mono 12";
     };
     "org/gnome/desktop/wm/preferences" = {
       workspace-names = ["Main"];
@@ -98,7 +115,7 @@
           ".config/gtk-4.0"
         ];
         files = [
-          ".gtkrc-2.0"
+          # ".gtkrc-2.0"
         ];
       };
     };
