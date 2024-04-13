@@ -81,4 +81,14 @@
       }
     ];
   };
+
+  home = {
+    persistence = {
+      "/persist/home/boticelli" = {
+        files = [
+          ".local/share/fish/fish_history"
+        ];
+      };
+    };
+  };
 }
