@@ -98,6 +98,7 @@
           ".config/gtk-4.0"
         ];
         files = [
+          ".gtkrc-2.0"
         ];
       };
     };
