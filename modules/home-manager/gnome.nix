@@ -113,9 +113,11 @@
           ".config/dconf"
           ".config/gtk-3.0"
           ".config/gtk-4.0"
+          ".local/share/gnome-shell"
+          ".local/share/icons"
+          ".local/.icons"
         ];
         files = [
-          # ".gtkrc-2.0"
         ];
       };
     };
