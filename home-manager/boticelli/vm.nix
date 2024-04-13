@@ -20,6 +20,7 @@
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/gh.nix
     ../../modules/home-manager/git.nix
+    ../../modules/home-manager/gnome.nix
     ../../modules/home-manager/nix.nix
     ../../modules/home-manager/nnn.nix
     ../../modules/home-manager/sops.nix

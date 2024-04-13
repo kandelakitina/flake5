@@ -90,4 +90,13 @@
     curl = "curlie";
     sudo = "sudo -E -s";
   };
+  home = {
+    persistence = {
+      "/persist/home/boticelli" = {
+        directories = [
+          ".local/share/zoxide"
+        ];
+      };
+    };
+  };
 }
