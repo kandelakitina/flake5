@@ -80,11 +80,11 @@
       show-network = true;
     };
     "org/gnome/desktop/background" = {
-      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-l.png";
-      picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-d.png";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-l.jpg";
+      picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-d.jpg";
     };
     "org/gnome/desktop/screensaver" = {
-      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-d.png";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-d.jpg";
       primary-color = "#3465a4";
       secondary-color = "#000000";
     };
