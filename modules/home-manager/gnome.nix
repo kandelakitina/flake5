@@ -79,10 +79,13 @@
     # };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      enable-hot-corners = true;
+      enable-hot-corners = false;
       # document-font-name = "UbuntuMono Nerd Font Propo 12";
       # font-name = "UbuntuMono Nerd Font Propo 12";
       # monospace-name = "UbuntuMono Nerd Font Mono 12";
+    };
+    "org/gnome/gnome/mutter" = {
+      edge-tiling = true;
     };
     "org/gnome/desktop/wm/preferences" = {
       workspace-names = ["Main"];
