@@ -1,14 +1,5 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [
-    ./rgv.nix
-  ];
+{ inputs, outputs, lib, config, pkgs, ... }: {
+  imports = [ ./rgv.nix ];
 
   programs = {
     # fuzzy finder
@@ -40,10 +31,7 @@
       enable = true;
       icons = true;
       git = true;
-      extraOptions = [
-        "--group-directories-first"
-        "--header"
-      ];
+      extraOptions = [ "--group-directories-first" "--header" ];
     };
 
     jq.enable = true;
@@ -93,9 +81,7 @@
   home = {
     persistence = {
       "/persist/home/boticelli" = {
-        directories = [
-          ".local/share/zoxide"
-        ];
+        directories = [ ".local/share/zoxide" ".cache/tealdeer" ];
       };
     };
   };
