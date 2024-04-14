@@ -1,10 +1,4 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, lib, config, pkgs, ... }: {
   imports = [
     inputs.nix-colors.homeManagerModules.default
     inputs.impermanence.nixosModules.home-manager.impermanence
@@ -44,7 +38,7 @@
   home = {
     username = "boticelli";
     homeDirectory = "/home/${config.home.username}";
-    sessionPath = ["$HOME/.local/bin"];
+    sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
       FLAKE = "$HOME/flake5";
       EDITOR = "hx";
@@ -57,7 +51,6 @@
         directories = [
           "Documents"
           "Downloads"
-          ".config/copilot"
           ".config/sops/age"
           "flake5"
           ".local/bin"
@@ -71,8 +64,8 @@
 
   news = {
     display = "silent";
-    json = lib.mkForce {};
-    entries = lib.mkForce [];
+    json = lib.mkForce { };
+    entries = lib.mkForce [ ];
   };
   programs.home-manager.enable = true;
   programs.git.enable = true;

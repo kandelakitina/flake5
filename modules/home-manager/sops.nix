@@ -1,7 +1,5 @@
-{inputs, ...}: {
-  imports = [
-    inputs.sops-nix.homeManagerModules.sops
-  ];
+{ inputs, ... }: {
+  imports = [ inputs.sops-nix.homeManagerModules.sops ];
 
   sops = {
     defaultSopsFile = ../../secrets.yaml;
@@ -12,16 +10,6 @@
       "private-keys/boticelli" = {
         path = "/home/boticelli/.ssh/boticelli_ed25519_key";
       };
-      copilot = {
-        path = "/home/boticelli/.config/copilot/apikey.txt";
-      };
     };
-  };
-
-  programs.fish = {
-    enable = true;
-    shellInit = ''
-      set -x COPILOT_API_KEY (cat /home/boticelli/.config/copilot/apikey.txt)
-    '';
   };
 }
