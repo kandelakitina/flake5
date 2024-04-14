@@ -1,14 +1,8 @@
 # TODO install https://github.com/joshmedeski/sesh
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ pkgs, ... }: {
   programs.fish = {
     enable = true;
+
     functions = {
       # make fff file manager cd on quit
       # f = ''
@@ -40,6 +34,7 @@
     };
     interactiveShellInit = ''
       set fish_greeting (echo -e "\e[38;5;135m┏(-_-)┛\e[38;5;15m┗(-_-)┓\e[38;5;196m┗(-_-)┛\e[38;5;226m┏(-_-)┓\e[38;5;82m┏(-_-)┛\e[38;5;87m┗(-_-)┓\e[38;5;33m┗(-_-)┛\e[0m")
+      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
     '';
     plugins = [
       # Enable a plugin (here grc for colorized command output) from nixpkgs
@@ -85,9 +80,7 @@
   home = {
     persistence = {
       "/persist/home/boticelli" = {
-        files = [
-          ".local/share/fish/fish_history"
-        ];
+        files = [ ".local/share/fish/fish_history" ];
       };
     };
   };

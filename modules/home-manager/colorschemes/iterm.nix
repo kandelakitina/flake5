@@ -3,7 +3,7 @@
   palette = {
     base00 = "#101421"; # Deep Blue
     base01 = "#232630"; # Dark Grey *
-    base02 = "#565656"; # Light Black *
+    base02 = "#5d5f66"; # Light Black *
     base03 = "#7b5cb0"; # Magenta
     # base04 = "#888a90"; # Grey
     base04 = "#5c5c5c"; # Grey
