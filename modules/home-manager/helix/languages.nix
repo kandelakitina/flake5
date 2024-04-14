@@ -1,196 +1,119 @@
 {
   pkgs,
-  lib,
+  inputs,
   ...
 }: {
-  programs.helix.extraPackages = let
-    helix-gpt-wrapper = pkgs.writeScriptBin "helix-gpt" ''
-      #!/usr/bin/env bash
-      set -e
-      ${pkgs.helix-gpt}/bin/helix-gpt $@
-    '';
-  in
-    with pkgs;
-    with nodePackages; [
-      helix-gpt
-      helix-gpt-wrapper
-
-      vscode-langservers-extracted
-      vscode-css-languageserver-bin
-      typescript
-      typescript-language-server
-      marksman
-      nil
-      nixpkgs-fmt
-      lua-language-server
-      bash-language-server
-    ];
-
-  programs.helix.languages = {
-    language = let
-      deno = lang: {
-        command = "${pkgs.deno}/bin/deno";
-        args = ["fmt" "-" "--ext" lang];
+  language = [
+    {
+      name = "tsx";
+      auto-format = true;
+    }
+    {
+      name = "nix";
+      auto-format = true;
+      formatter = {command = "nixfmt";};
+    }
+    {
+      name = "yaml";
+      auto-format = true;
+    }
+    {
+      name = "toml";
+      auto-format = true;
+    }
+    {
+      name = "vue";
+      auto-format = true;
+      language-servers = [
+        {
+          name = "volar";
+          except-features = ["inlay-hints"];
+        }
+        "tailwind"
+        # "eslint"
+      ];
+    }
+    {
+      name = "typescript";
+      auto-format = true;
+      language-servers = ["eslint" "typescript"];
+      formatter = {
+        command = "${pkgs.nodePackages_latest.prettier}/bin/prettier";
+        args = ["--parser" "typescript"];
       };
-
-      prettier = lang: {
-        command = "${pkgs.nodePackages.prettier}/bin/prettier";
-        args = ["--parser" lang];
+    }
+    {
+      name = "javascript";
+      auto-format = true;
+      language-servers = ["eslint" "typescript"];
+      formatter = {
+        command = "${pkgs.nodePackages_latest.prettier}/bin/prettier";
+        args = ["--parser" "typescript"];
       };
-      prettierLangs = map (e: {
-        name = e;
-        formatter = prettier e;
-      });
-      langs = ["css" "scss" "html"];
-    in
-      [
-        {
-          name = "toml";
-          language-servers = ["taplo" "gpt"];
-          formatter = deno "toml";
-          auto-format = true;
-        }
-        {
-          name = "yaml";
-          language-servers = ["yaml-language-server" "gpt"];
-        }
-        {
-          name = "nix";
-          language-servers = ["nil" "gpt"];
-          formatter = {
-            command = "alejandro";
-          };
-          auto-format = true;
-        }
-        {
-          name = "bash";
-          auto-format = true;
-          formatter = {
-            command = "${pkgs.shfmt}/bin/shfmt";
-            args = ["-i" "2"];
-          };
-        }
-        {
-          name = "clojure";
-          injection-regex = "(clojure|clj|edn|boot|yuck)";
-          file-types = ["clj" "cljs" "cljc" "clje" "cljr" "cljx" "edn" "boot" "yuck"];
-        }
-        {
-          name = "javascript";
-          auto-format = true;
-          language-servers = ["gpt" "dprint" "typescript-language-server"];
-        }
-        {
-          name = "json";
-          formatter = deno "json";
-        }
-        {
-          name = "markdown";
-          language-servers = ["marksman" "gpt"];
-          formatter = {
-            command = "dprint";
-            args = ["fmt" "--stdin" "md"];
-          };
-          auto-format = true;
-        }
-        {
-          name = "typescript";
-          auto-format = true;
-          language-servers = ["gpt" "dprint" "typescript-language-server"];
-        }
-      ]
-      ++ prettierLangs langs;
+    }
+    {
+      name = "markdown";
+      auto-format = true;
+      language-servers = ["marksman" "ltex-ls"];
+    }
+    {
+      name = "svelte";
+      # roots = [ "package.json" ];
+      auto-format = true;
+      language-servers = ["svelteserver" "tailwind" "eslint"];
+    }
+  ];
 
-    language-server = {
-      "gpt" = {
-        command = "helix-gpt";
-        args = [
-          "--handler"
-          "copilot"
-        ];
-      };
+  language-server.typescript = {
+    command = "${pkgs.nodePackages_latest.typescript-language-server}/bin/typescript-language-server";
+    args = ["--stdio"];
+  };
+  language-server.svelteserver = {
+    command = "${pkgs.nodePackages_latest.svelte-language-server}/bin/svelteserver";
+    args = ["--stdio"];
+  };
+  language-server.volar = {
+    args = ["--stdio"];
+    command = "${
+      # pkgs.nodePackages_latest."@vue/language-server"
+      pkgs.nodePackages_latest.volar
+    }/bin/vue-language-server";
+    config.typescript = {
+      tsdk = "${pkgs.nodePackages.typescript}/lib/node_modules/typescript/lib";
+    };
+  };
+  language-server.eslint = {
+    command = "vscode-eslint-language-server";
+    args = ["--stdio"];
+    config = {
+      validate = "on";
+      format = true;
+      quiet = false;
+      onIgnoredFiles = "off";
+      rulesCustomizations = [];
+      run = "onType";
+      # nodePath configures the directory in which the eslint server should start its node_modules resolution.
+      # This path is relative to the workspace folder (root dir) of the server instance.
+      nodePath = "";
+      # use the workspace folder location or the file location (if no workspace folder is open) as the working directory
 
-      bash-language-server = {
-        command = "${pkgs.nodePackages.bash-language-server}/bin/bash-language-server";
-        args = ["start"];
-      };
-
-      clangd = {
-        command = "${pkgs.clang-tools}/bin/clangd";
-        clangd.fallbackFlags = ["-std=c++2b"];
-      };
-
-      deno-lsp = {
-        command = lib.getExe pkgs.deno;
-        args = ["lsp"];
-        environment.NO_COLOR = "1";
-        config.deno = {
+      workingDirectory.mode = "auto";
+      experimental = {};
+      problems.shortenToSingleLine = false;
+      codeAction = {
+        disableRuleComment = {
           enable = true;
-          lint = true;
-          unstable = true;
-          suggest = {
-            completeFunctionCalls = false;
-            imports = {hosts."https://deno.land" = true;};
-          };
-          inlayHints = {
-            enumMemberValues.enabled = true;
-            functionLikeReturnTypes.enabled = true;
-            parameterNames.enabled = "all";
-            parameterTypes.enabled = true;
-            propertyDeclarationTypes.enabled = true;
-            variableTypes.enabled = true;
-          };
+          location = "separateLine";
         };
-      };
-
-      dprint = {
-        command = lib.getExe pkgs.dprint;
-        args = ["lsp"];
-      };
-
-      nil = {
-        command = lib.getExe pkgs.nil;
-        config.nil.formatting.command = ["${lib.getExe pkgs.alejandra}" "-q"];
-      };
-
-      typescript-language-server = {
-        command = "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server";
-        args = ["--stdio"];
-        config = let
-          inlayHints = {
-            includeInlayEnumMemberValueHints = true;
-            includeInlayFunctionLikeReturnTypeHints = true;
-            includeInlayFunctionParameterTypeHints = true;
-            includeInlayParameterNameHints = "all";
-            includeInlayParameterNameHintsWhenArgumentMatchesName = true;
-            includeInlayPropertyDeclarationTypeHints = true;
-            includeInlayVariableTypeHints = true;
-          };
-        in {
-          typescript-language-server.source = {
-            addMissingImports.ts = true;
-            fixAll.ts = true;
-            organizeImports.ts = true;
-            removeUnusedImports.ts = true;
-            sortImports.ts = true;
-          };
-
-          typescript = {inherit inlayHints;};
-          javascript = {inherit inlayHints;};
-
-          hostInfo = "helix";
-        };
-      };
-
-      vscode-css-language-server = {
-        command = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
-        args = ["--stdio"];
-        config = {
-          provideFormatter = true;
-          css.validate.enable = true;
-          scss.validate.enable = true;
-        };
+        showDocumentation.enable = true;
       };
     };
+  };
+  language-server.tailwind = {
+    args = ["--stdio"];
+    command = "${
+      pkgs.nodePackages."@tailwindcss/language-server"
+    }/bin/tailwindcss-language-server";
+    config = {};
   };
 }

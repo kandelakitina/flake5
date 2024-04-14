@@ -1,9 +1,10 @@
-{config, ...}: let
+{config, pkgs, inputs, ...}: let
   inherit (config) colorScheme;
+  languages = import ./languages.nix { inherit pkgs inputs; };
 in {
-  imports = [./languages.nix];
 
   programs.helix = {
+    inherit languages;
     enable = true;
 
     themes = import ./themes {inherit colorScheme;};
@@ -99,18 +100,18 @@ in {
       };
     };
 
-    # extraPackages = with pkgs;
-    # with nodePackages; [
-    #   vscode-langservers-extracted
-    #   vscode-css-languageserver-bin
-    #   typescript
-    #   typescript-language-server
-    #   marksman
-    #   nil
-    #   nixpkgs-fmt
-    #   lua-language-server
-    #   bash-language-server
-    # ];
+    extraPackages = with pkgs;
+    with nodePackages; [
+      vscode-langservers-extracted
+      vscode-css-languageserver-bin
+      typescript
+      typescript-language-server
+      marksman
+      nil
+      nixfmt
+      lua-language-server
+      bash-language-server
+    ];
 
     # package = inputs.helix.packages.${pkgs.system}.default.overrideAttrs (old: {
     #   makeWrapperArgs = with pkgs;
@@ -132,4 +133,38 @@ in {
     #     ];
     # });
   };
+
+  # home.packages = with pkgs; [
+  #   nil
+  #   nixfmt
+  #   lua-language-server
+  #   vscode-langservers-extracted
+
+  #   # zls
+  #   taplo
+  #   ltex-ls
+
+  #   buf-language-server
+  #   pb
+
+  #   # golangci-lint-langserver
+  #   yaml-language-server
+  #   # python311Packages.python-lsp-server
+
+  #   # haskellPackages.haskell-language-server
+  #   # ocamlPackages.ocaml-lsp
+  #   # nls
+  #   marksman
+  # ];
+
+  home.file.".config/helix/ignore".text = ''
+    !.*env*
+    !.dockerignore
+    !.github/
+    !.gitignore
+    !.gitattributes
+    !.eslintrc*
+    !.prettierc*
+    !.cargo/
+  '';
 }
