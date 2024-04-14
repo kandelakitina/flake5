@@ -14,6 +14,7 @@
     ../../modules/home-manager/zellij
 
     ../../modules/home-manager/alacritty.nix
+    ../../modules/home-manager/anki.nix
     ../../modules/home-manager/cheatsheets.nix
     # ../../modules/home-manager/firefox.nix
     ../../modules/home-manager/fish.nix
@@ -21,8 +22,11 @@
     ../../modules/home-manager/gh.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/gnome.nix
+    ../../modules/home-manager/goldendict.nix
+    ../../modules/home-manager/mpv.nix
     ../../modules/home-manager/nix.nix
     ../../modules/home-manager/nnn.nix
+    ../../modules/home-manager/obsidian.nix
     ../../modules/home-manager/sops.nix
     ../../modules/home-manager/starship.nix
     ../../modules/home-manager/zk.nix
