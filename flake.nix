@@ -7,8 +7,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # hardware.url = "github:nixos/nixos-hardware";
-    # nix-colors.url = "github:misterio77/nix-colors";
+    hardware.url = "github:nixos/nixos-hardware";
 
     disko.url = "github:nix-community/disko";
 
@@ -63,6 +62,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [./hosts/vm];
       };
+      thinkpad = lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./hosts/thinkpad];
+      };
     };
 
     homeConfigurations = {
@@ -70,6 +73,11 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home-manager/boticelli/vm.nix];
+      };
+      "boticelli@thinkpad" = lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home-manager/boticelli/thinkpad.nix];
       };
     };
   };
