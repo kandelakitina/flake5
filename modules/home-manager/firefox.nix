@@ -1,24 +1,40 @@
-{
-  inputs,
-  ...
-}:
-{
-  # home = {
-  #   persistence = {
-  #     # Not persisting is safer
-  #     "/persist/home/boticelli".directories = [ ".mozilla/firefox" ];
-  #   };
-  # };
+{ inputs, ... }: {
+  home = {
+    persistence = {
+      # Not persisting is safer
+      "/persist/home/boticelli".directories = [
+        ".mozilla/firefox"
+        # ".mozilla/firefox/default/extensions"
+      ];
+    };
+  };
 
-  home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source = inputs.firefox-gnome-theme;
+  home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source =
+    inputs.firefox-gnome-theme;
 
   programs.firefox = {
     enable = true;
     profiles.default = {
       name = "Default";
       extraConfig = ''
-        ${builtins.readFile "${inputs.firefox-gnome-theme}/configuration/user.js"}
+        ${builtins.readFile
+        "${inputs.firefox-gnome-theme}/configuration/user.js"}
       '';
+
+      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        ublock-origin
+        darkreader
+        gesturefy
+        istilldontcareaboutcookies
+        switchyomega
+        # onetab
+        raindropio
+        tab-session-manager
+        persistentpin
+        foxytab
+        undoclosetabbutton
+        browserpass
+      ];
 
       settings = {
         "browser.uidensity" = 0;

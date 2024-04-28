@@ -25,60 +25,59 @@
       url = "github:rafaelmardojai/firefox-gnome-theme";
       flake = false;
     };
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-    lib = nixpkgs.lib // home-manager.lib;
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    let
+      inherit (self) outputs;
+      lib = nixpkgs.lib // home-manager.lib;
 
-    # This is a helper to expand configs for many systems:
-    systems = [
-      "x86_64-linux"
-      # "aarch64-linux"
-    ];
-    forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
-    pkgsFor = lib.genAttrs systems (
-      system:
+      # This is a helper to expand configs for many systems:
+      systems = [
+        "x86_64-linux"
+        # "aarch64-linux"
+      ];
+      forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
+      pkgsFor = lib.genAttrs systems (system:
         import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-        }
-    );
-  in {
-    inherit lib;
+        });
+    in {
+      inherit lib;
 
-    overlays = import ./overlays {inherit inputs outputs;};
-    packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
-    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
-    formatter = forEachSystem (pkgs: pkgs.alejandro);
+      overlays = import ./overlays { inherit inputs outputs; };
+      packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
+      devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
+      formatter = forEachSystem (pkgs: pkgs.alejandro);
 
-    nixosConfigurations = {
-      vm = lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/vm];
+      nixosConfigurations = {
+        vm = lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/vm ];
+        };
+        thinkpad = lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/thinkpad ];
+        };
       };
-      thinkpad = lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/thinkpad];
+
+      homeConfigurations = {
+        "boticelli@vm" = lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home-manager/boticelli/vm.nix ];
+        };
+        "boticelli@thinkpad" = lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home-manager/boticelli/thinkpad.nix ];
+        };
       };
     };
-
-    homeConfigurations = {
-      "boticelli@vm" = lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/boticelli/vm.nix];
-      };
-      "boticelli@thinkpad" = lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/boticelli/thinkpad.nix];
-      };
-    };
-  };
 }
