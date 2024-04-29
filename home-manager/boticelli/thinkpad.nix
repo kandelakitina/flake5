@@ -21,9 +21,11 @@
     ../../modules/home-manager/nix.nix
     ../../modules/home-manager/nnn.nix
     ../../modules/home-manager/obsidian.nix
+    ../../modules/home-manager/proxychains.nix
     ../../modules/home-manager/sops.nix
     ../../modules/home-manager/starship.nix
     ../../modules/home-manager/sgpt.nix
+    ../../modules/home-manager/telegram.nix
     ../../modules/home-manager/zk.nix
   ];
 
