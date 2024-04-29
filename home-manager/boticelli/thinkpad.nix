@@ -42,6 +42,7 @@
     username = "boticelli";
     homeDirectory = "/home/${config.home.username}";
     sessionPath = [ "$HOME/.local/bin" ];
+    shellAliases = { sysrestart = "systemctl --user reset-failed"; };
     sessionVariables = {
       FLAKE = "$HOME/flake5";
       EDITOR = "hx";
