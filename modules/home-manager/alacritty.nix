@@ -1,4 +1,5 @@
-{config, ...}: let
+{ config, ... }:
+let
   background = "#${config.colorScheme.palette.base00}";
   purple = "#${config.colorScheme.palette.base03}";
   grey = "#${config.colorScheme.palette.base04}";
@@ -12,30 +13,22 @@ in {
   programs.alacritty = {
     enable = true;
     settings = {
-      env = {
-        TERM = "xterm-256color";
-      };
+      env = { TERM = "xterm-256color"; };
 
-      mouse.bindings = [
-        {
-          mouse = "Right";
-          action = "Paste";
-        }
-      ];
+      mouse.bindings = [{
+        mouse = "Right";
+        action = "Paste";
+      }];
 
       font = {
-        normal = {
-          family = "UbuntuMono Nerd Font";
-        };
-        size = 18;
+        normal = { family = "UbuntuMono Nerd Font"; };
+        size = 14;
       };
 
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
 
-      shell = {
-        program = "fish";
-      };
+      shell = { program = "fish"; };
 
       colors = {
         primary = {
