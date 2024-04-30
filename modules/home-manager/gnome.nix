@@ -2,15 +2,15 @@
   gtk = {
     enable = true;
 
-    iconTheme = {
-      name = "Colloid-dark";
-      package = pkgs.colloid-icon-theme;
-    };
+    # iconTheme = {
+    #   name = "Colloid-dark";
+    #   package = pkgs.colloid-icon-theme;
+    # };
 
-    theme = {
-      name = "Colloid-Dark";
-      package = pkgs.colloid-gtk-theme;
-    };
+    # theme = {
+    #   name = "Colloid-Dark";
+    #   package = pkgs.colloid-gtk-theme;
+    # };
 
     # cursorTheme = {
     # name = "Bibata-Cursor";
@@ -46,16 +46,18 @@
 
   home.packages = with pkgs; [
     # gnome.dconf-editor
-    gnomeExtensions.user-themes
+    # gnomeExtensions.user-themes
     gnomeExtensions.tray-icons-reloaded
     gnomeExtensions.vitals
     gnomeExtensions.dash-to-panel
     gnomeExtensions.space-bar
-    nightfox-gtk-theme
     # palenight-theme
   ];
 
-  # home.sessionVariables.GTK_THEME = "palenight";
+  # home.sessionVariables = {
+  #   GTK_THEME = "Colloid-Dark";
+  #   WINIT_UNIX_BACKEND = "x11";
+  # };
 
   dconf.settings = {
 
