@@ -87,6 +87,8 @@
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       enable-hot-corners = false;
+      clock-show-weekday = true;
+      show-battery-percentage = true;
       # document-font-name = "UbuntuMono Nerd Font Propo 12";
       # font-name = "UbuntuMono Nerd Font Propo 12";
       # monospace-name = "UbuntuMono Nerd Font Mono 12";
@@ -128,6 +130,21 @@
         "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-d.jpg";
       primary-color = "#3465a4";
       secondary-color = "#000000";
+    };
+
+    "org/gnome/desktop/peripherals/mouse" = {
+      accel-profile = "flat";
+      speed = -0.6;
+    };
+    "org/gnome/settings-daemon/plugins/color" = {
+      night-light-enabled = true;
+      night-light-schedule-automatic = false;
+      night-light-schedule-from = 0.0;
+      night-light-schedule-to = 0.0;
+      night-light-temperature = 2700;
+    };
+    "org/gnome/desktop/notifications/application/org-telegram-desktop" = {
+      enable = false;
     };
   };
   home = {
