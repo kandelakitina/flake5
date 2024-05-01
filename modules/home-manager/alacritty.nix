@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
   background = "#${config.colorScheme.palette.base00}";
   purple = "#${config.colorScheme.palette.base03}";
@@ -10,6 +10,7 @@ let
   cyan = "#${config.colorScheme.palette.base0C}";
   blue = "#${config.colorScheme.palette.base0D}";
 in {
+  imports = [ ../../scripts/pkgsAlacritty.nix ];
   programs.alacritty = {
     enable = true;
     settings = {
