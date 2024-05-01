@@ -1,6 +1,17 @@
 { lib, pkgs, ... }: {
+
+  # qt = {
+  #   enable = true;
+  #   platformTheme = "gnome";
+  #   style = "adwaita-dark";
+  # };
+
   gtk = {
     enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome.gnome-themes-extra;
+    };
 
     # iconTheme = {
     #   name = "Colloid-dark";
@@ -8,8 +19,8 @@
     # };
 
     # theme = {
-    #   name = "Colloid-Dark";
-    #   package = pkgs.colloid-gtk-theme;
+    #   name = "Adementary-dark";
+    #   package = pkgs.adementary-theme;
     # };
 
     # cursorTheme = {
@@ -52,6 +63,7 @@
     gnomeExtensions.dash-to-panel
     gnomeExtensions.space-bar
     # palenight-theme
+    # adementary-theme
   ];
 
   # home.sessionVariables = {
@@ -114,6 +126,7 @@
     # "org/gnome/shell/extensions/space-bar" = {
     # };
     "org/gnome/desktop/interface" = {
+      # gtk-theme = "Adementary-dark";
       color-scheme = "prefer-dark";
       enable-hot-corners = false;
       clock-show-weekday = true;
@@ -130,7 +143,7 @@
 
     "org/gnome/shell/extensions/dash-to-panel" = {
       panel-element-positions = ''
-        {"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'';
+        {"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centered"},{"element":"centerBox","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'';
       panel-sizes = ''{"0":32}'';
       panel-positions = ''{"0":"TOP"}'';
       # trans-use-custom-opacity = true;
