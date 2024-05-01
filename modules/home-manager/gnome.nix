@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ lib, pkgs, ... }: {
   gtk = {
     enable = true;
 
@@ -85,8 +85,8 @@
       };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =
       {
-        binding = "<Super>t";
-        command = "run-alacritty";
+        binding = "<Super>Return";
+        command = "${(lib.getExe pkgs.run-alacritty)}";
         name = "Alacritty";
       };
 

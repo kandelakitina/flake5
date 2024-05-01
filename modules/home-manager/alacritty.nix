@@ -10,7 +10,6 @@ let
   cyan = "#${config.colorScheme.palette.base0C}";
   blue = "#${config.colorScheme.palette.base0D}";
 in {
-  imports = [ ../../scripts/pkgsAlacritty.nix ];
   programs.alacritty = {
     enable = true;
     settings = {

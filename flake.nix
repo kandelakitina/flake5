@@ -74,7 +74,8 @@
           modules = [ ./home-manager/boticelli/vm.nix ];
         };
         "boticelli@thinkpad" = lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          pkgs = pkgsFor.x86_64-linux;
+          # pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home-manager/boticelli/thinkpad.nix ];
         };

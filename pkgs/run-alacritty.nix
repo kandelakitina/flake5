@@ -1,6 +1,6 @@
-{ pkgs }:
+{ pkgs, ... }:
 
-# Runs a new instance of Alacritty /bin/alacrittyor brings it to focus if it exists already
+# Runs a new instance of Alacritty or brings it to focus if it exists already
 pkgs.writeShellScriptBin "run-alacritty" ''
   if pgrep -x "alacritty" > /dev/null; then
       ALACRITTY_WID=$(xdotool search --onlyvisible --class alacritty | head -n 1)
