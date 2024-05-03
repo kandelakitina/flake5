@@ -55,23 +55,59 @@
     # size = 32;
   };
 
-  home.packages = with pkgs; [
-    # gnome.dconf-editor
-    # gnomeExtensions.user-themes
-    gnomeExtensions.tray-icons-reloaded
-    gnomeExtensions.vitals
-    gnomeExtensions.dash-to-panel
-    gnomeExtensions.space-bar
-    # palenight-theme
-    # adementary-theme
-  ];
-
   # home.sessionVariables = {
   #   GTK_THEME = "Colloid-Dark";
   #   WINIT_UNIX_BACKEND = "x11";
   # };
 
+  home.packages = with pkgs; [
+    # gnome.dconf-editor
+    # gnomeExtensions.user-themes
+    # gnomeExtensions.tray-icons-reloaded
+    gnomeExtensions.vitals
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.space-bar
+    # palenight-theme
+    # adementary-theme
+    gnomeExtensions.hibernate-status-button
+    gnomeExtensions.forge
+    gnomeExtensions.pano
+    gnomeExtensions.search-light
+    gnomeExtensions.caffeine
+    gnomeExtensions.appindicator
+  ];
+
   dconf.settings = {
+
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      enabled-extensions = [
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
+        # "trayIconsReloaded@selfmade.pl"
+        "Vitals@CoreCoding.com"
+        "dash-to-panel@jderose9.github.com"
+        "space-bar@luchrioh"
+        "apps-menu@gnome-shell-extensions.gcampax.github.com"
+        "places-menu@gnome-shell-extensions.gcampax.github.com"
+        "drive-menu@gnome-shell-extensions.gcampax.github.com"
+        # "window-list@gnome-shell-extensions.gcampax.github.com"
+        "hibernate-status@dromi"
+        "forge@jmmaranan.com"
+        "pano@elhan.io"
+        "search-light@icedman.github.com"
+        "caffeine@patapon.info"
+        "appindicatorsupport@rgcjonas.gmail.com"
+      ];
+
+      favorite-apps = [
+        "Alacritty.desktop"
+        "firefox.desktop"
+        # "virt-manager.desktop"
+        "org.gnome.Nautilus.desktop"
+      ];
+
+    };
+
     "org/gnome/desktop/applications/terminal" = {
       exec = "${pkgs.alacritty}/bin/foot";
     };
@@ -105,27 +141,6 @@
         name = "Alacritty";
       };
 
-    "org/gnome/shell" = {
-      favorite-apps = [
-        "Alacritty.desktop"
-        "firefox.desktop"
-        # "virt-manager.desktop"
-        "org.gnome.Nautilus.desktop"
-      ];
-
-      # `gnome-extensions list` for a list
-      enabled-extensions = [
-        "user-theme@gnome-shell-extensions.gcampax.github.com"
-        "trayIconsReloaded@selfmade.pl"
-        "Vitals@CoreCoding.com"
-        "dash-to-panel@jderose9.github.com"
-        "space-bar@luchrioh"
-        "apps-menu@gnome-shell-extensions.gcampax.github.com"
-        "places-menu@gnome-shell-extensions.gcampax.github.com"
-        "drive-menu@gnome-shell-extensions.gcampax.github.com"
-        # "window-list@gnome-shell-extensions.gcampax.github.com"
-      ];
-    };
     # "org/gnome/shell/extensions/space-bar" = {
     # };
     "org/gnome/desktop/interface" = {
@@ -139,9 +154,20 @@
       # monospace-name = "UbuntuMono Nerd Font Mono 12";
     };
     "org/gnome/gnome/mutter" = { edge-tiling = true; };
+
     "org/gnome/desktop/wm/preferences" = {
       workspace-names = [ "Main" "Browser" "Misc" "Anime" ];
       button-layout = "appmenu:minimize,maximize,close";
+    };
+
+    "org/gnome/desktop/wm/keybindings" = { close = [ "<Super>q" ]; };
+
+    "com/github/stunkymonkey/nautilus-open-any-terminal" = {
+      terminal = "alacritty";
+    };
+
+    "org/gnome/shell/extensions/appindicator" = {
+      legacy-tray-enabled = false;
     };
 
     "org/gnome/shell/extensions/dash-to-panel" = {
