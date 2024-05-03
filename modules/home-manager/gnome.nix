@@ -79,29 +79,35 @@
   ];
 
   dconf.settings = {
-
     "org/gnome/shell" = {
-      disable-user-extensions = false;
       enabled-extensions = [
-        # "user-theme@gnome-shell-extensions.gcampax.github.com"
-        # "trayIconsReloaded@selfmade.pl"
-        "Vitals@CoreCoding.com"
-        "dash-to-panel@jderose9.github.com"
-        "space-bar@luchrioh"
+        "appindicatorsupport@rgcjonas.gmail.com"
         "apps-menu@gnome-shell-extensions.gcampax.github.com"
-        "places-menu@gnome-shell-extensions.gcampax.github.com"
+        "caffeine@patapon.info"
+        "dash-to-panel@jderose9.github.com"
         "drive-menu@gnome-shell-extensions.gcampax.github.com"
-        # "window-list@gnome-shell-extensions.gcampax.github.com"
         "hibernate-status@dromi"
         "pano@elhan.io"
-        "search-light@icedman.github.com"
-        "caffeine@patapon.info"
-        "appindicatorsupport@rgcjonas.gmail.com"
-
-        # Tiling managers
-        "forge@jmmaranan.com"
         "paperwm@paperwm.github.com"
+        "places-menu@gnome-shell-extensions.gcampax.github.com"
+        "search-light@icedman.github.com"
+        "space-bar@luchrioh"
+        "Vitals@CoreCoding.com"
       ];
+
+      disabled-extensions = [
+        "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
+        "forge@jmmaranan.com"
+        "light-style@gnome-shell-extensions.gcampax.github.com"
+        "native-window-placement@gnome-shell-extensions.gcampax.github.com"
+        "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
+        "trayIconsReloaded@selfmade.pl"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
+        "window-list@gnome-shell-extensions.gcampax.github.com"
+        "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
+        "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
+      ];
+      disable-user-extensions = false;
 
       favorite-apps = [
         "Alacritty.desktop"
@@ -109,6 +115,7 @@
         "org.telegram.desktop.desktop"
         # "virt-manager.desktop"
         "org.gnome.Nautilus.desktop"
+        "whatsapp-for-linux.desktop"
       ];
     };
 
@@ -190,7 +197,7 @@
       '';
       panel-sizes = ''{"0":32}'';
       panel-positions = ''{"0":"TOP"}'';
-      # trans-use-custom-opacity = true;
+      trans-use-custom-opacity = true;
       # trans-panel-opacity = 0.2;
       multi-monitors = false;
     };

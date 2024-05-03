@@ -27,6 +27,7 @@
     ../../modules/home-manager/sgpt.nix
     ../../modules/home-manager/transmission.nix
     ../../modules/home-manager/telegram.nix
+    ../../modules/home-manager/whatsapp.nix
     ../../modules/home-manager/zk.nix
   ];
 
