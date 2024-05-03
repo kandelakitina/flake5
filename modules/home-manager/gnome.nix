@@ -72,6 +72,9 @@
   # };
 
   dconf.settings = {
+    "org/gnome/desktop/applications/terminal" = {
+      exec = "${pkgs.alacritty}/bin/foot";
+    };
 
     # Bindings
     "org/gnome/settings-daemon/plugins/media-keys" = {
