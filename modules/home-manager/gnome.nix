@@ -174,7 +174,8 @@
       # font-name = "UbuntuMono Nerd Font Propo 12";
       # monospace-name = "UbuntuMono Nerd Font Mono 12";
     };
-    "org/gnome/gnome/mutter" = { edge-tiling = true; };
+
+    "org/gnome/gnome/mutter" = { edge-tiling = false; };
 
     "org/gnome/desktop/wm/preferences" = {
       workspace-names = [ "1" "2" "3" "4" ];
