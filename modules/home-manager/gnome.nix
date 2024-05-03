@@ -170,7 +170,7 @@
     "org/gnome/gnome/mutter" = { edge-tiling = true; };
 
     "org/gnome/desktop/wm/preferences" = {
-      workspace-names = [ "Main" "Browser" "Misc" "Anime" ];
+      workspace-names = [ "1" "2" "3" "4" ];
       button-layout = "appmenu:minimize,maximize,close";
     };
 
