@@ -30,9 +30,6 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Vmess, trojan proxy frontend
-    across.url = "github:ArkToria/ACross";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

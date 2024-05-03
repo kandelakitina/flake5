@@ -1,27 +1,5 @@
 {
   "nodes": {
-    "across": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "magic_enum": "magic_enum",
-        "nixpkgs": "nixpkgs",
-        "semver": "semver",
-        "single_application": "single_application"
-      },
-      "locked": {
-        "lastModified": 1653578697,
-        "narHash": "sha256-IOz+KReohYeZ9sfbsLPvyfLtKhyWYW6Q3t9eYkLrZmY=",
-        "owner": "ArkToria",
-        "repo": "ACross",
-        "rev": "0fca6dcf599db8367cc8862db1fa1cfc7772448e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ArkToria",
-        "repo": "ACross",
-        "type": "github"
-      }
-    },
     "base16-schemes": {
       "flake": false,
       "locked": {
@@ -40,7 +18,7 @@
     },
     "disko": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "lastModified": 1714405407,
@@ -58,7 +36,7 @@
     },
     "firefox-addons": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
+        "flake-utils": "flake-utils",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -97,7 +75,7 @@
     },
     "flake-programs-sqlite": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
         "utils": "utils"
       },
       "locked": {
@@ -115,21 +93,6 @@
       }
     },
     "flake-utils": {
-      "locked": {
-        "lastModified": 1652776076,
-        "narHash": "sha256-gzTw/v1vj4dOVbpBSJX4J0DwUR6LIyXo7/SuuTJp1kM=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_2": {
       "locked": {
         "lastModified": 1629284811,
         "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
@@ -194,23 +157,6 @@
         "type": "github"
       }
     },
-    "magic_enum": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1628520270,
-        "narHash": "sha256-2UofNUyvq1UBreJyV25+SVT8nvxfZ52v+MC5g33D2rg=",
-        "owner": "Neargye",
-        "repo": "magic_enum",
-        "rev": "38f86e4d093cfc9034a140d37de2168e3951bef3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Neargye",
-        "repo": "magic_enum",
-        "rev": "38f86e4d093cfc9034a140d37de2168e3951bef3",
-        "type": "github"
-      }
-    },
     "nix-colors": {
       "inputs": {
         "base16-schemes": "base16-schemes",
@@ -232,15 +178,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1653576718,
-        "narHash": "sha256-Cpf0WXU8wYxjzv7v5s+M2XyDGW+vVgPVjcIBga5uxMo=",
+        "lastModified": 1713805509,
+        "narHash": "sha256-YgSEan4CcrjivCNO5ZNzhg7/8ViLkZ4CB/GrGBVSudo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a701e4adbca77736346445a8f5ff930bf4db1b5a",
+        "rev": "1e1dc66fe68972a76679644a5577828b6a7e8be4",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -278,22 +225,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1713805509,
-        "narHash": "sha256-YgSEan4CcrjivCNO5ZNzhg7/8ViLkZ4CB/GrGBVSudo=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "1e1dc66fe68972a76679644a5577828b6a7e8be4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "lastModified": 1680487167,
         "narHash": "sha256-9FNIqrxDZgSliGGN2XJJSvcDYmQbgOANaZA4UWnTdg4=",
         "owner": "NixOS",
@@ -308,7 +239,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1714253743,
         "narHash": "sha256-mdTQw2XlariysyScCv2tTE45QSU9v/ezLcHJ22f0Nxc=",
@@ -324,7 +255,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1713596654,
         "narHash": "sha256-LJbHQQ5aX1LVth2ST+Kkse/DRzgxlVhTL1rxthvyhZc=",
@@ -357,7 +288,6 @@
     },
     "root": {
       "inputs": {
-        "across": "across",
         "disko": "disko",
         "firefox-addons": "firefox-addons",
         "firefox-gnome-theme": "firefox-gnome-theme",
@@ -366,48 +296,14 @@
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "nix-colors": "nix-colors",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_3",
         "persist-retro": "persist-retro",
         "sops-nix": "sops-nix"
       }
     },
-    "semver": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1623864083,
-        "narHash": "sha256-PMslCT6y536MLqDYj6Zrh/bz2cguRpegURUDQ6ugf1Q=",
-        "owner": "Neargye",
-        "repo": "semver",
-        "rev": "2a8aa6a50fdb6a9a7ea519cbfdedb5d313b7844c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Neargye",
-        "repo": "semver",
-        "rev": "2a8aa6a50fdb6a9a7ea519cbfdedb5d313b7844c",
-        "type": "github"
-      }
-    },
-    "single_application": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1633341549,
-        "narHash": "sha256-XnCXsi1nWMEXFVZZRNfs8ieO7a5/Z3QZjQzC7V27Yag=",
-        "owner": "itay-grudev",
-        "repo": "SingleApplication",
-        "rev": "0d7b2630bda26f7dd4752c90faa9719455cab433",
-        "type": "github"
-      },
-      "original": {
-        "owner": "itay-grudev",
-        "repo": "SingleApplication",
-        "rev": "0d7b2630bda26f7dd4752c90faa9719455cab433",
-        "type": "github"
-      }
-    },
     "sops-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": "nixpkgs_4",
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
