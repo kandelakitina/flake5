@@ -75,6 +75,7 @@
     gnomeExtensions.search-light
     gnomeExtensions.caffeine
     gnomeExtensions.appindicator
+    gnomeExtensions.paperwm
   ];
 
   dconf.settings = {
@@ -82,7 +83,7 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
-        "user-theme@gnome-shell-extensions.gcampax.github.com"
+        # "user-theme@gnome-shell-extensions.gcampax.github.com"
         # "trayIconsReloaded@selfmade.pl"
         "Vitals@CoreCoding.com"
         "dash-to-panel@jderose9.github.com"
@@ -92,20 +93,33 @@
         "drive-menu@gnome-shell-extensions.gcampax.github.com"
         # "window-list@gnome-shell-extensions.gcampax.github.com"
         "hibernate-status@dromi"
-        "forge@jmmaranan.com"
         "pano@elhan.io"
         "search-light@icedman.github.com"
         "caffeine@patapon.info"
         "appindicatorsupport@rgcjonas.gmail.com"
+
+        # Tiling managers
+        "forge@jmmaranan.com"
+        "paperwm@paperwm.github.com"
       ];
 
       favorite-apps = [
         "Alacritty.desktop"
         "firefox.desktop"
+        "org.telegram.desktop.desktop"
         # "virt-manager.desktop"
         "org.gnome.Nautilus.desktop"
       ];
+    };
 
+    "org/gnome/shell/extensions/pano" = {
+      send-notification-on-copy = false;
+      play-audio-on-copy = false;
+      session-only-mode = true;
+    };
+
+    "org/gnome/shell/extensions/forge" = {
+      move-pointer-focus-enabled = false;
     };
 
     "org/gnome/desktop/applications/terminal" = {
