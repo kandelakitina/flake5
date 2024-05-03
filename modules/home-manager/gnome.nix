@@ -76,6 +76,14 @@
     gnomeExtensions.caffeine
     gnomeExtensions.appindicator
     gnomeExtensions.paperwm
+    gnomeExtensions.switcher
+    gnomeExtensions.no-overview
+    gnomeExtensions.random-wallpaper
+    gnomeExtensions.color-picker
+    gnomeExtensions.bluetooth-battery
+    gnomeExtensions.status-area-horizontal-spacing
+    gnomeExtensions.vertical-overview
+    gnomeExtensions.top-bar-organizer
   ];
 
   dconf.settings = {
@@ -91,8 +99,16 @@
         "paperwm@paperwm.github.com"
         "places-menu@gnome-shell-extensions.gcampax.github.com"
         "search-light@icedman.github.com"
-        "space-bar@luchrioh"
         "Vitals@CoreCoding.com"
+        "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
+        "switcher@landau.fi"
+        "no-overview@fthx"
+        "randomwallpaper@iflow.space"
+        "color-picker@tuberry"
+        "bluetooth-battery@michalw.github.com"
+        "status-area-horizontal-spacing@mathematical.coffee.gmail.com"
+        "vertical-workspaces@G-dH.github.com"
+        "top-bar-organizer@julian.gse.jsts.xyz"
       ];
 
       disabled-extensions = [
@@ -101,11 +117,11 @@
         "light-style@gnome-shell-extensions.gcampax.github.com"
         "native-window-placement@gnome-shell-extensions.gcampax.github.com"
         "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
+        "space-bar@luchrioh"
         "trayIconsReloaded@selfmade.pl"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "window-list@gnome-shell-extensions.gcampax.github.com"
         "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
-        "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
       ];
       disable-user-extensions = false;
 
@@ -115,8 +131,13 @@
         "org.telegram.desktop.desktop"
         # "virt-manager.desktop"
         "org.gnome.Nautilus.desktop"
-        "whatsapp-for-linux.desktop"
       ];
+    };
+
+    "org/gnome/shell/extensions/space-iflow-randomwallpaper" = {
+      auto-fetch = true;
+      hours = 1;
+      change-type = 3;
     };
 
     "org/gnome/shell/extensions/pano" = {
@@ -174,8 +195,7 @@
       # font-name = "UbuntuMono Nerd Font Propo 12";
       # monospace-name = "UbuntuMono Nerd Font Mono 12";
     };
-
-    "org/gnome/gnome/mutter" = { edge-tiling = false; };
+    "org/gnome/gnome/mutter" = { edge-tiling = true; };
 
     "org/gnome/desktop/wm/preferences" = {
       workspace-names = [ "1" "2" "3" "4" ];
