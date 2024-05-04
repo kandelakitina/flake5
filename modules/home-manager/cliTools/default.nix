@@ -62,7 +62,6 @@
     sd # better sed
     silver-searcher # 'ag' (code search)
     tree
-    xdotool
     xclip
     xh # sending HTTP requests in CLi
     xxh # bring your shell with you upon SSH

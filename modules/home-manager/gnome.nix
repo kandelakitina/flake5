@@ -82,7 +82,7 @@
     gnomeExtensions.color-picker
     gnomeExtensions.bluetooth-battery
     gnomeExtensions.status-area-horizontal-spacing
-    gnomeExtensions.vertical-overview
+    gnomeExtensions.vertical-workspaces
     gnomeExtensions.top-bar-organizer
   ];
 
@@ -173,15 +173,17 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
       {
         binding = "<Super>b";
-        command = "firefox";
+        command = "${(lib.getExe pkgs.run-firefox)}";
         name = "Firefox";
       };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =
       {
-        binding = "<Super>Return";
+        binding = "<Super>backslash";
         command = "${(lib.getExe pkgs.run-alacritty)}";
         name = "Alacritty";
       };
+
+    "org/gnome/shell/keybindings/toggle-application-view" = { "@as" = [ ]; };
 
     # "org/gnome/shell/extensions/space-bar" = {
     # };
