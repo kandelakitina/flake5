@@ -84,6 +84,7 @@
     gnomeExtensions.status-area-horizontal-spacing
     gnomeExtensions.vertical-workspaces
     gnomeExtensions.top-bar-organizer
+    wmctrl # needed for app scripts
   ];
 
   dconf.settings = {

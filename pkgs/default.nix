@@ -8,7 +8,4 @@
   # copilotchat-nvim = pkgs.callPackage ./copilotchat-nvim.nix {};
   # adwaita-for-steam = pkgs.callPackage ./adwaita-for-steam {};
   # monolisa = pkgs.callPackage ./monolisa {};
-
-  # App for windows focusing scripts
-  home.packages = with pkgs; [ wmctrl ];
 }
