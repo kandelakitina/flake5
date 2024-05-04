@@ -140,7 +140,11 @@
       hours = 1;
       change-type = 3;
       fetch-on-startup = true;
+      sources = [ "1714852810324" ];
     };
+
+    "org/gnome/shell/extensions/space-iflow-randomwallpaper/sources/unsplash/1714852810324/keyword" =
+      "mountains";
 
     "org/gnome/shell/extensions/pano" = {
       send-notification-on-copy = false;
