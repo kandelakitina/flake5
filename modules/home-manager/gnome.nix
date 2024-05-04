@@ -139,6 +139,7 @@
       auto-fetch = true;
       hours = 1;
       change-type = 3;
+      fetch-on-startup = true;
     };
 
     "org/gnome/shell/extensions/pano" = {
