@@ -7,7 +7,7 @@
     {
       name = "nix";
       auto-format = true;
-      formatter = { command = "nixfmt-classic"; };
+      formatter = { command = "nixfmt"; };
     }
     {
       name = "yaml";
