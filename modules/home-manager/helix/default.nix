@@ -1,4 +1,5 @@
-{config, pkgs, inputs, ...}: let
+{ config, pkgs, inputs, ... }:
+let
   inherit (config) colorScheme;
   languages = import ./languages.nix { inherit pkgs inputs; };
 in {
@@ -7,7 +8,7 @@ in {
     inherit languages;
     enable = true;
 
-    themes = import ./themes {inherit colorScheme;};
+    themes = import ./themes { inherit colorScheme; };
 
     settings = {
       theme = "boticelliZero";
@@ -36,7 +37,7 @@ in {
           display-inlay-hints = true;
         };
 
-        gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
+        gutters = [ "diagnostics" "line-numbers" "spacer" "diff" ];
 
         statusline = {
           left = [
@@ -49,12 +50,7 @@ in {
             "spinner"
             "file-name"
           ];
-          right = [
-            "file-encoding"
-            "file-type"
-            "selections"
-            "position"
-          ];
+          right = [ "file-encoding" "file-type" "selections" "position" ];
         };
 
         whitespace.characters = {
@@ -64,33 +60,38 @@ in {
       };
 
       keys.insert = {
-        "C-a" = ["goto_line_start"];
-        "C-e" = ["goto_line_end_newline"];
+        "C-a" = [ "goto_line_start" ];
+        "C-e" = [ "goto_line_end_newline" ];
       };
 
       keys.normal = {
         "{" = "goto_prev_paragraph";
         "}" = "goto_next_paragraph";
         "X" = "extend_line_above";
-        "D" = ["kill_to_line_end"];
-        "esc" = ["collapse_selection" "keep_primary_selection"];
+        "D" = [ "kill_to_line_end" ];
+        "esc" = [ "collapse_selection" "keep_primary_selection" ];
 
         space.space = "file_picker";
         space.w = ":w";
         space.q = ":bc";
 
-        "C-j" = ["extend_to_line_bounds" "delete_selection" "paste_after"];
-        "C-k" = ["extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before"];
+        "C-j" = [ "extend_to_line_bounds" "delete_selection" "paste_after" ];
+        "C-k" = [
+          "extend_to_line_bounds"
+          "delete_selection"
+          "move_line_up"
+          "paste_before"
+        ];
 
         # "C-(" = [ "rotate_selection_contents_backward" ];
         # "C-)" = [ "rotate_selection_contents_forward" ];
-        "C-U" = ["later"];
+        "C-U" = [ "later" ];
         # "C-|" = [ "shell_pipe_to" ];
-        "C-!" = ["shell_append_output"];
-        "C-_" = ["merge_consecutive_selections"];
-        "V" = ["copy_selection_on_prev_line"];
-        "C-m" = ["join_selections_space"];
-        "C-r" = ["remove_selections"];
+        "C-!" = [ "shell_append_output" ];
+        "C-_" = [ "merge_consecutive_selections" ];
+        "V" = [ "copy_selection_on_prev_line" ];
+        "C-m" = [ "join_selections_space" ];
+        "C-r" = [ "remove_selections" ];
       };
 
       keys.normal.space.u = {
@@ -101,17 +102,17 @@ in {
     };
 
     extraPackages = with pkgs;
-    with nodePackages; [
-      vscode-langservers-extracted
-      vscode-css-languageserver-bin
-      typescript
-      typescript-language-server
-      marksman
-      nil
-      nixfmt
-      lua-language-server
-      bash-language-server
-    ];
+      with nodePackages; [
+        vscode-langservers-extracted
+        vscode-css-languageserver-bin
+        typescript
+        typescript-language-server
+        marksman
+        nil
+        nixfmt-classic
+        lua-language-server
+        bash-language-server
+      ];
 
     # package = inputs.helix.packages.${pkgs.system}.default.overrideAttrs (old: {
     #   makeWrapperArgs = with pkgs;

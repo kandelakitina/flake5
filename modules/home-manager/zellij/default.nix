@@ -1,15 +1,7 @@
-{
-  inputs,
-  pkgs,
-  lib,
-  config,
-  ...
-}: let
-  inherit (config) colorScheme;
+{ inputs, pkgs, lib, config, ... }:
+let inherit (config) colorScheme;
 in {
-  imports = [
-    ./sesh.nix
-  ];
+  imports = [ ./sesh.nix ];
 
   home.packages = [
     # pkgs.tmate
@@ -20,20 +12,20 @@ in {
     "zellij/config.kdl".text = builtins.readFile ./config.kdl;
 
     # "zellij/layouts/default.kdl".source = ./zjstatus.kdl;
-    # "zellij/layouts/mine.kdl".text = ''
-    #   layout {
-    #    tab {
-    #   	 pane
-    #    }
+    "zellij/layouts/mine.kdl".text = ''
+      layout {
+       tab {
+      	 pane
+       }
 
-    #    default_tab_template {
-    #   	 pane size=1 borderless=true {
-    #   		 plugin location="zellij:compact-bar"
-    #   	 }
-    #   	 children
-    #    }
-    #   }
-    # '';
+       default_tab_template {
+      	 pane size=1 borderless=true {
+      		 plugin location="zellij:compact-bar"
+      	 }
+      	 children
+       }
+      }
+    '';
   };
 
   programs.zellij = {
@@ -42,7 +34,7 @@ in {
 
     settings = {
       theme = "nix-${colorScheme.slug}";
-      themes = import ./themes.nix {inherit colorScheme;};
+      themes = import ./themes.nix { inherit colorScheme; };
       defaultShell = "fish";
       copyOnSelect = true;
     };
