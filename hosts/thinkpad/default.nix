@@ -1,11 +1,4 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, outputs, lib, config, pkgs, ... }: {
   imports = [
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
@@ -18,7 +11,7 @@
     ./hardware-configuration.nix
 
     inputs.disko.nixosModules.disko
-    (import ../../diskoConfigs/btfrs.nix {device = "/dev/vda";})
+    (import ../../diskoConfigs/btfrs.nix { device = "/dev/vda"; })
 
     ../../modules/nixos/impermanence.nix
     ../../modules/nixos/gnome.nix
@@ -38,7 +31,7 @@
 
   # FIXME: Add the rest of your current configuration
 
-  home-manager.extraSpecialArgs = {inherit inputs outputs;};
+  home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
   networking.hostName = "thinkpad";
 
@@ -47,6 +40,8 @@
   services.spice-vdagentd.enable = true; # Clipboard share in VM
 
   environment.variables.EDITOR = "hx";
+
+  environment.systemPackages = with pkgs; [ networkmanager ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
