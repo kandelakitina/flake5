@@ -1,7 +1,7 @@
 // theme "catppuccin-mocha"
 // pane_frames false
 simplified_ui true
-// default_layout "mine"
+default_layout "mine"
 default_shell "fish"
 copy_on_select true
 
