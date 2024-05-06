@@ -30,6 +30,58 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Hyprland ecosystem
+    hyprwm-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # hyprland = {
+    #   url = "github:hyprwm/hyprland";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
+
+    # hyprcursor = {
+    #   url = "github:hyprwm/Hyprcursor";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    # hypridle = {
+    #   url = "github:hyprwm/Hypridle";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    # hyprlock = {
+    #   url = "github:hyprwm/Hyprlock";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    # hyprpaper = {
+    #   url = "github:hyprwm/hyprpaper";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    # pyprland = {
+    #   url = "github:hyprland-community/pyprland";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    # hyprland-git.url = "github:hyprwm/hyprland";
+    # hyprland-xdph-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    # hyprland-protocols-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    # hyprland-nix.url = "github:spikespaz/hyprland-nix";
+    # hyprland-nix.inputs = {
+    #   hyprland.follows = "hyprland-git";
+    #   hyprland-xdph.follows = "hyprland-xdph-git";
+    #   hyprland-protocols.follows = "hyprland-protocols-git";
+    # };
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

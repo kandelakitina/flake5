@@ -7,6 +7,9 @@
     ../../modules/home-manager/helix
     ../../modules/home-manager/zellij
 
+    # ../../modules/home-manager/gnome.nix
+    ../../modules/home-manager/hyprland.nix
+
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/anki.nix
     ../../modules/home-manager/cheatsheets.nix
@@ -15,7 +18,6 @@
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/gh.nix
     ../../modules/home-manager/git.nix
-    ../../modules/home-manager/gnome.nix
     ../../modules/home-manager/goldendict.nix
     ../../modules/home-manager/mpv.nix
     ../../modules/home-manager/nix.nix
