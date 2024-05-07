@@ -31,7 +31,6 @@
         raindropio
         tab-session-manager
         persistentpin
-        foxytab
         undoclosetabbutton
         browserpass
       ];
