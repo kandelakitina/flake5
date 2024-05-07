@@ -18,17 +18,19 @@
       exec-once = ''
         ${pkgs.waybar}/bin/waybar &
       '';
-      bind = let
-        grimblast = lib.getExe pkgs.inputs.hyprwm-contrib.grimblast;
+      bind =
+        # let
+        # grimblast = lib.getExe pkgs.inputs.hyprwm-contrib.grimblast;
         # tesseract = lib.getExe pkgs.tesseract;
         # pactl = lib.getExe' pkgs.pulseaudio "pactl";
         # notify-send = lib.getExe' pkgs.libnotify "notify-send";
         # defaultApp = type: "${lib.getExe pkgs.handlr-regex} launch ${type}";
         # [ "SUPER, a, exec,${defaultApp "x-scheme-handler/terminal"}" ];
-      in [
-        "SUPER, Return, exec, ${pkgs.alacritty}/bin/alacritty"
-        "SUPER, W, exec, ${pkgs.rofi}/bin/rofi -show drun"
-      ];
+        # in [
+        [
+          "SUPER, Return, exec, ${pkgs.alacritty}/bin/alacritty"
+          "SUPER, W, exec, ${pkgs.wofi}/bin/wofi --show drun"
+        ];
       general = {
         resize_on_border = true;
         cursor_inactive_timeout = 4;
@@ -45,6 +47,13 @@
       };
       binds = { movefocus_cycles_fullscreen = false; };
       input = {
+        # Mouse
+        sensitivity = -0.5;
+        accel_profile = "flat";
+        follow_mouse = 2;
+
+        # Keyboard
+
         kb_layout = "us,ru";
         kb_options = "grp:alt_shift_toggle,caps:escape";
         touchpad.disable_while_typing = false;

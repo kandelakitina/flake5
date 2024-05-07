@@ -21,7 +21,8 @@
     swaybg
     swaynotificationcenter
     alacritty
-    rofi-wayland
+    wofi
+    # rofi-wayland
     wl-clipboard
     grimblast
   ];
