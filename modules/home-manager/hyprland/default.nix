@@ -1,4 +1,5 @@
 { config, pkgs, lib, ... }: {
+  imports = [ ./bindings.nix ];
   home.packages = with pkgs; [ hyprpicker ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -18,20 +19,7 @@
       exec-once = ''
         ${pkgs.waybar}/bin/waybar &
       '';
-      # ${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1
-      bind =
-        # let
-        # grimblast = lib.getExe pkgs.inputs.hyprwm-contrib.grimblast;
-        # tesseract = lib.getExe pkgs.tesseract;
-        # pactl = lib.getExe' pkgs.pulseaudio "pactl";
-        # notify-send = lib.getExe' pkgs.libnotify "notify-send";
-        # defaultApp = type: "${lib.getExe pkgs.handlr-regex} launch ${type}";
-        # [ "SUPER, a, exec,${defaultApp "x-scheme-handler/terminal"}" ];
-        # in [
-        [
-          "SUPER, Return, exec, ${pkgs.alacritty}/bin/alacritty"
-          "SUPER, W, exec, ${pkgs.wofi}/bin/wofi --show drun"
-        ];
+
       general = {
         resize_on_border = true;
         cursor_inactive_timeout = 4;

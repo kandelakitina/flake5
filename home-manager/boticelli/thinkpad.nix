@@ -8,7 +8,7 @@
     ../../modules/home-manager/zellij
 
     ../../modules/home-manager/gnome.nix
-    ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/hyprland
 
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/anki.nix

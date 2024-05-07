@@ -19,8 +19,8 @@
     alacritty
     grimblast
     libnotify
-    # polkit_gnome
-    polkit-kde-agent
+    polkit_gnome
+    # polkit-kde-agent
     swaybg
     swaynotificationcenter
     waybar
