@@ -23,6 +23,7 @@
     alacritty
     rofi-wayland
     wl-clipboard
+    grimblast
   ];
 
   xdg.portal = {
