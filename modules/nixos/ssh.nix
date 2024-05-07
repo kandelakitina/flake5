@@ -8,4 +8,5 @@
       PasswordAuthentication = false;
     };
   };
+  programs.ssh.startAgent = true;
 }

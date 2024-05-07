@@ -16,15 +16,16 @@
 
   environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
   environment.systemPackages = with pkgs; [
-    waybar
+    alacritty
+    grimblast
     libnotify
+    # polkit_gnome
+    polkit-kde-agent
     swaybg
     swaynotificationcenter
-    alacritty
-    wofi
-    # rofi-wayland
+    waybar
     wl-clipboard
-    grimblast
+    wofi
   ];
 
   xdg.portal = {
