@@ -16,9 +16,11 @@
       inactive =
         "0xaa${lib.removePrefix "#" config.colorScheme.palette.base00}";
     in {
-      exec-once = ''
-        ${pkgs.waybar}/bin/waybar &
-      '';
+      exec-once = [
+        "${pkgs.waybar}/bin/waybar &"
+        "gnome-keyring-daemon --start --components=secrets,ssh"
+        "${pkgs.plasma5Packages.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
+      ];
 
       general = {
         resize_on_border = true;

@@ -15,11 +15,11 @@
   programs = { ssh.startAgent = true; };
 
   # # Keyring
-  # environment.systemPackages = with pkgs; [ gnome.gnome-keyring ];
   # programs.seahorse.enable = true;
-  # security.pam.services.sddm.enableGnomeKeyring = true;
   # security.polkit.enable = true;
-  # services.gnome.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
+  environment.systemPackages = with pkgs; [ gnome.seahorse ];
 
   # Clipboard share in VM 
   services.spice-vdagentd.enable = true;
