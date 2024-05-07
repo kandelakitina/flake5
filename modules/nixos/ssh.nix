@@ -15,5 +15,4 @@
       AuthenticationMethods publickey
     '';
   };
-  programs.ssh.startAgent = true;
 }

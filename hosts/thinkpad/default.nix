@@ -18,6 +18,7 @@
     # ../../modules/nixos/xfce.nix
     ../../modules/nixos/hyprland.nix
 
+    ../../modules/nixos/gnupg.nix
     ../../modules/nixos/impermanence.nix
     ../../modules/nixos/sops.nix
     ../../modules/nixos/sound.nix

@@ -12,14 +12,15 @@
     '';
   };
 
-  programs = { ssh.startAgent = true; };
-
   # # Keyring
-  # programs.seahorse.enable = true;
+  # programs = {
+  #   ssh.startAgent = true;
+  #   seahorse.enable = true;
+  # };
+  # services.gnome.gnome-keyring.enable = true;
+  # security.pam.services.sddm.enableGnomeKeyring = true;
   # security.polkit.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.sddm.enableGnomeKeyring = true;
-  environment.systemPackages = with pkgs; [ gnome.seahorse ];
+  # environment.systemPackages = with pkgs; [ gnome.seahorse libsecret ];
 
   # Clipboard share in VM 
   services.spice-vdagentd.enable = true;
