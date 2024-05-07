@@ -14,25 +14,15 @@
     # package = pkgs.hyprland;
   };
 
-  services = {
-    displayManager = {
-      defaultSession = "hyprland";
-      sddm = {
-        enable = true;
-        wayland.enable = true;
-      };
-    };
-  };
-
   environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
   environment.systemPackages = with pkgs; [
     waybar
     libnotify
-    rofi
     swaybg
     swaynotificationcenter
     alacritty
     rofi-wayland
+    wl-clipboard
   ];
 
   xdg.portal = {
@@ -55,12 +45,9 @@
   #   };
   # };
 
-  # programs.dconf.enable = true;
-
   # security.pam.services.greetd = {
   #   allowNullPassword = true;
   #   startSession = true;
   #   enableGnomeKeyring = true;
   # };
-
 }

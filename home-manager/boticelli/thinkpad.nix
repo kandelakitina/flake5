@@ -7,7 +7,7 @@
     ../../modules/home-manager/helix
     ../../modules/home-manager/zellij
 
-    # ../../modules/home-manager/gnome.nix
+    ../../modules/home-manager/gnome.nix
     ../../modules/home-manager/hyprland.nix
 
     ../../modules/home-manager/alacritty.nix

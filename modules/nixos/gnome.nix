@@ -1,15 +1,6 @@
 { pkgs, ... }: {
-  services = {
-    displayManager = { defaultSession = "gnome"; };
-    xserver = {
-      enable = true;
-      displayManager = {
-        gdm.enable = true;
-        gdm.wayland = false;
-      };
-      desktopManager = { gnome.enable = true; };
-    };
-  };
+
+  services.xserver.desktopManager.gnome.enable = true;
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos

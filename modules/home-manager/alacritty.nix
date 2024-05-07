@@ -10,6 +10,14 @@ let
   cyan = "#${config.colorScheme.palette.base0C}";
   blue = "#${config.colorScheme.palette.base0D}";
 in {
+  # # DOES NOT WORK
+  # xdg.mimeApps = {
+  #   associations.added = { "x-scheme-handler/terminal" = "alacritty.desktop"; };
+  #   defaultApplications = {
+  #     "x-scheme-handler/terminal" = "alacritty.desktop";
+  #   };
+  # };
+
   programs.alacritty = {
     enable = true;
     settings = {
