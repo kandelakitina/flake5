@@ -26,6 +26,7 @@
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/nix.nix
     ../../modules/nixos/ssh.nix
+    ../../modules/nixos/system.nix
 
     ../../modules/nixos/users/boticelli.nix
 
@@ -42,14 +43,7 @@
 
   boot.loader.systemd-boot.enable = true;
 
-  services.spice-vdagentd.enable = true; # Clipboard share in VM
-
   environment.variables.EDITOR = "hx";
-
-  networking = {
-    networkmanager.enable = true;
-    # wireless.enable = true;
-  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
