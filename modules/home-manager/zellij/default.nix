@@ -12,20 +12,21 @@ in {
     "zellij/config.kdl".text = builtins.readFile ./config.kdl;
 
     # "zellij/layouts/default.kdl".source = ./zjstatus.kdl;
-    "zellij/layouts/mine.kdl".text = ''
-      layout {
-       tab {
-      	 pane
-       }
 
-       default_tab_template {
-      	 pane size=1 borderless=true {
-      		 plugin location="zellij:compact-bar"
-      	 }
-      	 children
-       }
-      }
-    '';
+    # "zellij/layouts/mine.kdl".text = ''
+    #   layout {
+    #    tab {
+    #   	 pane
+    #    }
+
+    #    default_tab_template {
+    #   	 pane size=1 borderless=true {
+    #   		 plugin location="zellij:compact-bar"
+    #   	 }
+    #   	 children
+    #    }
+    #   }
+    # '';
   };
 
   programs.zellij = {

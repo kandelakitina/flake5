@@ -3,10 +3,10 @@
     bindm = [ "SUPER,mouse:272,movewindow" "SUPER,mouse:273,resizewindow" ];
 
     bind = let
-      # grimblast = lib.getExe pkgs.inputs.hyprwm-contrib.grimblast;
-      # tesseract = lib.getExe pkgs.tesseract;
-      # pactl = lib.getExe' pkgs.pulseaudio "pactl";
-      # notify-send = lib.getExe' pkgs.libnotify "notify-send";
+      grimblast = lib.getExe pkgs.inputs.hyprwm-contrib.grimblast;
+      tesseract = lib.getExe pkgs.tesseract;
+      pactl = lib.getExe' pkgs.pulseaudio "pactl";
+      notify-send = lib.getExe' pkgs.libnotify "notify-send";
       # defaultApp = type: "${lib.getExe pkgs.handlr-regex} launch ${type}";
       workspaces = [
         "0"
@@ -45,8 +45,25 @@
       };
     in [
       "SUPER, Return, exec, ${pkgs.alacritty}/bin/alacritty"
-      "SUPER, W, exec, ${pkgs.wofi}/bin/wofi --show drun"
+      "SUPER, W, exec, ${pkgs.wofi}/bin/wofi -S drun -x 10 -y 10 -W 25% -H 60%"
+      "SUPER, D, exec, ${pkgs.wofi}/bin/wofi -S run"
+      "SUPER, B, exec, ${pkgs.firefox}/bin/firefox --show drun"
       "SUPER, V, exec, ${pkgs.cliphist}/bin/cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+
+      ",XF86MonBrightnessUp,exec,brightnessctl set 5%+"
+      ",XF86MonBrightnessDown,exec,brightnessctl set 5%-"
+
+      # Volume
+      ",XF86AudioRaiseVolume,exec,wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"
+      ",XF86AudioLowerVolume,exec,XF86AudioLowerVolume, exec, wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"
+      ",XF86AudioMute,exec,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
+      # Screenshotting
+      ",Print,exec,${grimblast} --notify --freeze copy output"
+      "SUPER,Print,exec,${grimblast} --notify --freeze copy area"
+
+      # To OCR
+      "ALT,Print,exec,${grimblast} --freeze save area - | ${tesseract} - - | wl-copy && ${notify-send} -t 3000 'OCR result copied to buffer'"
 
       "SUPERSHIFT,q,killactive"
       "SUPERSHIFT,e,exit"

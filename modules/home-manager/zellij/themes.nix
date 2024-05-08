@@ -1,4 +1,5 @@
-{colorScheme}: let
+{ colorScheme }:
+let
   background = "#${colorScheme.palette.base00}";
   darkGrey = "#${colorScheme.palette.base01}";
   purple = "#${colorScheme.palette.base03}";
@@ -14,7 +15,7 @@ in {
     fg = grey; # Buttons' colors
     red = yellow; # Keybinds on buttons
     black = background; # Bars background and "LOCK" etc
-    green = purple; # Panes' borders, tabs button, secondary keys in Tips
+    green = green; # Panes' borders, tabs button, secondary keys in Tips
     bg = purple; # ???
     yellow = yellow;
     blue = blue;
