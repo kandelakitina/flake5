@@ -30,11 +30,14 @@
     ../../modules/home-manager/transmission.nix
     ../../modules/home-manager/telegram.nix
     ../../modules/home-manager/whatsapp.nix
+    ../../modules/home-manager/wallpaper.nix
     ../../modules/home-manager/zk.nix
   ];
 
   colorScheme = import ../../modules/home-manager/colorschemes/iterm.nix;
   # colorscheme = import ../../modules/home-manager/colorschemes/dracula.nix;
+
+  wallpaper = ../../wallpapers/frieren1.jpg;
 
   fontProfiles = {
     enable = true;

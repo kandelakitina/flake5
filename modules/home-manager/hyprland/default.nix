@@ -32,7 +32,7 @@
         "${pkgs.wlsunset}/bin/wlsunset -l 44.56 -L 38.09"
         "wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store"
         "wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store"
-        # "${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"
+        "${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"
       ];
 
       general = {
