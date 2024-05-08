@@ -52,9 +52,9 @@
       "SUPERSHIFT,e,exit"
 
       "SUPER,s,togglesplit"
-      "SUPER,f,fullscreen,1"
-      "SUPERSHIFT,f,fullscreen,0"
-      "SUPERSHIFT,space,togglefloating"
+      "SUPER,space,fullscreen,1"
+      "SUPERSHIFT,space,fullscreen,0"
+      "SUPER,f,togglefloating"
 
       "SUPER,minus,splitratio,-0.25"
       "SUPERSHIFT,minus,splitratio,-0.3333333"
