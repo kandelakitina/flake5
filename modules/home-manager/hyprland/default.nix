@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }: {
   imports = [ ./bindings.nix ];
-  home.packages = with pkgs; [ hyprpicker ];
+  home.packages = with pkgs; [ hyprpicker cliphist ];
   wayland.windowManager.hyprland = {
     enable = true;
     systemd = {
@@ -18,8 +18,8 @@
     in {
       exec-once = [
         "${pkgs.waybar}/bin/waybar &"
-        "gnome-keyring-daemon --start --components=secrets,ssh"
-        "${pkgs.plasma5Packages.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
       ];
 
       general = {

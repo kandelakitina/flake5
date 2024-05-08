@@ -46,6 +46,7 @@
     in [
       "SUPER, Return, exec, ${pkgs.alacritty}/bin/alacritty"
       "SUPER, W, exec, ${pkgs.wofi}/bin/wofi --show drun"
+      "SUPER, V, exec, ${pkgs.cliphist}/bin/cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
       "SUPERSHIFT,q,killactive"
       "SUPERSHIFT,e,exit"
