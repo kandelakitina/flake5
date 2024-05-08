@@ -29,7 +29,8 @@ in {
       }];
 
       font = {
-        normal = { family = "UbuntuMono Nerd Font"; };
+        # normal = { family = "UbuntuMono Nerd Font"; };
+        normal = { family = config.fontProfiles.monospace.family; };
         size = 14;
       };
 

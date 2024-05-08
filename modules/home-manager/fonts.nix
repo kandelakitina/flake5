@@ -1,16 +1,15 @@
-{ lib, config, ... }:
+{ pkgs, lib, config, ... }:
 let
   mkFontOption = kind: {
     family = lib.mkOption {
       type = lib.types.str;
-      default = "Ubuntu";
+      default = "UbuntuMono Nerd Font";
       description = "Family name for ${kind} font profile";
       example = "Fira Code";
     };
     package = lib.mkOption {
       type = lib.types.package;
-      default =
-        ''pkgs.(nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" ]; })'';
+      default = pkgs.nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" ]; };
       description = "Package for ${kind} font profile";
       example = "pkgs.fira-code";
     };
@@ -27,10 +26,10 @@ in {
     fonts.fontconfig.enable = true;
     home.packages = [ cfg.monospace.package cfg.regular.package ];
   };
+
+  # home.packages = with pkgs;
+  #   [ (nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" ]; }) ];
+
+  # fonts.fontconfig.enable = true;
+
 }
-# home.packages = with pkgs; [
-#   (nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" ]; })
-# ];
-
-# fonts.fontconfig.enable = true;
-

@@ -36,6 +36,18 @@
   colorScheme = import ../../modules/home-manager/colorschemes/iterm.nix;
   # colorscheme = import ../../modules/home-manager/colorschemes/dracula.nix;
 
+  fontProfiles = {
+    enable = true;
+    # monospace = {
+    #   family = "FiraCode Nerd Font";
+    #   package = pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; };
+    # };
+    # regular = {
+    #   family = "Fira Sans";
+    #   package = pkgs.fira;
+    # };
+  };
+
   # Enable home-manager and git
   programs.git = {
     userName = "boticelli";
