@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }: {
-  imports = [ ./bindings.nix ./swayidle.nix ./swaylock.nix ];
+  imports =
+    [ ./waybar ./bindings.nix ./swayidle.nix ./swaylock.nix ./swaync.nix ];
   home = {
     packages = with pkgs; [ hyprpicker cliphist wlsunset brightnessctl ];
   };
@@ -28,13 +29,13 @@
     in {
 
       exec-once = [
-        "${pkgs.waybar}/bin/waybar &"
+        # "${pkgs.waybar}/bin/waybar &"
         "${pkgs.wlsunset}/bin/wlsunset -l 44.56 -L 38.09"
         "wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store"
         "wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store"
         "${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"
       ];
-
+      monitor = [ ",preferred,auto,auto" "eDP-1,preferred,auto,1" ];
       general = {
         resize_on_border = true;
         cursor_inactive_timeout = 4;
