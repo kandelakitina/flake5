@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }: {
   wayland.windowManager.hyprland.settings = {
     bindm = [ "SUPER,mouse:272,movewindow" "SUPER,mouse:273,resizewindow" ];
 
@@ -91,6 +91,10 @@
       "SUPERSHIFT,u,movetoworkspacesilent,special"
       "SUPER,i,pseudo"
     ] ++
+    # # Screen lock
+    (let swaylock = lib.getExe config.programs.swaylock.package;
+    in lib.optionals config.programs.swaylock.enable
+    [ "SUPER, backspace, exec, ${swaylock} -S --grace 2" ]) ++
     # Change workspace
     (map (n: "SUPER,${n},workspace,name:${n}") workspaces) ++
     # Move window to workspace

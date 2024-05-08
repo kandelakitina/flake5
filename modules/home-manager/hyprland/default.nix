@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }: {
-  imports = [ ./bindings.nix ];
+  imports = [ ./bindings.nix ./swayidle.nix ./swaylock.nix ];
   home = {
     packages = with pkgs; [ hyprpicker cliphist wlsunset brightnessctl ];
   };

@@ -1,5 +1,7 @@
 { lib, pkgs, ... }: {
 
+  security.pam.services = { swaylock = { }; };
+
   networking = {
     networkmanager.enable = true;
     firewall.enable = true;
