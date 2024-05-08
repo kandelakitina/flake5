@@ -1,6 +1,16 @@
 { config, pkgs, lib, ... }: {
   imports = [ ./bindings.nix ];
-  home.packages = with pkgs; [ hyprpicker cliphist ];
+  home = {
+    packages = with pkgs; [ hyprpicker cliphist wlsunset brightnessctl ];
+  };
+
+  # services.wlsunset = {
+  #   enable = true;
+  #   gamma = 0.6;
+  #   sunrise = "14:00";
+  #   sunset = "00:00";
+  # };
+
   wayland.windowManager.hyprland = {
     enable = true;
     systemd = {

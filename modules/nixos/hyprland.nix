@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ lib, pkgs, inputs, ... }: {
 
   # imports = [ inputs.hyprland.nixosModules.default ];
 
@@ -14,7 +14,17 @@
     # package = pkgs.hyprland;
   };
 
-  environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    SHELL = "${lib.getExe pkgs.fish}";
+    MOZ_ENABLE_WAYLAND = 1;
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+    GDK_BACKEND = "wayland,x11";
+    QT_QPA_PLATFORM = "wayland;xcb";
+  };
+
   environment.systemPackages = with pkgs; [
     alacritty
     grimblast
