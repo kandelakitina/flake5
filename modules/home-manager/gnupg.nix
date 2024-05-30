@@ -1,13 +1,12 @@
 {
 
-  programs.gpg = {
+  programs.gpg = { enable = true; };
+
+  services.gpg-agent = {
     enable = true;
-    settings = {
-      enable-ssh-support = true;
-      # enableSSHSupport = true;
-      # enableExtraSocket = true;
-    };
+    enableSshSupport = true;
   };
+
   home = {
     persistence = {
       "/persist/home/boticelli" = {
