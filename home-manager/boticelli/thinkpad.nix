@@ -18,6 +18,7 @@
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/gh.nix
     ../../modules/home-manager/git.nix
+    ../../modules/home-manager/gnupg.nix
     ../../modules/home-manager/goldendict.nix
     ../../modules/home-manager/mpv.nix
     ../../modules/home-manager/nix.nix
