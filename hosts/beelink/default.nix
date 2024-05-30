@@ -2,7 +2,7 @@
   imports = [
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
-    inputs.hardware.nixosModules.lenovo-thinkpad-x1-7th-gen
+    # inputs.hardware.nixosModules.lenovo-thinkpad-x1-7th-gen
 
     # simple flake to solve 'command-not-found' issue
     inputs.flake-programs-sqlite.nixosModules.programs-sqlite
@@ -40,7 +40,7 @@
 
   home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
-  networking.hostName = "thinkpad";
+  networking.hostName = "beelink";
 
   boot.loader.systemd-boot.enable = true;
 

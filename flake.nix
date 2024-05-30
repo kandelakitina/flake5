@@ -113,9 +113,9 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/vm ];
         };
-        thinkpad = lib.nixosSystem {
+        beelink = lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/thinkpad ];
+          modules = [ ./hosts/beelink ];
         };
       };
 
@@ -125,11 +125,11 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home-manager/boticelli/vm.nix ];
         };
-        "boticelli@thinkpad" = lib.homeManagerConfiguration {
+        "boticelli@beelink" = lib.homeManagerConfiguration {
           pkgs = pkgsFor.x86_64-linux;
           # pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home-manager/boticelli/thinkpad.nix ];
+          modules = [ ./home-manager/boticelli/beelink.nix ];
         };
       };
     };
