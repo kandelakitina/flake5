@@ -8,9 +8,9 @@
     };
   };
 
-  environment.persistence."/persist" = {
-    hideMounts = true;
-    directories = [ "/home/boticelli/.gnupg" ];
-  };
+  # environment.persistence."/persist" = {
+  #   hideMounts = true;
+  #   directories = [ "/home/boticelli/.gnupg" ];
+  # };
 
 }
