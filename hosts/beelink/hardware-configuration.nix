@@ -12,6 +12,11 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  # Fix for beelink S12 Pro WiFi problem
+  boot.extraModprobeConfig = ''
+    options iwlwifi disable_11ax=1
+  '';
+
   swapDevices = [{ device = "/dev/disk/by-partlabel/disk-main-swap"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
