@@ -45,7 +45,7 @@
       };
     in [
       "SUPER, Return, exec, ${pkgs.alacritty}/bin/alacritty"
-      "SUPER, W, exec, ${pkgs.wofi}/bin/wofi -S drun -x 10 -y 10 -W 25% -H 60%"
+      "SUPER, W, exec, ${pkgs.wofi}/bin/wofi -S drun"
       "SUPER, D, exec, ${pkgs.wofi}/bin/wofi -S run"
       "SUPER, B, exec, ${pkgs.firefox}/bin/firefox --show drun"
       "SUPER, V, exec, ${pkgs.cliphist}/bin/cliphist list | wofi --dmenu | cliphist decode | wl-copy"
