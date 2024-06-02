@@ -14,6 +14,7 @@
       cliphist
       wlsunset
       brightnessctl
+      networkmanagerapplet
     ];
   };
 
@@ -42,7 +43,8 @@
 
       exec-once = [
         "${pkgs.waybar}/bin/waybar &"
-        "${pkgs.waybar}/bin/mako &"
+        "${pkgs.mako}/bin/mako &"
+        "nm-applet &"
         "${pkgs.wlsunset}/bin/wlsunset -l 44.56 -L 38.09"
         "wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store"
         "wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store"
