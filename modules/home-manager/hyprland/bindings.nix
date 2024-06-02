@@ -65,7 +65,7 @@
       # To OCR
       "ALT,Print,exec,${grimblast} --freeze save area - | ${tesseract} - - | wl-copy && ${notify-send} -t 3000 'OCR result copied to buffer'"
 
-      "SUPERSHIFT,q,killactive"
+      "SUPER,q,killactive"
       "SUPERSHIFT,e,exit"
 
       "SUPER,s,togglesplit"

@@ -32,7 +32,8 @@
     polkit_gnome
     # polkit-kde-agent
     swaybg
-    swaynotificationcenter
+    # swaynotificationcenter
+    mako
     waybar
     wl-clipboard
     wofi
