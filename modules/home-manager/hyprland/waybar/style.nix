@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 let
   custom = {
     font = "JetBrainsMono Nerd Font";
@@ -34,15 +34,15 @@ in {
         
     }
     #workspaces button {
-        color: ${custom.text_color};
+        color: #${config.colorScheme.palette.base0D};
         padding-left:  6px;
         padding-right: 6px;
     }
     #workspaces button.empty {
-        color: #6c7086;
+        color: #${config.colorScheme.palette.base04};
     }
     #workspaces button.active {
-        color: #b4befe;
+        color: #${config.colorScheme.palette.base08};
     }
 
     #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery {

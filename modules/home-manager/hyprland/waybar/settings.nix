@@ -15,7 +15,7 @@
       calendar = {
         format = { today = "<span color='#b4befe'><b><u>{}</u></b></span>"; };
       };
-      format = " {:%H:%M}";
+      format = "{:%H:%M %d/%m}";
       tooltip = "true";
       tooltip-format = ''
         <big>{:%Y %B}</big>
@@ -52,17 +52,17 @@
       interval = 2;
     };
     cpu = {
-      format = "  {usage}%";
-      format-alt = "  {avg_frequency} GHz";
+      format = " {usage:2}%";
+      format-alt = " {avg_frequency} GHz";
       interval = 2;
     };
     disk = {
       # path = "/";
-      format = "󰋊 {percentage_used}%";
+      format = "󰋊 {percentage_used:2}%";
       interval = 60;
     };
     network = {
-      format-wifi = "  {signalStrength}%";
+      format-wifi = "  {signalStrength:2}%";
       format-ethernet = "󰀂 ";
       tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
       format-linked = "{ifname} (No IP)";
