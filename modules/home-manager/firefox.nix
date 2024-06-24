@@ -26,16 +26,17 @@
         darkreader
         gesturefy
         istilldontcareaboutcookies
-        switchyomega
         # onetab
         raindropio
         tab-session-manager
-        persistentpin
+        # persistentpin
         undoclosetabbutton
-        browserpass
+        # browserpass
       ];
 
       settings = {
+
+        "browser.translations.automaticallyPopup" = false;
         "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
 
         # For Firefox GNOME theme:
