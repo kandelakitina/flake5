@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, nix-colors, ... }: {
   imports = [
     inputs.nix-colors.homeManagerModules.default
     inputs.impermanence.nixosModules.home-manager.impermanence
@@ -37,7 +37,7 @@
   ];
 
   colorScheme = import ../../modules/home-manager/colorschemes/iterm.nix;
-  # colorscheme = import ../../modules/home-manager/colorschemes/dracula.nix;
+  # colorScheme = nix-colors.colorSchemes.dracula;
 
   wallpaper = ../../wallpapers/frieren1.jpg;
 

@@ -84,7 +84,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nix-colors, ... }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
@@ -122,13 +122,13 @@
       homeConfigurations = {
         "boticelli@vm" = lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit nix-colors inputs outputs; };
           modules = [ ./home-manager/boticelli/vm.nix ];
         };
         "boticelli@beelink" = lib.homeManagerConfiguration {
           pkgs = pkgsFor.x86_64-linux;
           # pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit nix-colors inputs outputs; };
           modules = [ ./home-manager/boticelli/beelink.nix ];
         };
       };
