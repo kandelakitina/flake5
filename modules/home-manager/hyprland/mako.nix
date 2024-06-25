@@ -1,23 +1,30 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+
+# To test mako run
+# notify-send "hello world\!" "This is a message"
+
+let inherit (config.colorScheme) palette;
+in {
+
   services = {
     mako = {
       enable = true;
-      font = "JetBrainsMono Nerd Font 12";
+      font = config.fontProfiles.regular.family;
       padding = "15";
       defaultTimeout = 5000;
       borderSize = 2;
       borderRadius = 5;
-      backgroundColor = "#1e1e2e";
-      borderColor = "#b4befe";
-      progressColor = "over #313244";
-      textColor = "#cdd6f4";
+      backgroundColor = "#${palette.base00}";
+      borderColor = "#${palette.base06}";
+      progressColor = "over #${palette.base0B}";
+      textColor = "#${palette.base0D}";
       icons = true;
       actions = true;
       extraConfig = ''
         text-alignment=center
         [urgency=high]
         default-timeout=100000000
-        border-color=#fab387
+        border-color=#${palette.base09}
       '';
     };
   };
