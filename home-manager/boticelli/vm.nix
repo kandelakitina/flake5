@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, nix-colors, pkgs, ... }: {
   imports = [
     inputs.nix-colors.homeManagerModules.default
     inputs.impermanence.nixosModules.home-manager.impermanence
@@ -28,7 +28,7 @@
   ];
 
   colorScheme = import ../../modules/home-manager/colorschemes/iterm.nix;
-  # colorscheme = import ../../modules/home-manager/colorschemes/dracula.nix;
+  # colorScheme = nix-colors.colorSchemes.dracula;
 
   # Enable home-manager and git
   programs.git = {
