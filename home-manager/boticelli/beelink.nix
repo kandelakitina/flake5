@@ -47,10 +47,10 @@
       family = "JetBrainsMono Nerd Font";
       package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
     };
-    # regular = {
-    #   family = "Fira Sans";
-    #   package = pkgs.fira;
-    # };
+    regular = {
+      family = "Ubuntu";
+      package = pkgs.ubuntu_font_family;
+    };
   };
 
   # Enable home-manager and git
