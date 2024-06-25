@@ -48,8 +48,8 @@
       package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
     };
     regular = {
-      family = "Ubuntu";
-      package = pkgs.ubuntu_font_family;
+      family = "Ubuntu Nerd Font";
+      package = pkgs.nerdfonts.override { fonts = [ "Ubuntu" ]; };
     };
   };
 
