@@ -15,6 +15,7 @@
       wlsunset
       brightnessctl
       networkmanagerapplet
+      swayidle
     ];
   };
 
