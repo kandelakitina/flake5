@@ -42,6 +42,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sddm-sugar-candy-nix = {
+      url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # hyprland = {
     #   url = "github:hyprwm/hyprland";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -77,9 +82,9 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    hyprland-git.url = "github:hyprwm/hyprland";
-    hyprland-xdph-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";
-    hyprland-protocols-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    # hyprland-git.url = "github:hyprwm/hyprland";
+    # hyprland-xdph-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    # hyprland-protocols-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";
 
     # hyprland-nix.url = "github:spikespaz/hyprland-nix";
     # hyprland-nix.inputs = {
