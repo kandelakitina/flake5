@@ -14,7 +14,8 @@
             ScreenWidth = 1920;
             ScreenHeight = 1080;
             # FormPosition = "left";
-            # HaveFormBackground = true;
+            HaveFormBackground = true;
+            FullBlur = true;
             PartialBlur = true;
             ForceLastUser = true;
             HeaderText = "";
