@@ -22,7 +22,7 @@
     ../../modules/home-manager/goldendict.nix
     ../../modules/home-manager/mpv.nix
     ../../modules/home-manager/nix.nix
-    ../../modules/home-manager/nixvim.nix
+    # ../../modules/home-manager/nixvim.nix
     ../../modules/home-manager/nnn.nix
     ../../modules/home-manager/obsidian.nix
     ../../modules/home-manager/proxychains.nix
