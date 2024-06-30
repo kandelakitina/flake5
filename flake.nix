@@ -77,9 +77,10 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    # hyprland-git.url = "github:hyprwm/hyprland";
-    # hyprland-xdph-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";
-    # hyprland-protocols-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    hyprland-git.url = "github:hyprwm/hyprland";
+    hyprland-xdph-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    hyprland-protocols-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";
+
     # hyprland-nix.url = "github:spikespaz/hyprland-nix";
     # hyprland-nix.inputs = {
     #   hyprland.follows = "hyprland-git";

@@ -13,7 +13,8 @@
     inputs.disko.nixosModules.disko
     (import ../../diskoConfigs/btfrs.nix { device = "/dev/vda"; })
 
-    ../../modules/nixos/sddm.nix
+    # ../../modules/nixos/sddm.nix
+    ../../modules/nixos/greetd.nix
     # ../../modules/nixos/gnome.nix
     # ../../modules/nixos/xfce.nix
     ../../modules/nixos/hyprland.nix
