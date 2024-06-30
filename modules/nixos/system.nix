@@ -27,5 +27,10 @@
   # Clipboard share in VM 
   services.spice-vdagentd.enable = true;
 
-  environment.defaultPackages = with pkgs; lib.mkForce [ nh ];
+  environment.defaultPackages = with pkgs;
+    lib.mkForce [
+
+      # nh - nix helper. nh os switch, nh home switch, nh clean
+      nh
+    ];
 }
