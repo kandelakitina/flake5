@@ -12,30 +12,32 @@
       # '';
 
       # make nnn file manager cd on quit
-      f = ''
-        if test -n "$NNNLVL" -a "$NNNLVL" -ge 1
-            echo "nnn is already running"
-            return
-        end
+      f = # fish
+        ''
+          if test -n "$NNNLVL" -a "$NNNLVL" -ge 1
+              echo "nnn is already running"
+              return
+          end
 
-        if test -n "$XDG_CONFIG_HOME"
-            set -x NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
-        else
-            set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
-        end
+          if test -n "$XDG_CONFIG_HOME"
+              set -x NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
+          else
+              set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
+          end
 
-        command nnn -e $argv
+          command nnn -e $argv
 
-        if test -e $NNN_TMPFILE
-            source $NNN_TMPFILE
-            rm -- $NNN_TMPFILE
-        end
-      '';
+          if test -e $NNN_TMPFILE
+              source $NNN_TMPFILE
+              rm -- $NNN_TMPFILE
+          end
+        '';
     };
-    interactiveShellInit = ''
-      set fish_greeting (echo -e "\e[38;5;135m┏(-_-)┛\e[38;5;15m┗(-_-)┓\e[38;5;196m┗(-_-)┛\e[38;5;226m┏(-_-)┓\e[38;5;82m┏(-_-)┛\e[38;5;87m┗(-_-)┓\e[38;5;33m┗(-_-)┛\e[0m")
-      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-    '';
+    interactiveShellInit = # bash
+      ''
+        set fish_greeting (echo -e "\e[38;5;135m┏(-_-)┛\e[38;5;15m┗(-_-)┓\e[38;5;196m┗(-_-)┛\e[38;5;226m┏(-_-)┓\e[38;5;82m┏(-_-)┛\e[38;5;87m┗(-_-)┓\e[38;5;33m┗(-_-)┛\e[0m")
+        ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+      '';
     plugins = [
       # Enable a plugin (here grc for colorized command output) from nixpkgs
       # { name = "grc"; src = pkgs.fishPlugins.grc.src; }
@@ -51,7 +53,7 @@
         name = "autopair";
         src = pkgs.fishPlugins.autopair.src;
       }
-      # Learn bindings on https://github.com/wfxr/forgit
+      # TODO: Learn bindings on https://github.com/wfxr/forgit
       {
         name = "forgit";
         src = pkgs.fishPlugins.forgit.src;
