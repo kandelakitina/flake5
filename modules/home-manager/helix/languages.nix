@@ -73,8 +73,9 @@
   language-server.volar = {
     args = [ "--stdio" ];
     command = "${
-      # pkgs.nodePackages_latest."@vue/language-server"
-      pkgs.nodePackages_latest.volar}/bin/vue-language-server";
+        pkgs.nodePackages_latest."@vue/language-server"
+        # pkgs.nodePackages_latest.volar
+      }/bin/vue-language-server";
     config.typescript = {
       tsdk = "${pkgs.nodePackages.typescript}/lib/node_modules/typescript/lib";
     };
