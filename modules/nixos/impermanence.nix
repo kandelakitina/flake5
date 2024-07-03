@@ -33,14 +33,16 @@ in {
   environment.persistence."/persist" = {
     hideMounts = true;
     directories = [
+      "/var/lib/log"
       "/var/lib/bluetooth"
       "/var/lib/nixos"
-      "/var/lib/systemd/coredump"
+      "/var/lib/systemd"
       "/var/lib/sops-nix"
       "/etc/NetworkManager/system-connections"
       "/etc/ssh"
       # "/var/lib/sops-nix"
     ];
+    files = [ "/etc/machine-id" ];
   };
 
   programs.fuse.userAllowOther = true;
