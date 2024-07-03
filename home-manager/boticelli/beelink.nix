@@ -10,6 +10,8 @@
     ../../modules/home-manager/gnome.nix
     ../../modules/home-manager/hyprland
 
+    ../../modules/home-manager/scripts
+
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/anki.nix
     ../../modules/home-manager/cheatsheets.nix
@@ -28,7 +30,6 @@
     ../../modules/home-manager/proxychains.nix
     # ../../modules/home-manager/sops.nix
     ../../modules/home-manager/starship.nix
-    ../../modules/home-manager/scripts.nix
     ../../modules/home-manager/sgpt.nix
     ../../modules/home-manager/transmission.nix
     ../../modules/home-manager/telegram.nix

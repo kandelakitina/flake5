@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 
 config_file=~/.config/hypr/hyprland.conf

@@ -90,11 +90,15 @@
       "SUPER,u,togglespecialworkspace"
       "SUPERSHIFT,u,movetoworkspacesilent,special"
       "SUPER,i,pseudo"
+
+      "SUPER, backspace, exec, shutdown-script" # custom script
     ] ++
+
     # # Screen lock
-    (let swaylock = lib.getExe config.programs.swaylock.package;
-    in lib.optionals config.programs.swaylock.enable
-    [ "SUPER, backspace, exec, ${swaylock} -S --grace 2" ]) ++
+    # (let swaylock = lib.getExe config.programs.swaylock.package;
+    # in lib.optionals config.programs.swaylock.enable
+    # [ "SUPER, backspace, exec, ${swaylock} -S --grace 2" ]) ++
+
     # Change workspace
     (map (n: "SUPER,${n},workspace,name:${n}") workspaces) ++
     # Move window to workspace

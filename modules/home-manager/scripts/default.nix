@@ -18,38 +18,38 @@ let
   # compress = pkgs.writeScriptBin "compress" (builtins.readFile ./scripts/compress.sh);
   # extract = pkgs.writeScriptBin "extract" (builtins.readFile ./scripts/extract.sh);
 
-  # shutdown-script = pkgs.writeScriptBin "shutdown-script" (builtins.readFile ./shutdown-script.sh);
+  shutdown-script = pkgs.writeScriptBin "shutdown-script"
+    (builtins.readFile ./shutdown-script.sh);
 
-  show-keybinds = pkgs.writeScriptBin "show-keybinds"
-    (builtins.readFile ./scripts/keybinds.sh);
+  show-keybinds =
+    pkgs.writeScriptBin "show-keybinds" (builtins.readFile ./keybinds.sh);
 
   # vm-start = pkgs.writeScriptBin "vm-start" (builtins.readFile ./scripts/vm-start.sh);
 
   # ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
 in {
-  home.packages = with pkgs;
-    [
-      # wall-change
-      # wallpaper-picker
+  home.packages = with pkgs; [
+    # wall-change
+    # wallpaper-picker
 
-      # runbg
-      # music
-      # lofi
+    # runbg
+    # music
+    # lofi
 
-      # toggle_blur
-      # toggle_oppacity
+    # toggle_blur
+    # toggle_oppacity
 
-      # maxfetch
+    # maxfetch
 
-      # compress
-      # extract
+    # compress
+    # extract
 
-      # shutdown-script
+    shutdown-script
 
-      show-keybinds
+    show-keybinds
 
-      # vm-start
+    # vm-start
 
-      # ascii
-    ];
+    # ascii
+  ];
 }
