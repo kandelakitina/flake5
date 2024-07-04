@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, ... }: {
   programs.waybar.settings.mainBar = {
     position = "top";
     layer = "top";
@@ -22,8 +22,11 @@
     ];
     "hyprland/language" = {
       format = "{}";
-      format-ru = "русский";
-      format-en = "english";
+      format-ru =
+        # "<span foreground='#${config.colorScheme.palette.base08}'>русский</span>";
+        "<span foreground='#${config.colorScheme.palette.base08}'>русский</span>";
+      format-en =
+        "<span foreground='#${config.colorScheme.palette.base0B}'>english</span>";
     };
     clock = {
       calendar = {
