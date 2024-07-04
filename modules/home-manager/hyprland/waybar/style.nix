@@ -91,18 +91,27 @@ in {
       }
 
       #custom-launcher {
-          font-size: 20px;
+          font-size: ${custom.font_size};
           color: ${custom.tertiary_accent};
           font-weight: ${custom.font_weight};
           padding-left: 10px;
           padding-right: 15px;
       }
       #custom-power {
-          font-size: 20px;
+          font-size: ${custom.font_size};
           color: ${custom.tertiary_accent};
           font-weight: ${custom.font_weight};
           padding-left: 10px;
           padding-right: 15px;
       }
+
+      #language {
+          font-size: ${custom.font_size};
+          font-weight: ${custom.font_weight};
+          color: ${custom.tertiary_accent};
+          padding-left: 10px;
+          padding-right: 15px;
+      }
+
     '';
 }

@@ -17,8 +17,14 @@
       "pulseaudio"
       "battery"
       # "network"
+      "hyprland/language"
       "custom/power"
     ];
+    "hyprland/language" = {
+      format = "{}";
+      format-ru = "русский";
+      format-en = "english";
+    };
     clock = {
       calendar = {
         format = { today = "<span color='#b4befe'><b><u>{}</u></b></span>"; };
