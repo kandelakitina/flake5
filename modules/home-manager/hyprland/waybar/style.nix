@@ -4,12 +4,12 @@ let
     font = config.fontProfiles.monospace.family;
     font_size = "15px";
     font_weight = "bold";
-    text_color = "#${config.colorScheme.palette.base06}";
-    secondary_accent = "#${config.colorScheme.palette.base03}";
-    tertiary_accent = "#${config.colorScheme.palette.base0D}";
+    white = "#${config.colorScheme.palette.base06}";
+    magenta = "#${config.colorScheme.palette.base03}";
+    blue = "#${config.colorScheme.palette.base0D}";
     green = "#${config.colorScheme.palette.base0B}";
-    background = "11111B";
-    opacity = "0.98";
+    grey = "#${config.colorScheme.palette.base01}";
+    opacity = "1";
   };
 in {
   programs.waybar.style = # css
@@ -28,6 +28,8 @@ in {
 
           window#waybar {
               background: none;
+              /* background-color: transparent; */
+              /* background: rgba(128, 128, 128, 0.05); */
           }
 
           #workspaces {
@@ -49,7 +51,7 @@ in {
 
           #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery {
               font-size: ${custom.font_size};
-              color: ${custom.text_color};
+              color: ${custom.white};
           }
 
           #cpu {
@@ -93,14 +95,14 @@ in {
 
           #custom-launcher {
               font-size: ${custom.font_size};
-              color: ${custom.tertiary_accent};
+              color: ${custom.blue};
               font-weight: ${custom.font_weight};
               padding-left: 10px;
               padding-right: 15px;
           }
           #custom-power {
               font-size: ${custom.font_size};
-              color: ${custom.tertiary_accent};
+              color: ${custom.blue};
               font-weight: ${custom.font_weight};
               padding-left: 10px;
               padding-right: 15px;

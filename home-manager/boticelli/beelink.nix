@@ -78,6 +78,7 @@
         directories = [
           "Documents"
           "Downloads"
+          "Pictures"
           ".config/sops/age"
           "flake5"
           ".local/bin"
