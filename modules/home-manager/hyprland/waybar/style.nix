@@ -97,5 +97,12 @@ in {
           padding-left: 10px;
           padding-right: 15px;
       }
+      #custom-power {
+          font-size: 20px;
+          color: ${custom.tertiary_accent};
+          font-weight: ${custom.font_weight};
+          padding-left: 10px;
+          padding-right: 15px;
+      }
     '';
 }

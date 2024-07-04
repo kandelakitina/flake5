@@ -60,7 +60,7 @@
 
       # Screenshotting
       ",Print,exec,${grimblast} --notify --freeze copy output"
-      "SUPER,Print,exec,${grimblast} --notify --freeze copy area"
+      "SUPERSHIFT,s,exec,${grimblast} --notify --freeze copy area"
 
       # To OCR
       "ALT,Print,exec,${grimblast} --freeze save area - | ${tesseract} - - | wl-copy && ${notify-send} -t 3000 'OCR result copied to buffer'"

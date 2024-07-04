@@ -9,8 +9,16 @@
     margin-right = 0;
     modules-left = [ "custom/launcher" "hyprland/workspaces" ];
     modules-center = [ "clock" ];
-    modules-right =
-      [ "tray" "cpu" "memory" "disk" "pulseaudio" "battery" "network" ];
+    modules-right = [
+      "tray"
+      "cpu"
+      "memory"
+      "disk"
+      "pulseaudio"
+      "battery"
+      # "network"
+      "custom/power"
+    ];
     clock = {
       calendar = {
         format = { today = "<span color='#b4befe'><b><u>{}</u></b></span>"; };
@@ -31,7 +39,7 @@
         "1" = "󰈹";
         "2" = "";
         "3" = "󰘙";
-        "4" = "󰙯";
+        "4" = "";
         "5" = "";
         "6" = "";
         urgent = "";
@@ -61,13 +69,13 @@
       format = "󰋊 {percentage_used:2}%";
       interval = 60;
     };
-    network = {
-      format-wifi = "  {signalStrength:2}%";
-      format-ethernet = "󰀂 ";
-      tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
-      format-linked = "{ifname} (No IP)";
-      format-disconnected = "󰖪 ";
-    };
+    # network = {
+    #   format-wifi = "  {signalStrength:2}%";
+    #   format-ethernet = "󰀂 ";
+    #   tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
+    #   format-linked = "{ifname} (No IP)";
+    #   format-disconnected = "󰖪 ";
+    # };
     tray = {
       icon-size = 20;
       spacing = 8;
@@ -95,6 +103,11 @@
       format = "";
       on-click = "pkill wofi || wofi --show drun";
       on-click-right = "pkill wofi || wallpaper-picker";
+      tooltip = "false";
+    };
+    "custom/power" = {
+      format = "⏻";
+      on-click = "pkill wofi || shutdown-script";
       tooltip = "false";
     };
   };
