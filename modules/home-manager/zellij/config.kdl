@@ -171,8 +171,7 @@ keybinds {
     shared_except "locked" {
         bind "Alt u" { SwitchToMode "Locked"; }
 
-        bind "Alt q" { CloseFocus; }
-        // bind "Alt q" { Quit; }
+        bind "Alt q" { Quit; }
         bind "Alt n" { NewPane; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
