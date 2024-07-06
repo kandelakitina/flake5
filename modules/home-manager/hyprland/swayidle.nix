@@ -1,7 +1,8 @@
 { pkgs, config, ... }:
 let
   lock =
-    "${pkgs.swaylock-effects}/bin/swaylock --daemonize --clock --indicator --grace 10";
+    # "${pkgs.swaylock-effects}/bin/swaylock --daemonize --clock --indicator --grace 10";
+    "${pkgs.swaylock-effects}/bin/swaylock --daemonize --clock --indicator";
   hyprlandPkg = config.wayland.windowManager.hyprland.package;
 in {
   services.swayidle = {
@@ -25,8 +26,9 @@ in {
       }
       {
         timeout = 15 * 60;
-        command = "${hyprlandPkg}/bin/hyprctl dispatch dpms off";
-        resumeCommand = "${hyprlandPkg}/bin/hyprctl dispatch dpms on";
+        command = "${pkgs.systemd}/bin/systemctl suspend";
+        # command = "${hyprlandPkg}/bin/hyprctl dispatch dpms off";
+        # resumeCommand = "${hyprlandPkg}/bin/hyprctl dispatch dpms on";
       }
     ];
   };
