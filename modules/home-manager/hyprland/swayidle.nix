@@ -4,7 +4,7 @@
     systemdTarget = "hyprland-session.target";
     events = [{
       event = "before-sleep";
-      command = "${pkgs.swaylock}/bin/swaylock -f -c 000000";
+      command = "swaylock -f -c 000000";
     }];
     timeouts = [
       {
@@ -14,7 +14,7 @@
       }
       {
         timeout = 320;
-        command = "${pkgs.swaylock}/bin/swaylock -f -c 000000";
+        command = "swaylock -f -c 000000";
       }
     ];
   };
