@@ -9,6 +9,8 @@ let
     blue = "#${config.colorScheme.palette.base0D}";
     green = "#${config.colorScheme.palette.base0B}";
     grey = "#${config.colorScheme.palette.base01}";
+    yellow = "#${config.colorScheme.palette.base09}";
+    cyan = "#${config.colorScheme.palette.base0C}";
     opacity = "1";
   };
 in {
@@ -77,7 +79,7 @@ in {
               padding-left: 15px;
               padding-right: 9px;
               margin-left: 7px;
-              color: #${config.colorScheme.palette.base09};
+              color: ${custom.cyan};
           }
           #battery {
               padding-left: 9px;
@@ -103,6 +105,20 @@ in {
           #custom-power {
               font-size: ${custom.font_size};
               color: ${custom.blue};
+              font-weight: ${custom.font_weight};
+              padding-left: 10px;
+              padding-right: 15px;
+          }
+          #custom-brightness {
+              font-size: ${custom.font_size};
+              color: ${custom.magenta};
+              font-weight: ${custom.font_weight};
+              padding-left: 10px;
+              padding-right: 15px;
+          }
+          #custom-temperature {
+              font-size: ${custom.font_size};
+              color: ${custom.yellow};
               font-weight: ${custom.font_weight};
               padding-left: 10px;
               padding-right: 15px;

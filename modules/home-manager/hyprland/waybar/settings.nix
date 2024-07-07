@@ -17,6 +17,9 @@
       "pulseaudio"
       "battery"
       # "network"
+      # "custom/gamma"
+      "custom/brightness"
+      "custom/temperature"
       "hyprland/language"
       "custom/power"
     ];
@@ -28,6 +31,36 @@
       format-en =
         "<span foreground='#${config.colorScheme.palette.base0B}'>english</span>";
     };
+    "custom/temperature" = {
+      format = "{} ";
+      exec = "wl-gammarelay-rs watch {t}";
+      on-scroll-up =
+        "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
+      on-scroll-down =
+        "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
+      on-click =
+        "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 5000";
+    };
+    "custom/brightness" = {
+      format = "{}% ";
+      exec = "wl-gammarelay-rs watch {bp}";
+      on-scroll-up =
+        "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02";
+      on-scroll-down =
+        "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02";
+      on-click =
+        "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1";
+    };
+    # "custom/gamma" = {
+    #   format = "{}% γ";
+    #   exec = "wl-gammarelay-rs watch {g}";
+    #   on-scroll-up =
+    #     "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateGamma d +0.02";
+    #   on-scroll-down =
+    #     "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateGamma d -0.02";
+    #   on-click =
+    #     "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Gamma d 1";
+    # };
     clock = {
       calendar = {
         format = { today = "<span color='#b4befe'><b><u>{}</u></b></span>"; };
