@@ -41,7 +41,8 @@
   colorScheme = import ../../modules/home-manager/colorschemes/iterm.nix;
   # colorScheme = nix-colors.colorSchemes.dracula;
 
-  wallpaper = ../../wallpapers/frieren1.jpg;
+  # wallpaper = ../../wallpapers/frieren1.jpg;
+  # wallpaper = /home/boticelli/Pictures/wallpapers/wallpaper;
 
   fontProfiles = {
     enable = true;
