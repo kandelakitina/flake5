@@ -92,6 +92,8 @@
       "SUPER,i,pseudo"
 
       "SUPER, backspace, exec, shutdown-script" # custom script
+
+      "SUPER, C ,exec, hyprpicker -a"
     ] ++
 
     # # Screen lock
