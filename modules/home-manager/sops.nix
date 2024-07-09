@@ -7,9 +7,7 @@
     age.keyFile = "/home/boticelli/.config/sops/age/keys.txt";
 
     secrets = {
-      "private-keys/boticelli" = {
-        path = "/home/boticelli/.ssh/boticelli_ed25519_key";
-      };
+      "private-keys/boticelli" = { path = "/home/boticelli/.ssh/id_rsa"; };
       openAI = { path = "/home/boticelli/.config/openAI/key.txt"; };
     };
   };

@@ -18,7 +18,7 @@ in {
     extraGroups = [ "wheel" "audio" "video" ]
       ++ ifTheyExist [ "docker" "git" "mysql" "network" ];
 
-    openssh.authorizedKeys.keyFiles = [ ../../../keys/boticelli_ed25519.pub ];
+    openssh.authorizedKeys.keyFiles = [ ../../../keys/id_rsa.pub ];
 
     packages = [ pkgs.home-manager ];
   };
