@@ -5,8 +5,8 @@ in {
 
   programs.swaylock = {
     enable = true;
-    package = pkgs.swaylock-effects;
-    # package = pkgs.swaylock;
+    # package = pkgs.swaylock-effects;
+    package = pkgs.swaylock;
     settings = {
 
       clock = true;

@@ -39,7 +39,7 @@
       on-scroll-down =
         "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
       on-click =
-        "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 5000";
+        "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
     };
     "custom/brightness" = {
       format = "{}% ";

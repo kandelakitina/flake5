@@ -2,7 +2,8 @@
 let
   lock =
     # "${pkgs.swaylock-effects}/bin/swaylock --daemonize --clock --indicator --grace 10";
-    "${pkgs.swaylock-effects}/bin/swaylock --daemonize --clock --indicator";
+    # "${pkgs.swaylock-effects}/bin/swaylock --daemonize --clock --indicator";
+    "${pkgs.swaylock}/bin/swaylock --daemonize --clock --indicator";
   hyprlandPkg = config.wayland.windowManager.hyprland.package;
 in {
   services.swayidle = {
