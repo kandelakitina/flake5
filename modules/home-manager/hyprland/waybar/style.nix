@@ -26,6 +26,11 @@ in {
               font-family: ${custom.font};
               font-weight: ${custom.font_weight};
               opacity: ${custom.opacity};
+              text-shadow:
+                  -1px -1px 0 #000,
+                  1px -1px 0 #000,
+                  -1px 1px 0 #000,
+                  1px 1px 0 #000;
           }
 
           window#waybar {
