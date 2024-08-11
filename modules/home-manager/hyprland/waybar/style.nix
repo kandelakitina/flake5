@@ -4,7 +4,7 @@ let
     # font = config.fontProfiles.monospace.family;
     font = "Ubuntu Nerd Font";
     font_size = "15px";
-    font_weight = "bold";
+    font_weight = "normal";
     darkGrey = "#${config.colorScheme.palette.base01}";
     magenta = "#${config.colorScheme.palette.base03}";
     grey = "#${config.colorScheme.palette.base04}";
@@ -30,16 +30,14 @@ in {
               font-weight: ${custom.font_weight};
               opacity: ${custom.opacity};
               text-shadow:
-                  -1px -1px 0 #000,
-                  1px -1px 0 #000,
-                  -1px 1px 0 #000,
-                  1px 1px 0 #000;
-          }
+                 1px  1px 1px rgba(0, 0, 0, 0.4),  
+                -1px -1px 1px rgba(0, 0, 0, 0.4),
+                 1px -1px 1px rgba(0, 0, 0, 0.4),
+                -1px  1px 1px rgba(0, 0, 0, 0.4);
+            }
 
           window#waybar {
-              background: none;
-              /* background-color: transparent; */
-              /* background: rgba(128, 128, 128, 0.05); */
+              background-color: transparent;
           }
 
           #workspaces {
@@ -54,7 +52,7 @@ in {
           }
 
           #workspaces button.empty {
-              color: ${custom.grey};
+              color: ${custom.white};
           }
 
           #workspaces button.active {
