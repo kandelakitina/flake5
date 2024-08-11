@@ -1,16 +1,19 @@
 { config, ... }:
 let
   custom = {
-    font = config.fontProfiles.monospace.family;
+    # font = config.fontProfiles.monospace.family;
+    font = "Ubuntu Nerd Font";
     font_size = "15px";
     font_weight = "bold";
-    white = "#${config.colorScheme.palette.base06}";
+    darkGrey = "#${config.colorScheme.palette.base01}";
     magenta = "#${config.colorScheme.palette.base03}";
-    blue = "#${config.colorScheme.palette.base0D}";
-    green = "#${config.colorScheme.palette.base0B}";
-    grey = "#${config.colorScheme.palette.base01}";
+    grey = "#${config.colorScheme.palette.base04}";
+    white = "#${config.colorScheme.palette.base06}";
+    red = "#${config.colorScheme.palette.base08}";
     yellow = "#${config.colorScheme.palette.base09}";
+    green = "#${config.colorScheme.palette.base0B}";
     cyan = "#${config.colorScheme.palette.base0C}";
+    blue = "#${config.colorScheme.palette.base0D}";
     opacity = "1";
   };
 in {
@@ -40,24 +43,25 @@ in {
           }
 
           #workspaces {
-              font-size: 18px;
               padding-left: 15px;
               
           }
+
           #workspaces button {
-              color: #${config.colorScheme.palette.base0D};
+              color: ${custom.blue};
               padding-left:  6px;
               padding-right: 6px;
           }
+
           #workspaces button.empty {
-              color: #${config.colorScheme.palette.base04};
+              color: ${custom.grey};
           }
+
           #workspaces button.active {
-              color: #${config.colorScheme.palette.base08};
+              color: ${custom.magenta};
           }
 
           #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery {
-              font-size: ${custom.font_size};
               color: ${custom.white};
           }
 
@@ -101,37 +105,27 @@ in {
           }
 
           #custom-launcher {
-              font-size: ${custom.font_size};
               color: ${custom.blue};
-              font-weight: ${custom.font_weight};
               padding-left: 10px;
               padding-right: 15px;
           }
           #custom-power {
-              font-size: ${custom.font_size};
               color: ${custom.blue};
-              font-weight: ${custom.font_weight};
               padding-left: 10px;
               padding-right: 15px;
           }
           #custom-brightness {
-              font-size: ${custom.font_size};
               color: ${custom.magenta};
-              font-weight: ${custom.font_weight};
               padding-left: 10px;
               padding-right: 15px;
           }
           #custom-temperature {
-              font-size: ${custom.font_size};
               color: ${custom.yellow};
-              font-weight: ${custom.font_weight};
               padding-left: 10px;
               padding-right: 15px;
           }
 
       #language {
-          font-size: ${custom.font_size};
-          font-weight: ${custom.font_weight};
           padding-left: 10px;
           padding-right: 15px;
       }
