@@ -56,7 +56,7 @@ in {
           }
 
           #workspaces button.active {
-              color: ${custom.magenta};
+              color: ${custom.yellow};
           }
 
           #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery {

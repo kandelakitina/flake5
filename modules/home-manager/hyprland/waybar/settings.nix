@@ -75,7 +75,7 @@
     "hyprland/workspaces" = {
       active-only = false;
       disable-scroll = true;
-      format = "{icon}";
+      format = "{name}: {icon}";
       on-click = "activate";
       format-icons = {
         "1" = "alacritty";
@@ -83,17 +83,17 @@
         "3" = "telegram";
         "4" = "youtube";
         "5" = "spotify";
-        "6" = "random";
-        # "1" = "󰈹";
-        # "2" = "";
-        # "3" = "󰘙";
-        # "4" = "";
-        # "5" = "";
-        # "6" = "";
-        urgent = "";
-        default = "";
-        sort-by-number = true;
+        #   "6" = "random";
+        #   # "1" = "󰈹";
+        #   # "2" = "";
+        #   # "3" = "󰘙";
+        #   # "4" = "";
+        #   # "5" = "";
+        #   # "6" = "";
+        #   # urgent = "";
+        #   # default = "";
       };
+      sort-by-number = true;
       persistent-workspaces = {
         "1" = [ ];
         "2" = [ ];
