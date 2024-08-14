@@ -8,30 +8,30 @@
       pactl = lib.getExe' pkgs.pulseaudio "pactl";
       notify-send = lib.getExe' pkgs.libnotify "notify-send";
       # defaultApp = type: "${lib.getExe pkgs.handlr-regex} launch ${type}";
-      workspaces = [
-        "0"
-        "1"
-        "2"
-        "3"
-        "4"
-        "5"
-        "6"
-        "7"
-        "8"
-        "9"
-        "F1"
-        "F2"
-        "F3"
-        "F4"
-        "F5"
-        "F6"
-        "F7"
-        "F8"
-        "F9"
-        "F10"
-        "F11"
-        "F12"
-      ];
+      # workspaces = [
+      #   "0"
+      #   "1"
+      #   "2"
+      #   "3"
+      #   "4"
+      #   "5"
+      #   "6"
+      #   "7"
+      #   "8"
+      #   "9"
+      #   "F1"
+      #   "F2"
+      #   "F3"
+      #   "F4"
+      #   "F5"
+      #   "F6"
+      #   "F7"
+      #   "F8"
+      #   "F9"
+      #   "F10"
+      #   "F11"
+      #   "F12"
+      # ];
       # Map keys (arrows and hjkl) to hyprland directions (l, r, u, d)
       directions = rec {
         left = "l";
@@ -94,6 +94,29 @@
       "SUPER, backspace, exec, shutdown-script" # custom script
 
       "SUPER, C ,exec, hyprpicker -a"
+      "SUPER,1,workspace,name:1"
+      "SUPER,2,workspace,name:2"
+      "SUPER,3,workspace,name:3"
+      "SUPER,4,workspace,name:4"
+      "SUPER,5,workspace,name:5"
+      "SUPER,6,workspace,name:6"
+      "SUPER,7,workspace,name:7"
+      "SUPER,8,workspace,name:8"
+      "SUPER,9,workspace,name:9"
+      "SUPER,0,workspace,name:10"
+      "SUPERALT,UP,workspace,e+1"
+      "SUPERALT,DOWN,workspace,e-1"
+
+      "SUPERSHIFT,1,movetoworkspace,name:1"
+      "SUPERSHIFT,2,movetoworkspace,name:2"
+      "SUPERSHIFT,3,movetoworkspace,name:3"
+      "SUPERSHIFT,4,movetoworkspace,name:4"
+      "SUPERSHIFT,5,movetoworkspace,name:5"
+      "SUPERSHIFT,6,movetoworkspace,name:6"
+      "SUPERSHIFT,7,movetoworkspace,name:7"
+      "SUPERSHIFT,8,movetoworkspace,name:8"
+      "SUPERSHIFT,9,movetoworkspace,name:9"
+      "SUPERSHIFT,0,movetoworkspace,name:10"
     ] ++
 
     # # Screen lock
@@ -101,10 +124,11 @@
     # in lib.optionals config.programs.swaylock.enable
     # [ "SUPER, backspace, exec, ${swaylock} -S --grace 2" ]) ++
 
-    # Change workspace
-    (map (n: "SUPER,${n},workspace,name:${n}") workspaces) ++
-    # Move window to workspace
-    (map (n: "SUPERSHIFT,${n},movetoworkspacesilent,name:${n}") workspaces) ++
+    # # Change workspace
+    # (map (n: "SUPER,${n},workspace,name:${n}") workspaces) ++
+    # # Move window to workspace
+    # (map (n: "SUPERSHIFT,${n},movetoworkspacesilent,name:${n}") workspaces) ++
+
     # Move focus
     (lib.mapAttrsToList (key: direction: "SUPER,${key},movefocus,${direction}")
       directions) ++
