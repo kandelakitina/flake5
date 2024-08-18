@@ -4,19 +4,19 @@
   sops = {
     defaultSopsFile = ../../secrets.yaml;
 
-    age.keyFile = "/home/boticelli/.config/sops/age/keys.txt";
+    # age.keyFile = "/home/boticelli/.config/sops/age/keys.txt";
 
     secrets = {
-      "private-keys/boticelli" = { path = "/home/boticelli/.ssh/id_rsa"; };
-      openAI = { path = "/home/boticelli/.config/openAI/key.txt"; };
+      # "private-keys/boticelli" = { path = "/home/boticelli/.ssh/id_rsa"; };
+      # openAI = { path = "/home/boticelli/.config/openAI/key.txt"; };
     };
   };
 
   programs.fish = {
     enable = true;
-    shellInit = ''
-      set -x OPENAI_API_KEY (cat /home/boticelli/.config/openAI/key.txt)
-    '';
+    # shellInit = ''
+    #   set -x OPENAI_API_KEY (cat /home/boticelli/.config/openAI/key.txt)
+    # '';
   };
 
   home = {

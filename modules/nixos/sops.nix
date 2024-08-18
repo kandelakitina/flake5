@@ -1,22 +1,15 @@
-{
-  pkgs,
-  inputs,
-  config,
-  ...
-}: {
-  imports = [
-    inputs.sops-nix.nixosModules.sops
-  ];
+{ pkgs, inputs, config, ... }: {
+  imports = [ inputs.sops-nix.nixosModules.sops ];
 
   # secrets will be output to /run/secrets
   sops = {
     defaultSopsFile = ../../secrets.yaml;
     # validateSopsFiles = false;
 
-    # gnupg = {
-    #   home = "~/.gnupg";
-    #   sshKeyPaths = [];
-    # };
+    gnupg = {
+      home = "~/.gnupg/pubring.kbx";
+      sshKeyPaths = [ ];
+    };
 
     age = {
       # automatically import host SSH keys as age keys
@@ -28,8 +21,5 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    sops
-    age
-  ];
+  environment.systemPackages = with pkgs; [ sops age ];
 }
