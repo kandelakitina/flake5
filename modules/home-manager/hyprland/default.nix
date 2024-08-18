@@ -52,6 +52,7 @@
         "wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store"
         # "${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"
         "${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/wallpaper --mode fill"
+        "${pkgs.yubikey-touch-detector}/bin/yubikey-touch-detector -libnotify"
       ];
       monitor = [ ",preferred,auto,auto" "eDP-1,preferred,auto,1" ];
       # cursor = { inactive_timeout = 4; };

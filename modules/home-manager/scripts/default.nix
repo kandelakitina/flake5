@@ -3,6 +3,8 @@
 # https://github.com/Frost-Phoenix/nixos-config/blob/2bba124946e7530cee136f554f4d5cd8834bdf20/modules/home/scripts/scripts.nix
 
 let
+  waybar-yubikey = pkgs.writeShellScriptBin "waybar-yubikey"
+    (builtins.readFile ./waybar-yubikey.sh);
   wall-change =
     pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./wall-change.sh);
   wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker"
@@ -31,6 +33,7 @@ let
   # ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
 in {
   home.packages = with pkgs; [
+    waybar-yubikey
     wall-change
     wallpaper-picker
 

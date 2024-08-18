@@ -7,7 +7,7 @@
     margin-bottom = 0;
     margin-left = 0;
     margin-right = 0;
-    modules-left = [ "custom/launcher" "hyprland/workspaces" ];
+    modules-left = [ "custom/launcher" "hyprland/workspaces" "custom/yubikey" ];
     modules-center = [ "clock" ];
     modules-right = [
       "tray"
@@ -23,6 +23,10 @@
       "hyprland/language"
       "custom/power"
     ];
+    "custom/yubikey" = {
+      exec = "waybar-yubikey";
+      return-type = "json";
+    };
     "hyprland/language" = {
       format = "{}";
       format-ru =

@@ -36,6 +36,7 @@
     ../../modules/home-manager/telegram.nix
     ../../modules/home-manager/whatsapp.nix
     ../../modules/home-manager/wallpaper.nix
+    ../../modules/home-manager/yubikey.nix
     ../../modules/home-manager/zk.nix
   ];
 
