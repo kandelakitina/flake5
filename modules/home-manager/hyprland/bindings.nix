@@ -49,6 +49,8 @@
       "SUPER, D, exec, ${pkgs.wofi}/bin/wofi -S run"
       "SUPER, B, exec, ${pkgs.firefox}/bin/firefox --show drun"
       "SUPER, V, exec, ${pkgs.cliphist}/bin/cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+      "SUPER, O, exec, ${pkgs.obsidian}/bin/obsidian"
+      "SUPER, T, exec, ${pkgs.telegram-desktop}/bin/telegram-desktop"
 
       ",XF86MonBrightnessUp,exec,brightnessctl set 5%+"
       ",XF86MonBrightnessDown,exec,brightnessctl set 5%-"

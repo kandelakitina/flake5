@@ -86,9 +86,10 @@
       format-icons = {
         "1" = "alacritty";
         "2" = "firefox";
-        "3" = "telegram";
-        "4" = "youtube";
-        "5" = "spotify";
+        "3" = "obsidian";
+        "4" = "telegram";
+        "5" = "youtube";
+        "6" = "spotify";
         #   "6" = "random";
         #   # "1" = "󰈹";
         #   # "2" = "";
@@ -106,6 +107,7 @@
         "3" = [ ];
         "4" = [ ];
         "5" = [ ];
+        "6" = [ ];
       };
     };
     memory = {
