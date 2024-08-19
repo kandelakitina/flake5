@@ -43,6 +43,8 @@
       on-scroll-down =
         "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
       on-click =
+        "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3500";
+      on-click-right =
         "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
     };
     "custom/brightness" = {
@@ -112,13 +114,13 @@
       interval = 2;
     };
     cpu = {
-      format = " {usage:2}%";
+      format = " {usage:02}%";
       format-alt = " {avg_frequency} GHz";
       interval = 2;
     };
     disk = {
       # path = "/";
-      format = "󰋊 {percentage_used:2}%";
+      format = "󰋊 {percentage_used:02}%";
       interval = 60;
     };
     # network = {
@@ -133,7 +135,7 @@
       spacing = 8;
     };
     pulseaudio = {
-      format = "{icon} {volume}%";
+      format = "{icon} {volume:02}%";
       format-muted = "󰖁  {volume}%";
       format-icons = { default = [ " " ]; };
       scroll-step = 5;
