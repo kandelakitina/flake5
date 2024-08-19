@@ -7,5 +7,5 @@
       enableExtraSocket = true;
     };
   };
-
+  hardware.gpgSmartcards.enable = true;
 }

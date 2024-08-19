@@ -30,5 +30,6 @@
 
       # nh - nix helper. nh os switch, nh home switch, nh clean
       nh
+      wget
     ];
 }

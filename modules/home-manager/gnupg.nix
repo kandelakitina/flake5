@@ -12,6 +12,9 @@
     }];
   };
 
+  # Fixes a bug where GnuPG requires to insert already inserted yubikey
+  programs.gpg.scdaemonSettings = { disable-ccid = true; };
+
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
