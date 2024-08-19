@@ -24,12 +24,12 @@
     ../../modules/nixos/impermanence.nix
     ../../modules/nixos/locale.nix
     ../../modules/nixos/nix.nix
-    ../../modules/nixos/pam.nix
     ../../modules/nixos/sops.nix
     ../../modules/nixos/sound.nix
     ../../modules/nixos/ssh.nix
     ../../modules/nixos/system.nix
     ../../modules/nixos/v2ray.nix
+    ../../modules/nixos/yubikey.nix
 
     ../../modules/nixos/users/boticelli.nix
 

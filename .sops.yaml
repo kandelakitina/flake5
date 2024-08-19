@@ -1,12 +1,10 @@
 keys:
-  - &users:
-    - &boticelli 0098D3F49DA1184BAADA5BBB98C7C7A7441867D1
-  # - &hosts:
-    # - &thinkpad age1k4rwzrpmnvuz6r36ugzk2tdf50d2nu7afecucn2dp4w8sx03a3dsz0phw4
+  - &boticelli 0098D3F49DA1184BAADA5BBB98C7C7A7441867D1
+  - &beelink age1esz5xqtsecn38chd0n2qh3xvx7c3zvgm2te6v2mdsn9tzfqep94s2wrjn9
 creation_rules:
   - path_regex: secrets.yaml$
     key_groups:
-    # - age:
-    #   - *thinkpad
-    - pgp:
+    - age:
+      - *beelink
+      pgp:
       - *boticelli

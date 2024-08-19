@@ -5,6 +5,7 @@
     defaultSopsFile = ../../secrets.yaml;
 
     # age.keyFile = "/home/boticelli/.config/sops/age/keys.txt";
+    # age.keyFile = "/persist/var/lib/sops-nix/key.txt";
 
     secrets = {
       # "private-keys/boticelli" = { path = "/home/boticelli/.ssh/id_rsa"; };

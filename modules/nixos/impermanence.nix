@@ -40,7 +40,6 @@ in {
       "/var/lib/sops-nix"
       "/etc/NetworkManager/system-connections"
       "/etc/ssh"
-      # "/var/lib/sops-nix"
     ];
     files = [ "/etc/machine-id" ];
   };

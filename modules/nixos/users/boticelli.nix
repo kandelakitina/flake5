@@ -5,12 +5,13 @@ let
 in {
 
   # Decrypt boticelli-password to /run/secrets-for-users/ so it can be used to create the user
-  # sops.secrets.boticelli-password.neededForUsers = true;
-  # users.mutableUsers = false; # Required for password to be set via sops during system activation!
+  sops.secrets.boticelli-password.neededForUsers = true;
+  users.mutableUsers =
+    false; # Required for password to be set via sops during system activation!
 
   users.users.boticelli = {
     initialPassword = "password";
-    # hashedPasswordFile = config.sops.secrets.boticelli-password.path;
+    hashedPasswordFile = config.sops.secrets.boticelli-password.path;
     isNormalUser = true;
     shell = pkgs.fish; # default shell
     ignoreShellProgramCheck = true;
@@ -18,7 +19,7 @@ in {
     extraGroups = [ "wheel" "audio" "video" ]
       ++ ifTheyExist [ "docker" "git" "mysql" "network" ];
 
-    openssh.authorizedKeys.keyFiles = [ ../../../keys/id_rsa.pub ];
+    openssh.authorizedKeys.keyFiles = [ ../../../keys/boticelli_rsa.pub ];
 
     packages = [ pkgs.home-manager ];
   };

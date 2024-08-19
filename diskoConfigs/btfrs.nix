@@ -1,4 +1,4 @@
-{device ? throw "Set this to your disk device, e.g. /dev/sda", ...}: {
+{ device ? throw "Set this to your disk device, e.g. /dev/sda", ... }: {
   disko.devices = {
     disk.main = {
       inherit device;
@@ -47,27 +47,25 @@
             size = "100%FREE";
             content = {
               type = "btrfs";
-              extraArgs = ["-f"];
+              extraArgs = [ "-f" ];
 
               subvolumes = {
-                "/root" = {
-                  mountpoint = "/";
-                };
+                "/root" = { mountpoint = "/"; };
                 # "/home" = {
                 #   mountpoint = "/home";
                 #   mountOptions = ["subvol=home" "noatime"];
                 # };
                 "/nix" = {
                   mountpoint = "/nix";
-                  mountOptions = ["subvol=nix" "noatime"];
+                  mountOptions = [ "subvol=nix" "noatime" ];
                 };
                 "/persist" = {
                   mountpoint = "/persist";
-                  mountOptions = ["subvol=persist" "noatime"];
+                  mountOptions = [ "subvol=persist" "noatime" ];
                 };
                 "/log" = {
                   mountpoint = "/var/log";
-                  mountOptions = ["subvol=log" "noatime"];
+                  mountOptions = [ "subvol=log" "noatime" ];
                 };
               };
             };
@@ -79,5 +77,5 @@
   fileSystems."/persist".neededForBoot = true;
   fileSystems."/var/log".neededForBoot = true;
   fileSystems."/etc/ssh".neededForBoot = true;
-  # fileSystems."/var/lib/sops-nix".neededForBoot = true;
+  fileSystems."/var/lib/sops-nix".neededForBoot = true;
 }
