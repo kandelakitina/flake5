@@ -7,19 +7,19 @@
     # validateSopsFiles = false;
 
     # gnupg = {
-    #   home = "~/.gnupg/pubring.kbx";
+    #   home = "~/.gnupg";
     #   # sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
     #   sshKeyPaths = [ ];
     # };
 
-    # age = {
-    # automatically import host SSH keys as age keys
-    # sshKeyPaths = [ "/persist/etc/ssh/ssh_host_ed25519_key" ];
-    # this is where the age key derived from the above SSH will live
-    # keyFile = "/persist/var/lib/sops-nix/key.txt";
-    # generate a new key if the key specified above does not exist
-    # generateKey = true;
-    # };
+    age = {
+      # automatically import host SSH keys as age keys
+      sshKeyPaths = [ "/persist/etc/ssh/ssh_host_ed25519_key" ];
+      # this is where the age key derived from the above SSH will live
+      # keyFile = "/persist/var/lib/sops-nix/key.txt";
+      # generate a new key if the key specified above does not exist
+      # generateKey = true;
+    };
   };
 
   # environment.variables = {
