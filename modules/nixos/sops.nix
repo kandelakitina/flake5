@@ -31,12 +31,5 @@
   environment = {
     variables.OPENAI_API_KEY = "$(cat ${config.sops.secrets.OPENAI.path})";
     systemPackages = with pkgs; [ sops age ];
-
-    # set -x OPENAI_API_KEY (cat ${config.sops.secrets.OPENAI.path})
-
-    # environment.variables = {
-    #   SOPS_AGE_KEY_FILE = "/persist/var/lib/sops-nix/key.txt";
-    # };
-
   };
 }
