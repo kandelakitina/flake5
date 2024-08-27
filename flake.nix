@@ -128,6 +128,14 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/beelink ];
         };
+        iso = lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/iso
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
+          ];
+        };
       };
 
       homeConfigurations = {
