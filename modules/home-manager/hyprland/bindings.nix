@@ -109,16 +109,16 @@
       "SUPERALT,UP,workspace,e+1"
       "SUPERALT,DOWN,workspace,e-1"
 
-      "SUPERSHIFT,1,movetoworkspace,name:1"
-      "SUPERSHIFT,2,movetoworkspace,name:2"
-      "SUPERSHIFT,3,movetoworkspace,name:3"
-      "SUPERSHIFT,4,movetoworkspace,name:4"
-      "SUPERSHIFT,5,movetoworkspace,name:5"
-      "SUPERSHIFT,6,movetoworkspace,name:6"
-      "SUPERSHIFT,7,movetoworkspace,name:7"
-      "SUPERSHIFT,8,movetoworkspace,name:8"
-      "SUPERSHIFT,9,movetoworkspace,name:9"
-      "SUPERSHIFT,0,movetoworkspace,name:10"
+      "SUPERSHIFT,1,movetoworkspace,1"
+      "SUPERSHIFT,2,movetoworkspace,2"
+      "SUPERSHIFT,3,movetoworkspace,3"
+      "SUPERSHIFT,4,movetoworkspace,4"
+      "SUPERSHIFT,5,movetoworkspace,5"
+      "SUPERSHIFT,6,movetoworkspace,6"
+      "SUPERSHIFT,7,movetoworkspace,7"
+      "SUPERSHIFT,8,movetoworkspace,8"
+      "SUPERSHIFT,9,movetoworkspace,9"
+      "SUPERSHIFT,0,movetoworkspace,10"
     ] ++
 
     # # Screen lock
