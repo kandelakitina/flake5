@@ -104,7 +104,7 @@ in {
     extraPackages = with pkgs;
       with nodePackages; [
         vscode-langservers-extracted
-        vscode-css-languageserver-bin
+        # vscode-css-languageserver-bin
         typescript
         typescript-language-server
         marksman
