@@ -14,10 +14,10 @@
   };
 
   security.pam.services = {
-    swaylock.u2fAuth = true;
-    login.u2fAuth = true;
-    sudo.u2fAuth = true;
-    # sddm.u2fAuth = true;
+    swaylock.u2fAuth = false;
+    login.u2fAuth = false;
+    sudo.u2fAuth = false;
+    sddm.u2fAuth = false;
   };
 
   # security.pam.yubico = {
