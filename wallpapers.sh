@@ -4,7 +4,7 @@
 REPO_URL="https://api.github.com/repos/kandelakitina/wallpapers/contents/"
 
 # Define the target directory
-TARGET_DIR="$HOME/.local/share/backgrounds"
+TARGET_DIR="$HOME/Pictures/wallpapers/others"
 
 # Create the target directory if it doesn't exist
 mkdir -p "$TARGET_DIR"
