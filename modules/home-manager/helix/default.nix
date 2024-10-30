@@ -109,7 +109,7 @@ in {
         typescript-language-server
         marksman
         nil
-        nixfmt
+        nixfmt-classic
         lua-language-server
         bash-language-server
       ];
