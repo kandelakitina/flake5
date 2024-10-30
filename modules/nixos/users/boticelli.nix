@@ -10,7 +10,7 @@ in {
     false; # Required for password to be set via sops during system activation!
 
   users.users.boticelli = {
-    initialPassword = "password";
+    # initialPassword = "password";
     hashedPasswordFile = config.sops.secrets.boticelli-password.path;
     isNormalUser = true;
     shell = pkgs.fish; # default shell
