@@ -9,7 +9,7 @@ let
     };
     package = lib.mkOption {
       type = lib.types.package;
-      default = pkgs.nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" ]; };
+      default = pkgs.nerd-fonts.ubuntu;
       description = "Package for ${kind} font profile";
       example = "pkgs.fira-code";
     };

@@ -49,11 +49,11 @@
     enable = true;
     monospace = {
       family = "JetBrainsMono Nerd Font";
-      package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+      package = pkgs.nerd-fonts.jetbrains-mono;
     };
     regular = {
       family = "Ubuntu Nerd Font";
-      package = pkgs.nerdfonts.override { fonts = [ "Ubuntu" ]; };
+      package = pkgs.nerd-fonts.ubuntu;
     };
   };
 

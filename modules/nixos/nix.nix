@@ -22,7 +22,7 @@
 
       # This puts all nix stuff in ~/.local/state. But not all nixkpgs work
       # use-xdg-base-directories = true;
-      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+      experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
       system-features = [ "kvm" "big-parallel" "nixos-test" ];
 

@@ -37,7 +37,7 @@ in {
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
 
-      shell = { program = "fish"; };
+      terminal.shell = { program = "fish"; };
 
       colors = {
         primary = {
