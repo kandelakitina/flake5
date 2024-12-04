@@ -28,8 +28,19 @@
     group = config.users.users.boticelli.group;
   };
 
+  sops.secrets.CODESTRAL_API_KEY = {
+    mode = "0440";
+    owner = config.users.users.boticelli.name;
+    group = config.users.users.boticelli.group;
+  };
+
   environment = {
-    variables.OPENAI_API_KEY = "$(cat ${config.sops.secrets.OPENAI.path})";
+    variables = {
+      OPENAI_API_KEY = "$(cat ${config.sops.secrets.OPENAI.path})";
+      CODESTRAL_API_KEY =
+        "$(cat ${config.sops.secrets.CODESTRAL_API_KEY.path})";
+    };
     systemPackages = with pkgs; [ sops age ];
   };
+
 }
