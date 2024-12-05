@@ -1,14 +1,16 @@
 { config, pkgs, inputs, ... }:
-let
-  inherit (config) colorScheme;
-  languages = import ./languages.nix { inherit pkgs inputs; };
-in {
+# let
+#   inherit (config) colorScheme;
+#   # languages = import ./languages.nix { inherit pkgs inputs; };
+# in
+{
+  home.file = { ".config/helix/languages.toml".source = ./languages.toml; };
 
   programs.helix = {
-    inherit languages;
+    # inherit languages;
     enable = true;
 
-    themes = import ./themes { inherit colorScheme; };
+    themes = import ./themes { inherit (config) colorScheme; };
 
     settings = {
       theme = "boticelliZero";
@@ -101,62 +103,29 @@ in {
       };
     };
 
-    extraPackages = with pkgs;
-      with nodePackages; [
-        vscode-langservers-extracted
-        # vscode-css-languageserver-bin
-        typescript
-        typescript-language-server
-        marksman
-        nil
-        nixfmt-classic
-        lua-language-server
-        bash-language-server
-      ];
-
-    # package = inputs.helix.packages.${pkgs.system}.default.overrideAttrs (old: {
-    #   makeWrapperArgs = with pkgs;
-    #     old.makeWrapperArgs
-    #     or []
-    #     ++ [
-    #       "--suffix"
-    #       "PATH"
-    #       ":"
-    #       (lib.makeBinPath [
-    #         clang-tools
-    #         marksman
-    #         nil
-    #         nodePackages.bash-language-server
-    #         nodePackages.vscode-css-languageserver-bin
-    #         nodePackages.vscode-langservers-extracted
-    #         shellcheck
-    #       ])
-    #     ];
-    # });
+    # extraPackages = with pkgs;
+    #   with nodePackages; [
   };
-
-  # home.packages = with pkgs; [
-  #   nil
-  #   nixfmt
-  #   lua-language-server
-  #   vscode-langservers-extracted
-
-  #   # zls
-  #   taplo
-  #   ltex-ls
-
-  #   buf-language-server
-  #   pb
-
-  #   # golangci-lint-langserver
-  #   yaml-language-server
-  #   # python311Packages.python-lsp-server
-
-  #   # haskellPackages.haskell-language-server
-  #   # ocamlPackages.ocaml-lsp
-  #   # nls
-  #   marksman
-  # ];
+  home.packages = with pkgs; [
+    bash-language-server
+    emmet-language-server
+    eslint
+    # lua-language-server
+    marksman
+    nil
+    nixfmt-classic
+    nodePackages.prettier
+    nodePackages.dockerfile-language-server-nodejs
+    # nodePackages.stylelint
+    prettierd
+    svelte-language-server
+    tailwindcss-language-server
+    taplo
+    typescript-language-server
+    vscode-langservers-extracted
+    vue-language-server
+    yaml-language-server
+  ];
 
   home.file.".config/helix/ignore".text = ''
     !.*env*
