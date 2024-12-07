@@ -87,17 +87,30 @@
 
         # "C-(" = [ "rotate_selection_contents_backward" ];
         # "C-)" = [ "rotate_selection_contents_forward" ];
-        "C-U" = [ "later" ];
         # "C-|" = [ "shell_pipe_to" ];
-        "C-!" = [ "shell_append_output" ];
         "C-_" = [ "merge_consecutive_selections" ];
         "V" = [ "copy_selection_on_prev_line" ];
         "C-m" = [ "join_selections_space" ];
         "C-r" = [ "remove_selections" ];
 
-        # Replacing Alt to C
-        "C-." = [ "repeat_last_motion" ];
+        # Swapping d and c yanking
+        "d" = [ "delete_selection_noyank" ];
+        "c" = [ "change_selection_noyank" ];
+        # "C-d" = [ "delete_selection" ];
+        # "C-c" = [ "change_selection" ];
 
+        # Replacing Alt to C
+        "C-`" = [ "switch_to_uppercase" ];
+        "#" = [ "toggle_comments" ];
+        "C-n" = [ "split_selection_on_newline" ];
+        "C-minus" = [ "split_selection_on_newline" ];
+        "C-[" = [ "shrink_selection" ];
+        "C-]" = [ "expand_selection" ];
+        "C-," = [ "select_prev_sibling" ];
+        "C-." = [ "select_next_sibling" ];
+
+        # Piping to AI
+        # "C-l" = [ ":pipe proxychains4 sgpt -c {}" ];
       };
 
       keys.normal.space.u = {
