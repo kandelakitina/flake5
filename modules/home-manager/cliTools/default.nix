@@ -61,6 +61,7 @@
     procs # better ps
     sd # better sed
     silver-searcher # 'ag' (code search)
+    scooter # find and replace
     tree
     xclip
     xh # sending HTTP requests in CLi
