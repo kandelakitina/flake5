@@ -94,6 +94,10 @@
         "V" = [ "copy_selection_on_prev_line" ];
         "C-m" = [ "join_selections_space" ];
         "C-r" = [ "remove_selections" ];
+
+        # Replacing Alt to C
+        "C-." = [ "repeat_last_motion" ];
+
       };
 
       keys.normal.space.u = {
@@ -117,7 +121,7 @@
     nodePackages.prettier
     nodePackages.dockerfile-language-server-nodejs
     # nodePackages.stylelint
-    prettierd
+    # prettierd
     svelte-language-server
     tailwindcss-language-server
     taplo

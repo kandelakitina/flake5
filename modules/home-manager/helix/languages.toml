@@ -11,46 +11,46 @@ args = ["--stdio"]
 name = "html"
 auto-format = true
 language-servers = ["vscode-html-language-server", "emmet-ls"]
-formatter = { command = 'prettier', args = ["--parser", "html"] }
+# formatter = { command = 'prettier', args = ["--parser", "html"] }
 
-[[language]]
-name = "typescript"
-auto-format = true
-language-servers = ["typescript-language-server", "vscode-eslint-language-server"]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+# [[language]]
+# name = "typescript"
+# auto-format = true
+# language-servers = ["typescript-language-server", "vscode-eslint-language-server"]
+# formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 
-[[language]]
-name = "javascript"
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
-language-servers = ["typescript-language-server"]
-auto-format = true
+# [[language]]
+# name = "javascript"
+# formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+# language-servers = ["typescript-language-server"]
+# auto-format = true
 
-[[language]]
-name = "tsx"
-auto-format = true
-language-servers = ["typescript-language-server", "vscode-eslint-language-server", "emmet-ls"]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+# [[language]]
+# name = "tsx"
+# auto-format = true
+# language-servers = ["typescript-language-server", "vscode-eslint-language-server", "emmet-ls"]
+# formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 
-[[language]]
-name = "jsx"
-auto-format = true
-language-servers = ["typescript-language-server", "vscode-eslint-language-server", "emmet-ls"]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+# [[language]]
+# name = "jsx"
+# auto-format = true
+# language-servers = ["typescript-language-server", "vscode-eslint-language-server", "emmet-ls"]
+# formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 
-[[language]]
-name = "json"
-formatter = { command = 'prettier', args = ["--parser", "json"] }
+# [[language]]
+# name = "json"
+# formatter = { command = 'prettier', args = ["--parser", "json"] }
 
-[[language]]
-name = "css"
-language-servers = [
-  "stylelint",
-  "vscode-css-language-server",
-]
-auto-format = true
-formatter = { command = 'prettier', args = ["--parser", "css"] }
+# [[language]]
+# name = "css"
+# language-servers = [
+#   "stylelint",
+#   "vscode-css-language-server",
+# ]
+# auto-format = true
+# formatter = { command = 'prettier', args = ["--parser", "css"] }
 
-[[language]]
-name = "vue"
-formatter = { command = 'prettier', args = ["--parser", "vue"] }
-auto-format = true
+# [[language]]
+# name = "vue"
+# formatter = { command = 'prettier', args = ["--parser", "vue"] }
+# auto-format = true
