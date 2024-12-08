@@ -23,6 +23,7 @@
         completion-replace = true;
         true-color = true;
         # rulers = [80];
+        popup-border = "all";
 
         cursor-shape = {
           insert = "bar";
