@@ -38,6 +38,13 @@
         set fish_greeting (echo -e "\e[38;5;135m┏(-_-)┛\e[38;5;15m┗(-_-)┓\e[38;5;196m┗(-_-)┛\e[38;5;226m┏(-_-)┓\e[38;5;82m┏(-_-)┛\e[38;5;87m┗(-_-)┓\e[38;5;33m┗(-_-)┛\e[0m")
         ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       '';
+
+    shellInit = ''
+      function sgpt
+        proxychains4 sgpt $argv
+      end
+    '';
+
     plugins = [
       # Enable a plugin (here grc for colorized command output) from nixpkgs
       # { name = "grc"; src = pkgs.fishPlugins.grc.src; }

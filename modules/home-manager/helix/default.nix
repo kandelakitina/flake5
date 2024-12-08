@@ -16,6 +16,7 @@
       theme = "boticelliZero";
 
       editor = {
+        shell = [ "fish" "-c" ];
         color-modes = true;
         cursorline = true;
         idle-timeout = 1;
