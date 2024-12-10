@@ -40,7 +40,7 @@
       '';
 
     shellInit = ''
-      function sgpt
+      function ai
         proxychains4 sgpt $argv
       end
     '';
