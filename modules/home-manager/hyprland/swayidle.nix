@@ -1,52 +1,36 @@
-{ pkgs, lib, config, ... }: {
+{ pkgs, ... }:
+let
+  suspendScript = pkgs.writeShellScript "suspend-script" ''
+    ${pkgs.pipewire}/bin/pw-cli i all | ${pkgs.ripgrep}/bin/rg running
+    # only suspend if audio isn't running
+    if [ $? == 1 ]; then
+      ${pkgs.systemd}/bin/systemctl suspend
+    fi
+  '';
+in {
+  # screen idle
   services.swayidle = {
     enable = true;
     events = [
       {
         event = "before-sleep";
-        command = "${pkgs.swaylock-effects}/bin/swaylock --daemonize";
+        command = "${pkgs.systemd}/bin/loginctl lock-session";
       }
       {
         event = "lock";
-        command = "${pkgs.swaylock-effects}/bin/swaylock --daemonize --grace 0";
-      }
-      {
-        event = "unlock";
-        command = "pkill -SIGUSR1 swaylock";
-      }
-      {
-        event = "after-resume";
-        command = ''swaymsg "output * dpms on"'';
+        command = "${pkgs.swaylock-effects}/bin/swaylock -fF";
       }
     ];
     timeouts = [
       {
-        timeout = 1800;
-        command = "${pkgs.swaylock-effects}/bin/swaylock --daemonize";
+        timeout = 100;
+        command = "${pkgs.swaylock-effects}/bin/swaylock -fF";
       }
+
       {
-        timeout = 2000;
-        command = ''swaymsg "output * dpms off"'';
-        resumeCommand = ''swaymsg "output * dpms on"'';
+        timeout = 300;
+        command = suspendScript.outPath;
       }
     ];
   };
-  # services.swayidle = {
-  #   enable = true;
-  #   package = pkgs.swayidle;
-  #   events = [
-  #     {
-  #       event = "before-sleep";
-  #       command = "swaylock";
-  #     }
-  #     {
-  #       event = "lock";
-  #       command = "swaylock";
-  #     }
-  #   ];
-  #   timeouts = [{
-  #     timeout = 60;
-  #     command = "swaylock -fF";
-  #   }];
-  # };
 }

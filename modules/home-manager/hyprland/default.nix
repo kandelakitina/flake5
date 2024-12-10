@@ -16,6 +16,7 @@
       brightnessctl
       networkmanagerapplet
       swayidle
+      # swaylock
       wl-gammarelay-rs
     ];
   };
