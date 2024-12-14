@@ -37,10 +37,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     sddm-sugar-candy-nix = {
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
@@ -120,30 +120,31 @@
       formatter = forEachSystem (pkgs: pkgs.alejandro);
 
       nixosConfigurations = {
-        vm = lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/vm ];
-        };
         beelink = lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/beelink ];
         };
-        iso = lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./hosts/iso
-            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
-            "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
-          ];
-        };
+        # not currently implemented:
+        # vm = lib.nixosSystem {
+        #   specialArgs = { inherit inputs outputs; };
+        #   modules = [ ./hosts/vm ];
+        # };
+        # iso = lib.nixosSystem {
+        #   specialArgs = { inherit inputs outputs; };
+        #   modules = [
+        #     ./hosts/iso
+        #     "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
+        #     "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
+        #   ];
+        # };
       };
 
       homeConfigurations = {
-        "boticelli@vm" = lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit nix-colors inputs outputs; };
-          modules = [ ./home-manager/boticelli/vm.nix ];
-        };
+        # "boticelli@vm" = lib.homeManagerConfiguration {
+        #   pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        #   extraSpecialArgs = { inherit nix-colors inputs outputs; };
+        #   modules = [ ./home-manager/boticelli/vm.nix ];
+        # };
         "boticelli@beelink" = lib.homeManagerConfiguration {
           pkgs = pkgsFor.x86_64-linux;
           # pkgs = nixpkgs.legacyPackages.x86_64-linux;
