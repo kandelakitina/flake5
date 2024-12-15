@@ -142,6 +142,7 @@
       format-icons = { default = [ " " ]; };
       scroll-step = 5;
       on-click = "pamixer -t";
+      on-click-right = "pwvucontrol";
     };
     battery = {
       format = "{icon} {capacity}%";
