@@ -9,8 +9,12 @@
   boot.initrd.availableKernelModules =
     [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-intel" "snd_hda_intel" "snd_sof_pci" ];
   boot.extraModulePackages = [ ];
+
+  # Enable Intel HDA audio
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "intel" ];
 
   # Fix for beelink S12 Pro WiFi problem
   boot.extraModprobeConfig = ''
@@ -32,4 +36,5 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
+
 }

@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ pkgs, lib, ... }: {
   # Sound options
   security.rtkit.enable = true;
   hardware.pulseaudio.enable = lib.mkForce false;
@@ -9,4 +9,5 @@
     pulse.enable = true;
     jack.enable = true;
   };
+  environment.systemPackages = with pkgs; [ pwvucontrol ];
 }
