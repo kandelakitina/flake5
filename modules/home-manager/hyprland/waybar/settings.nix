@@ -142,7 +142,7 @@
       format-icons = { default = [ " " ]; };
       scroll-step = 5;
       on-click = "pamixer -t";
-      on-click-right = "pwvucontrol";
+      on-click-right = "kill pwvucontrol || pwvucontrol";
     };
     battery = {
       format = "{icon} {capacity}%";
