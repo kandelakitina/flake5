@@ -11,7 +11,7 @@
     ./hardware-configuration.nix
 
     inputs.disko.nixosModules.disko
-    (import ../../diskoConfigs/btfrs.nix { device = "/dev/vda"; })
+    (import ../../diskoConfigs/btfrs.nix { device = "/dev/nvme0n1"; })
 
     ../../modules/nixos/sddm.nix
     # ../../modules/nixos/greetd.nix
