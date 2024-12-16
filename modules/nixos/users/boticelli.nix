@@ -11,7 +11,7 @@ in {
 
   users.users.boticelli = {
     initialPassword = "password";
-    hashedPasswordFile = config.sops.secrets.boticelli-password.path;
+    # hashedPasswordFile = config.sops.secrets.boticelli-password.path;
     isNormalUser = true;
     shell = pkgs.fish; # default shell
     ignoreShellProgramCheck = true;
