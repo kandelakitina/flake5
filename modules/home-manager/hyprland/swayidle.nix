@@ -24,12 +24,12 @@
     ];
     timeouts = [
       {
-        timeout = 100;
+        timeout = 300;
         command = "${pkgs.swaylock-effects}/bin/swaylock -fF";
       }
 
       {
-        timeout = 300;
+        timeout = 600;
         # command = suspendScript.outPath;
         command = "${pkgs.systemd}/bin/systemctl suspend";
       }
