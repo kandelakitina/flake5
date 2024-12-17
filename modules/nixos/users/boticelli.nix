@@ -17,7 +17,7 @@ in {
     ignoreShellProgramCheck = true;
 
     extraGroups = [ "wheel" "audio" "video" ]
-      ++ ifTheyExist [ "docker" "git" "mysql" "network" ];
+      ++ ifTheyExist [ "libvirtd" "docker" "git" "mysql" "network" ];
 
     openssh.authorizedKeys.keyFiles = [ ../../../keys/boticelli_rsa.pub ];
 

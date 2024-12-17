@@ -30,6 +30,7 @@
     ../../modules/nixos/system.nix
     ../../modules/nixos/v2ray.nix
     ../../modules/nixos/yubikey.nix
+    ../../modules/nixos/virtualisation.nix
 
     ../../modules/nixos/users/boticelli.nix
 
