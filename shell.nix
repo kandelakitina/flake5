@@ -14,6 +14,7 @@
         nix
         home-manager
         git
+        gum
 
         sops
         ssh-to-age
