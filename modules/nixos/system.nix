@@ -32,4 +32,6 @@
       nh
       wget
     ];
+
+  home-manager.backupFileExtension = "backup";
 }
