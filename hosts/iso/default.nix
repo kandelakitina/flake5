@@ -20,6 +20,7 @@
     networkmanager
     git
     (writeShellScriptBin "nix-install" (builtins.readFile ./nix-install.sh))
+    (writeShellScriptBin "copy-SSH" (builtins.readFile ./copy-SSH.sh))
   ];
 
   nix = {
