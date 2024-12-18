@@ -48,12 +48,16 @@
   fontProfiles = {
     enable = true;
     monospace = {
-      family = "JetBrainsMono Nerd Font";
-      package = pkgs.nerd-fonts.jetbrains-mono;
+      # family = "JetBrainsMono Nerd Font";
+      # package = pkgs.nerd-fonts.jetbrains-mono;
+      family = "Iosevka Nerd Font";
+      package = pkgs.nerd-fonts.iosevka;
     };
     regular = {
-      family = "Ubuntu Nerd Font";
-      package = pkgs.nerd-fonts.ubuntu;
+      # family = "Ubuntu Nerd Font";
+      # package = pkgs.nerd-fonts.ubuntu;
+      family = "Iosevka Nerd Font";
+      package = pkgs.nerd-fonts.iosevka;
     };
   };
 
