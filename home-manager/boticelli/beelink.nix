@@ -69,7 +69,7 @@
 
   home = {
     username = "boticelli";
-    homeDirectory = "/home/${config.home.username}";
+    homeDirectory = lib.mkDefault "/home/${config.home.username}";
     sessionPath = [ "$HOME/.local/bin" ];
     shellAliases = { sysrestart = "systemctl --user reset-failed"; };
     sessionVariables = {
