@@ -86,15 +86,15 @@ fi
 # Confirm the selected folder
 echo "You selected the folder: $SELECTED_FOLDER"
 
-# Step 5: Copy SSH host keys to /etc/ssh
-echo "Copying SSH host keys from $SELECTED_FOLDER to /etc/ssh/"
+# Step 5: Copy SSH host keys to /mnt/etc/ssh
+echo "Copying SSH host keys from $SELECTED_FOLDER to /mnt/etc/ssh/"
 
-# Copy the SSH host keys to /etc/ssh using sudo
-sudo cp -av "/mnt/encrypted-storage/$SELECTED_FOLDER/ssh_host"* /etc/ssh/
+# Copy the SSH host keys to /mnt/etc/ssh using sudo
+sudo cp -av "/mnt/encrypted-storage/$SELECTED_FOLDER/ssh_host"* /mnt/etc/ssh/
 
 # Confirm the copy was successful
 if [ $? -eq 0 ]; then
-    echo "SSH host keys have been successfully copied to /etc/ssh/."
+    echo "SSH host keys have been successfully copied to /mnt/etc/ssh/."
 else
     echo "Failed to copy SSH host keys. Exiting."
     exit 1
