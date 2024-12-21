@@ -16,7 +16,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    gum
     networkmanager
     git
     (writeShellScriptBin "nix-install" (builtins.readFile ./nix-install.sh))
