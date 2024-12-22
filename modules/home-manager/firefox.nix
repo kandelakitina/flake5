@@ -21,18 +21,18 @@
       #   "${inputs.firefox-gnome-theme}/configuration/user.js"}
       # '';
 
-      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
-        ublock-origin
-        darkreader
-        gesturefy
-        istilldontcareaboutcookies
-        # onetab
-        raindropio
-        tab-session-manager
-        # persistentpin
-        undoclosetabbutton
-        # browserpass
-      ];
+      # extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+      # ublock-origin
+      # darkreader
+      # gesturefy
+      # istilldontcareaboutcookies
+      # onetab
+      # raindropio
+      # tab-session-manager
+      # persistentpin
+      # undoclosetabbutton
+      # browserpass
+      # ];
 
       settings = {
 
