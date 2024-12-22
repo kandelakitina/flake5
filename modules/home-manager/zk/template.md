@@ -1,8 +1,7 @@
 ---
 title: {{title}}
 date: {{format-date now}}
-tags:
-- {{slug title}}
+tags: [ ]
 ---
 
 TARGET DECK: Coding::{{title}}

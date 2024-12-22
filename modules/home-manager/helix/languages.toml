@@ -13,6 +13,14 @@ auto-format = true
 language-servers = ["vscode-html-language-server", "emmet-ls"]
 # formatter = { command = 'prettier', args = ["--parser", "html"] }
 
+[language-server.zk]
+command = "zk"
+args = ["lsp"]
+
+[[language]]
+name = "markdown"
+language-servers = ["zk"]
+
 # [[language]]
 # name = "typescript"
 # auto-format = true
