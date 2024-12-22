@@ -10,6 +10,8 @@
     };
   };
 
+  home-manager.backupFileExtension = "backup";
+
   environment.etc = lib.mapAttrs' (name: value: {
     name = "nix/path/${name}";
     value.source = value.flake;
