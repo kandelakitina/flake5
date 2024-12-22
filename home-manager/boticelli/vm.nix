@@ -24,7 +24,7 @@
     # ../../modules/home-manager/sops.nix
     ../../modules/home-manager/starship.nix
     ../../modules/home-manager/sgpt.nix
-    ../../modules/home-manager/zk.nix
+    ../../modules/home-manager/zk
   ];
 
   colorScheme = import ../../modules/home-manager/colorschemes/iterm.nix;

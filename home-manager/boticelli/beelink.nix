@@ -36,7 +36,7 @@
     ../../modules/home-manager/whatsapp.nix
     ../../modules/home-manager/wallpaper.nix
     ../../modules/home-manager/yubikey.nix
-    ../../modules/home-manager/zk.nix
+    ../../modules/home-manager/zk
   ];
 
   colorScheme = import ../../modules/home-manager/colorschemes/iterm.nix;
