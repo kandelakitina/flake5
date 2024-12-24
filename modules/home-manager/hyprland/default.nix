@@ -1,11 +1,12 @@
 { config, pkgs, lib, ... }: {
   imports = [
-    ./waybar
-    ./wofi.nix
     ./bindings.nix
+    ./mako.nix
+    ./pyprland.nix
     ./swayidle.nix
     ./swaylock.nix
-    ./mako.nix
+    ./waybar
+    ./wofi.nix
   ];
   home = {
     packages = with pkgs; [
@@ -18,6 +19,7 @@
       swayidle
       # swaylock
       wl-gammarelay-rs
+      pyprland
     ];
   };
 
@@ -56,6 +58,7 @@
         "${pkgs.yubikey-touch-detector}/bin/yubikey-touch-detector -libnotify"
         "${pkgs.blueman}/bin/blueman-applet &"
         "${pkgs.bluez}/bin/bluetoothctl power on" # Ensures Bluetooth is turned on
+        "${pkgs.pyprland}/bin/pypr"
       ];
       monitor = [ ",preferred,auto,auto" "eDP-1,preferred,auto,1" ];
       # cursor = { inactive_timeout = 4; };
@@ -175,6 +178,9 @@
         windowrulev2 = float, title:^(Bluetooth Devices)$
         windowrulev2 = size 50% 20%, title:^(Bluetooth Devices)$
         windowrulev2 = move 45% 20%, title:^(Bluetooth Devices)$
+
+        # zk last scratchpad
+        # windowrulev2 = float, move 50% 0,resize set 50% 100%,title:zklast
       '';
   };
 }
