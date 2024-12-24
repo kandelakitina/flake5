@@ -1,7 +1,7 @@
 {
   wayland.windowManager.hyprland.settings.bind = [
     "SUPER, n, exec, pypr toggle zklast && hyprctl dispatch bringactivetotop"
-    "SUPER, Return, exec, pypr toggle alacritty && hyprctl dispatch bringactivetotop"
+    # "SUPER, Return, exec, pypr toggle alacritty && hyprctl dispatch bringactivetotop"
   ];
 
   home.file.".config/hypr/pyprland.toml".text = # toml
@@ -13,8 +13,8 @@
       command = "alacritty --title zklast -e zk edit --limit 1 --sort modified-"
       class = "scratchpad"
 
-      [scratchpads.alacritty]
-      command = "alacritty"
-      class = "scratchpad"
+      # [scratchpads.alacritty]
+      # command = "alacritty"
+      # class = "scratchpad"
     '';
 }

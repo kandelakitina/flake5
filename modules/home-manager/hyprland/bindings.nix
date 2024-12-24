@@ -44,6 +44,7 @@
         j = down;
       };
     in [
+      "SUPER, Return, exec, ${pkgs.alacritty}/bin/alacritty"
       "SUPER, W, exec, ${pkgs.wofi}/bin/wofi -S drun"
       "SUPER, D, exec, ${pkgs.wofi}/bin/wofi -S run"
       "SUPER, B, exec, ${pkgs.firefox}/bin/firefox --show drun"
