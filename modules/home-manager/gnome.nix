@@ -181,13 +181,13 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
       {
         binding = "<Super>b";
-        command = "${(lib.getExe pkgs.run-firefox)}";
+        command = "run-firefox";
         name = "Firefox";
       };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =
       {
-        binding = "<Super>backslash";
-        command = "${(lib.getExe pkgs.run-alacritty)}";
+        binding = "<Super>Return";
+        command = "run-alacritty";
         name = "Alacritty";
       };
 

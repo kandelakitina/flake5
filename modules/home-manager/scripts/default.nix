@@ -3,6 +3,10 @@
 # https://github.com/Frost-Phoenix/nixos-config/blob/2bba124946e7530cee136f554f4d5cd8834bdf20/modules/home/scripts/scripts.nix
 
 let
+  run-firefox =
+    pkgs.writeShellScriptBin "run-firefox" (builtins.readFile ./run-firefox.sh);
+  run-alacritty = pkgs.writeShellScriptBin "run-alacritty"
+    (builtins.readFile ./run-alacritty.sh);
   waybar-yubikey = pkgs.writeShellScriptBin "waybar-yubikey"
     (builtins.readFile ./waybar-yubikey.sh);
   wall-change =
@@ -32,10 +36,13 @@ let
 
   # ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
 in {
-  home.packages = with pkgs; [
+  home.packages = [
     waybar-yubikey
     wall-change
     wallpaper-picker
+
+    run-firefox
+    run-alacritty
 
     # runbg
     # music

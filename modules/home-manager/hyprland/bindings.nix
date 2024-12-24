@@ -5,7 +5,7 @@
     bind = let
       grimblast = lib.getExe pkgs.inputs.hyprwm-contrib.grimblast;
       tesseract = lib.getExe pkgs.tesseract;
-      pactl = lib.getExe' pkgs.pulseaudio "pactl";
+      # pactl = lib.getExe' pkgs.pulseaudio "pactl";
       notify-send = lib.getExe' pkgs.libnotify "notify-send";
       # defaultApp = type: "${lib.getExe pkgs.handlr-regex} launch ${type}";
       # workspaces = [
@@ -44,7 +44,8 @@
         j = down;
       };
     in [
-      "SUPER, Return, exec, ${pkgs.alacritty}/bin/alacritty"
+      # "SUPER, Return, exec, ${pkgs.alacritty}/bin/alacritty"
+      "SUPER, Return, exec, run-alacritty"
       "SUPER, W, exec, ${pkgs.wofi}/bin/wofi -S drun"
       "SUPER, D, exec, ${pkgs.wofi}/bin/wofi -S run"
       "SUPER, B, exec, ${pkgs.firefox}/bin/firefox --show drun"
