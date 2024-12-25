@@ -3,6 +3,10 @@
 # https://github.com/Frost-Phoenix/nixos-config/blob/2bba124946e7530cee136f554f4d5cd8834bdf20/modules/home/scripts/scripts.nix
 
 let
+  mountUsb =
+    pkgs.writeShellScriptBin "mountUsb" (builtins.readFile ./mountUsb.sh);
+  mountEncryptedUsb = pkgs.writeShellScriptBin "mountEncryptedUsb"
+    (builtins.readFile ./mountEncryptedUsb.sh);
   run-firefox =
     pkgs.writeShellScriptBin "run-firefox" (builtins.readFile ./run-firefox.sh);
   run-alacritty = pkgs.writeShellScriptBin "run-alacritty"
@@ -43,6 +47,9 @@ in {
 
     run-firefox
     run-alacritty
+
+    mountUsb
+    mountEncryptedUsb
 
     # runbg
     # music
