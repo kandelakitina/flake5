@@ -18,6 +18,9 @@
         # Whatsapp
         windowrulev2 = workspace 4, title:^(WhatsApp for Linux)$
 
+        # Whatsapp
+        windowrulev2 = workspace 3, class:obsidian
+
         # zk last scratchpad
         # windowrulev2 = float, move 50% 0,resize set 50% 100%,title:zklast
       '';
