@@ -1,8 +1,8 @@
 { config, ... }:
 let
   custom = {
-    # font = config.fontProfiles.monospace.family;
-    font = "Ubuntu Nerd Font";
+    font = config.fontProfiles.monospace.family;
+    # font = "Ubuntu Nerd Font";
     font_size = "15px";
     font_weight = "normal";
     darkGrey = "#${config.colorScheme.palette.base01}";
