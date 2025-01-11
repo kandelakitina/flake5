@@ -1,7 +1,7 @@
 { pkgs, lib, ... }: {
   # Sound options
   security.rtkit.enable = true;
-  hardware.pulseaudio.enable = lib.mkForce false;
+  # hardware.pulseaudio.enable = lib.mkForce false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
