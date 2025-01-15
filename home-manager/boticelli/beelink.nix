@@ -23,6 +23,7 @@
     ../../modules/home-manager/gnupg.nix
     ../../modules/home-manager/goldendict.nix
     ../../modules/home-manager/mpv.nix
+    ../../modules/home-manager/nb.nix
     ../../modules/home-manager/nix.nix
     # ../../modules/home-manager/nixvim.nix
     ../../modules/home-manager/nnn.nix
@@ -31,6 +32,7 @@
     # ../../modules/home-manager/sops.nix
     ../../modules/home-manager/starship.nix
     ../../modules/home-manager/sgpt.nix
+    ../../modules/home-manager/syncVault.nix
     ../../modules/home-manager/transmission.nix
     ../../modules/home-manager/telegram.nix
     ../../modules/home-manager/whatsapp.nix
