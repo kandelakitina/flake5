@@ -8,6 +8,7 @@ let
       cd $VAULT_DIR || exit 1
       git add .
       git commit -m "$(date '+%Y-%m-%d %H:%M:%S')" || exit 0
+      git push || true
     '';
 in {
   home.packages = [ gitSyncVault ];
