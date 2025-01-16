@@ -23,7 +23,7 @@
     ../../modules/home-manager/gnupg.nix
     ../../modules/home-manager/goldendict.nix
     ../../modules/home-manager/mpv.nix
-    ../../modules/home-manager/nb.nix
+    # ../../modules/home-manager/nb.nix
     ../../modules/home-manager/nix.nix
     # ../../modules/home-manager/nixvim.nix
     ../../modules/home-manager/nnn.nix

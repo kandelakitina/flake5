@@ -23,6 +23,7 @@
           "zk edit --sort created- --created-after 'last two weeks' --interactive";
         conf = ''
           $EDITOR "$ZK_NOTEBOOK_DIR/.zk/config.toml"''; # Adjusted for proper string handling in Nix
+        save = ''git add . && git commit -m "zk save" && git push'';
       };
       lsp = {
         diagnostics = {

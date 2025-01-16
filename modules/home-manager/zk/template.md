@@ -6,10 +6,6 @@ tags: [ ]
 
 TARGET DECK: Coding::{{title}}
 
-## TOC
-```toc
-```
-
 ## Intro 
 
 {{content}}
