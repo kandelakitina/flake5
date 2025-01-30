@@ -1,6 +1,8 @@
-{ pkgs, config, ... }: {
-
-  home.packages = with pkgs; [ shell-gpt ];
-  home.shellAliases = { sgpt = "proxychains4 -q sgpt"; };
-
-}
+{ pkgs, ... }:
+let
+  ai = pkgs.writeShellScriptBin "ai" # bash
+    ''
+      #!/bin/sh
+      proxychains4 -q sgpt "$@"
+    '';
+in { home.packages = with pkgs; [ ai shell-gpt ]; }

@@ -39,12 +39,6 @@
         ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       '';
 
-    shellInit = ''
-      function ai
-        proxychains4 sgpt $argv
-      end
-    '';
-
     plugins = [
       # Enable a plugin (here grc for colorized command output) from nixpkgs
       # { name = "grc"; src = pkgs.fishPlugins.grc.src; }
