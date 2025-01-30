@@ -12,6 +12,7 @@
 
     ../../modules/home-manager/scripts
 
+    ../../modules/home-manager/aichat.nix
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/anki.nix
     ../../modules/home-manager/cheatsheets.nix
