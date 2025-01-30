@@ -32,4 +32,6 @@ in {
     [ProxyList]
     socks5 127.0.0.1 20170
   '';
+
+  home.shellAliases = { proxy = "proxychains4 -q"; };
 }
