@@ -43,7 +43,7 @@ in {
 
   home = {
     persistence = {
-      "/persist/home/boticelli" = { files = [ ".cache/zellij" ]; };
+      "/persist/home/boticelli" = { directories = [ ".cache/zellij" ]; };
     };
   };
 
