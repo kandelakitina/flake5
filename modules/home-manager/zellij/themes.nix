@@ -15,7 +15,7 @@ in {
     fg = grey; # Buttons' colors
     red = green; # Keybinds on buttons
     black = background; # Bars background and "LOCK" etc
-    green = red; # Panes' borders, tabs button, secondary keys in Tips
+    green = purple; # Panes' borders, tabs button, secondary keys in Tips
     bg = purple; # ???
     yellow = yellow;
     blue = blue;
