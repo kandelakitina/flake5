@@ -31,6 +31,9 @@
           select = "underline";
         };
 
+        # Jump around with this buttons
+        jump-label-alphabet = "jfkdls;aurieowpqnvmcxz";
+
         # indent-guides = {
         #   render = true;
         #   character = "┊";
@@ -73,6 +76,10 @@
       };
 
       keys.normal = {
+
+        # Jump around with enter
+        "ret" = "goto_word";
+
         "{" = "goto_prev_paragraph";
         "}" = "goto_next_paragraph";
         "X" = "extend_line_above";
