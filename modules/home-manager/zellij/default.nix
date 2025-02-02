@@ -40,4 +40,11 @@ in {
       copyOnSelect = true;
     };
   };
+
+  home = {
+    persistence = {
+      "/persist/home/boticelli" = { files = [ ".cache/zellij" ]; };
+    };
+  };
+
 }

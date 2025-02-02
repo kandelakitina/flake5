@@ -61,6 +61,10 @@
           newline = "↴";
           tab = "⇥";
         };
+        soft-wrap = {
+          enable = true;
+          wrap-indicator = "";
+        };
       };
 
       keys.insert = {
