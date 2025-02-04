@@ -1,7 +1,7 @@
 {
   wayland.windowManager.hyprland.settings.bind = [
-    "SUPER, l, exec, pypr toggle zklast && hyprctl dispatch bringactivetotop"
-    "SUPER, n, exec, pypr toggle zkopen && hyprctl dispatch bringactivetotop"
+    "SUPER, n, exec, pypr toggle zklast && hyprctl dispatch bringactivetotop"
+    "SUPER, z, exec, pypr toggle zkopen && hyprctl dispatch bringactivetotop"
   ];
 
   home.file.".config/hypr/pyprland.toml".text = # toml
