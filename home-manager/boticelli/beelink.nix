@@ -53,12 +53,18 @@
     monospace = {
       # family = "JetBrainsMono Nerd Font";
       # package = pkgs.nerd-fonts.jetbrains-mono;
+
+      # family = "UbuntuMono Nerd Font";
+      # package = pkgs.nerd-fonts.ubuntu-mono;
+
       family = "Iosevka Nerd Font";
       package = pkgs.nerd-fonts.iosevka;
     };
     regular = {
+
       family = "Ubuntu Nerd Font";
       package = pkgs.nerd-fonts.ubuntu;
+
       # family = "Iosevka Nerd Font";
       # package = pkgs.nerd-fonts.iosevka;
     };
