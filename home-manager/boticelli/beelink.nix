@@ -96,6 +96,7 @@
           "Pictures"
           ".config/sops/age"
           "flake5"
+          "goldendict"
           ".local/bin"
           ".ssh"
           "vault"
