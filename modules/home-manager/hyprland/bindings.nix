@@ -44,8 +44,11 @@
         j = down;
       };
     in [
-      # "SUPER, Return, exec, ${pkgs.alacritty}/bin/alacritty"
-      "SUPER, Return, exec, run-alacritty"
+
+      # Tools 
+      "SUPER, X ,exec, hyprpicker -a"
+      "SUPER, C, exec, goldendict $(wl-paste -n -p)"
+      "SUPER, Return, exec, run-alacritty" # my script to only have one alacritty on workspace
       "SUPER, W, exec, ${pkgs.wofi}/bin/wofi -S drun"
       "SUPER, D, exec, ${pkgs.wofi}/bin/wofi -S run"
       "SUPER, B, exec, ${pkgs.firefox}/bin/firefox --show drun"
@@ -53,6 +56,46 @@
       "SUPER, O, exec, ${pkgs.obsidian}/bin/obsidian"
       "SUPER, T, exec, ${pkgs.telegram-desktop}/bin/telegram-desktop"
 
+      # To OCR
+      "ALT,Print,exec,${grimblast} --freeze save area - | ${tesseract} - - | wl-copy && ${notify-send} -t 3000 'OCR result copied to buffer'"
+
+      # Screenshotting
+      ",Print,exec,${grimblast} --notify --freeze copy output"
+      "SUPERSHIFT,s,exec,${grimblast} --notify --freeze copy area"
+
+      # Shotdown menu
+      "SUPER, backspace, exec, shutdown-script" # custom script
+
+      # Windows management
+      "SUPER, s, togglesplit"
+      "SUPER, space, fullscreen,1"
+      "SUPER, f, togglefloating"
+      "SUPERSHIFT, space, fullscreen,0"
+
+      "SUPER,minus,splitratio,-0.25"
+      "SUPERSHIFT,minus,splitratio,-0.3333333"
+
+      "SUPER,equal,splitratio,0.25"
+      "SUPERSHIFT,equal,splitratio,0.3333333"
+
+      "SUPER,apostrophe,workspace,previous"
+      "SUPERSHIFT,apostrophe,workspace,next"
+
+      "SUPER,u,togglespecialworkspace"
+      "SUPERSHIFT,u,movetoworkspacesilent,special"
+
+      "SUPER,i,pseudo"
+
+      "SUPER,q,killactive"
+      "SUPERSHIFT,e,exit"
+
+      # Grouping windows
+      # "SUPER, g,togglegroup"
+      # "SUPER, t,lockactivegroup,toggle"
+      # "SUPER, tab,changegroupactive,f"
+      # "SUPERSHIFT, tab,changegroupactive,b"
+
+      # Brightness keys
       ",XF86MonBrightnessUp,exec,brightnessctl set 5%+"
       ",XF86MonBrightnessDown,exec,brightnessctl set 5%-"
 
@@ -61,42 +104,6 @@
       ",XF86AudioLowerVolume,exec,XF86AudioLowerVolume, exec, wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"
       ",XF86AudioMute,exec,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 
-      # Screenshotting
-      ",Print,exec,${grimblast} --notify --freeze copy output"
-      "SUPERSHIFT,s,exec,${grimblast} --notify --freeze copy area"
-
-      # To OCR
-      "ALT,Print,exec,${grimblast} --freeze save area - | ${tesseract} - - | wl-copy && ${notify-send} -t 3000 'OCR result copied to buffer'"
-
-      "SUPER,q,killactive"
-      "SUPERSHIFT,e,exit"
-
-      "SUPER,s,togglesplit"
-      "SUPER,space,fullscreen,1"
-      "SUPERSHIFT,space,fullscreen,0"
-      "SUPER,f,togglefloating"
-
-      "SUPER,minus,splitratio,-0.25"
-      "SUPERSHIFT,minus,splitratio,-0.3333333"
-
-      "SUPER,equal,splitratio,0.25"
-      "SUPERSHIFT,equal,splitratio,0.3333333"
-
-      "SUPER,g,togglegroup"
-      "SUPER,t,lockactivegroup,toggle"
-      "SUPER,tab,changegroupactive,f"
-      "SUPERSHIFT,tab,changegroupactive,b"
-
-      "SUPER,apostrophe,workspace,previous"
-      "SUPERSHIFT,apostrophe,workspace,next"
-
-      "SUPER,u,togglespecialworkspace"
-      "SUPERSHIFT,u,movetoworkspacesilent,special"
-      "SUPER,i,pseudo"
-
-      "SUPER, backspace, exec, shutdown-script" # custom script
-
-      "SUPER, C ,exec, hyprpicker -a"
       "SUPER,1,workspace,1"
       "SUPER,2,workspace,2"
       "SUPER,3,workspace,3"

@@ -12,6 +12,9 @@
         windowrulev2 = size 50% 20%, title:^(Bluetooth Devices)$
         windowrulev2 = move 45% 20%, title:^(Bluetooth Devices)$
 
+        # Goldendict
+        windowrulev2 = float, class:GoldenDict-ng
+
         # Telegram
         windowrulev2 = workspace 4, title:Telegram*
 
