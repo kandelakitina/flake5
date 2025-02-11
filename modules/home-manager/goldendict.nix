@@ -4,7 +4,7 @@
   home = {
     persistence = {
       "/persist/home/boticelli" = {
-        # directories = [ ".config/goldendict" ];
+        directories = [ ".cache/goldendict" ];
         files = [ ".config/goldendict/config" ];
       };
     };
