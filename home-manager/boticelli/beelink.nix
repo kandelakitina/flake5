@@ -12,14 +12,14 @@
 
     ../../modules/home-manager/scripts
 
-    ../../modules/home-manager/aichat.nix
+    # ../../modules/home-manager/aichat.nix
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/anki.nix
     ../../modules/home-manager/cheatsheets.nix
     ../../modules/home-manager/firefox.nix
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/fonts.nix
-    ../../modules/home-manager/gh.nix
+    # ../../modules/home-manager/gh.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/gnupg.nix
     ../../modules/home-manager/goldendict.nix
@@ -34,7 +34,7 @@
     ../../modules/home-manager/starship.nix
     ../../modules/home-manager/sgpt.nix
     ../../modules/home-manager/syncVault.nix
-    ../../modules/home-manager/transmission.nix
+    # ../../modules/home-manager/transmission.nix
     ../../modules/home-manager/telegram.nix
     ../../modules/home-manager/whatsapp.nix
     ../../modules/home-manager/wallpaper.nix

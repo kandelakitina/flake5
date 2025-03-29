@@ -30,7 +30,7 @@
     ../../modules/nixos/ssh.nix
     ../../modules/nixos/system.nix
     ../../modules/nixos/v2ray.nix
-    ../../modules/nixos/virtualisation.nix
+    # ../../modules/nixos/virtualisation.nix
     ../../modules/nixos/yubikey.nix
 
     ../../modules/nixos/users/boticelli.nix
