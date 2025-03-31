@@ -3,5 +3,5 @@
 {
   programs.home-manager.enable = true;
 
-  home.packages = [ pkgs.nodejs ];
+  home.packages = with pkgs; with nodePackages; [ nodejs live-server ];
 }
