@@ -34,14 +34,22 @@
         # Jump around with this buttons
         jump-label-alphabet = "jfkdls;aurieowpqnvmcxz";
 
-        # indent-guides = {
-        #   render = true;
-        #   character = "┊";
-        # };
+        indent-guides = {
+          render = true;
+          character = "╎";
+        };
 
         lsp = {
           display-messages = true;
-          display-inlay-hints = true;
+          auto-signature-help = false;
+          # display-inlay-hints = true;
+        };
+
+        # Minimum severity to show a diagnostic after the end of a line
+        end-of-line-diagnostics = "hint";
+        inline-diagnostics = {
+          cursor-line = "error";
+          other-lines = "disable";
         };
 
         gutters = [ "diagnostics" "line-numbers" "spacer" "diff" ];
@@ -82,9 +90,12 @@
 
         "{" = "goto_prev_paragraph";
         "}" = "goto_next_paragraph";
-        "X" = "extend_line_above";
         "D" = [ "kill_to_line_end" ];
         "esc" = [ "collapse_selection" "keep_primary_selection" ];
+
+        # "X" = "extend_line_above";
+        "X" = "select_line_above";
+        "C-x" = "extend_to_line_bounds";
 
         space.space = "file_picker";
         space.w = ":w";
@@ -124,6 +135,11 @@
 
         # Piping to AI
         # "C-l" = [ ":pipe proxychains4 sgpt -c {}" ];
+      };
+
+      keys.select = {
+        "C-x" = "extend_to_line_bounds";
+        "X" = "select_line_above";
       };
 
       keys.normal.space.u = {

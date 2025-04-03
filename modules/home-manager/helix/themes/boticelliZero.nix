@@ -204,6 +204,8 @@ in {
     fg = red;
     # bg = yellow;
   };
+  "ui.virtual.indent-guide" = { fg = grey; };
+  "ui.virtual.inlay-hint" = { fg = grey; };
   "ui.window" = { fg = blue; };
   "variable.builtin" = {
     fg = cyan;
