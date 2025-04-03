@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{ config, pkgs, ... }: {
   programs.git = {
     enable = true;
 
@@ -12,13 +8,9 @@
         pager = "delta";
       };
 
-      color = {
-        ui = true;
-      };
+      color = { ui = true; };
 
-      interactive = {
-        diffFitler = "delta --color-only";
-      };
+      interactive = { diffFitler = "delta --color-only"; };
 
       delta = {
         enable = true;
@@ -28,18 +20,14 @@
         options.syntax-theme = "catppuccin";
       };
 
-      pull = {
-        ff = "only";
-      };
+      pull = { ff = "only"; };
 
       push = {
         default = "current";
         autoSetupRemote = true;
       };
 
-      init = {
-        defaultBranch = "init";
-      };
+      init = { defaultBranch = "main"; };
     };
   };
 
@@ -74,7 +62,8 @@
         }
         {
           key = "S";
-          command = "git commit -m '{{index .PromptResponses 0}}' --no-gpg-sign";
+          command =
+            "git commit -m '{{index .PromptResponses 0}}' --no-gpg-sign";
           description = "commit without gpg signing";
           context = "global";
           subprocess = true;
@@ -83,9 +72,7 @@
     };
   };
 
-  home.packages = with pkgs; [
-    delta
-  ];
+  home.packages = with pkgs; [ delta ];
 
   home.shellAliases = {
     g = "git";
