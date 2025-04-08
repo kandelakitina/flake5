@@ -28,6 +28,7 @@
     ../../modules/nixos/sops.nix
     ../../modules/nixos/sound.nix
     ../../modules/nixos/ssh.nix
+    ../../modules/nixos/strongswan.nix
     ../../modules/nixos/system.nix
     ../../modules/nixos/v2ray.nix
     # ../../modules/nixos/virtualisation.nix

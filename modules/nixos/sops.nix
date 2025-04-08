@@ -43,4 +43,10 @@
     systemPackages = with pkgs; [ sops age ];
   };
 
+  sops.secrets."ipsec-secrets" = {
+    mode = "0600";
+    owner = "root";
+    group = "root";
+    path = "/etc/ipsec.secrets";
+  };
 }
