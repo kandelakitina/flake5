@@ -12,8 +12,8 @@ in {
 
       background = {
         color = palette.base00;
-        # path = "screenshot";
-        path = "~/Pictures/wallpapers/wallpapers/wallpaper";
+        path = "screenshot";
+        # path = "~/Pictures/wallpapers/wallpaper";
         blur_passes = 2;
         brightness = 0.5;
       };
