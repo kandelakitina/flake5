@@ -3,8 +3,10 @@
     ./bindings.nix
     ./mako.nix
     ./pyprland.nix
-    ./swayidle.nix
-    ./swaylock.nix
+    # ./swayidle.nix
+    # ./swaylock.nix
+    ./hyprlock.nix
+    ./hypridle.nix
     ./waybar
     ./wofi.nix
     ./windowrules.nix
