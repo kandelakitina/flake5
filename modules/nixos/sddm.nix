@@ -10,7 +10,7 @@
           enable = true; # This set SDDM's theme to "sddm-sugar-candy-nix".
           settings = {
             # Set your configuration options here.
-            Background = lib.cleanSource ../../wallpapers/frieren1.jpg;
+            Background = lib.cleanSource ../../images/magentaAbstract.jpg;
             ScreenWidth = 1920;
             ScreenHeight = 1080;
             # FormPosition = "left";
