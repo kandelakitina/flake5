@@ -25,13 +25,7 @@
   # Clipboard share in VM 
   services.spice-vdagentd.enable = true;
 
-  environment.defaultPackages = with pkgs;
-    lib.mkForce [
-
-      # nh - nix helper. nh os switch, nh home switch, nh clean
-      nh
-      wget
-    ];
+  environment.defaultPackages = with pkgs; lib.mkForce [ wget ];
 
   home-manager.backupFileExtension = "backup";
 }

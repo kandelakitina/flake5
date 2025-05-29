@@ -25,6 +25,7 @@
     ../../modules/home-manager/goldendict.nix
     ../../modules/home-manager/mpv.nix
     # ../../modules/home-manager/nb.nix
+    ../../modules/home-manager/nh.nix
     ../../modules/home-manager/nix.nix
     # ../../modules/home-manager/nixvim.nix
     ../../modules/home-manager/nnn.nix
@@ -83,7 +84,8 @@
     sessionPath = [ "$HOME/.local/bin" ];
     shellAliases = { sysrestart = "systemctl --user reset-failed"; };
     sessionVariables = {
-      FLAKE = "$HOME/flake5";
+      # Flake path for nh
+      NH_FLAKE = "$HOME/flake5";
       EDITOR = "hx";
       BROWSER = "firefox";
       TERMINAL = "alacritty";
