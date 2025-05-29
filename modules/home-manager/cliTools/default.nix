@@ -8,6 +8,12 @@
       enableFishIntegration = true;
     };
 
+    carapace = {
+      enable = true;
+      enableFishIntegration = true;
+      enableBashIntegration = true;
+    };
+
     # better ctrl-r history search (replaces fzf)
     # see also atuin
     # mcfly = {
