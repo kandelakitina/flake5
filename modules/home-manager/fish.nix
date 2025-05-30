@@ -33,31 +33,60 @@
           end
         '';
     };
+
     interactiveShellInit = # bash
       ''
         set fish_greeting (echo -e "\e[38;5;135m┏(-_-)┛\e[38;5;15m┗(-_-)┓\e[38;5;196m┗(-_-)┛\e[38;5;226m┏(-_-)┓\e[38;5;82m┏(-_-)┛\e[38;5;87m┗(-_-)┓\e[38;5;33m┗(-_-)┛\e[0m")
         ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       '';
 
-    plugins = [
+    plugins = with pkgs.fishPlugins; [
       # Enable a plugin (here grc for colorized command output) from nixpkgs
-      # { name = "grc"; src = pkgs.fishPlugins.grc.src; }
+      # { name = "grc"; src = grc.src; }
+      {
+        name = "bass";
+        src = bass.src;
+      }
+      {
+        name = "colored-man-pages";
+        src = colored-man-pages.src;
+      }
+      {
+        name = "fish-you-should-use";
+        src = fish-you-should-use.src;
+      }
+      {
+        name = "plugin-git";
+        src = plugin-git.src;
+      }
+      {
+        name = "plugin-sudope";
+        src = plugin-sudope.src;
+      }
+      {
+        name = "humantime-fish";
+        src = humantime-fish.src;
+      }
+      {
+        name = "fifc";
+        src = fifc.src;
+      }
       {
         name = "fzf-fish";
-        src = pkgs.fishPlugins.fzf-fish.src;
+        src = fzf-fish.src;
       }
       {
         name = "done";
-        src = pkgs.fishPlugins.done.src;
+        src = done.src;
       }
       {
         name = "autopair";
-        src = pkgs.fishPlugins.autopair.src;
+        src = autopair.src;
       }
       # TODO: Learn bindings on https://github.com/wfxr/forgit
       {
         name = "forgit";
-        src = pkgs.fishPlugins.forgit.src;
+        src = forgit.src;
       }
       {
         name = "zoxide.fish";
