@@ -47,10 +47,10 @@
 
     plugins = with pkgs.fishPlugins; [
       # Enable a plugin (here grc for colorized command output) from nixpkgs
-      {
-        name = "grc";
-        src = grc.src;
-      }
+      # {
+      #   name = "grc";
+      #   src = grc.src;
+      # }
       {
         name = "tacklebox";
         src = pkgs.fetchFromGitHub {
