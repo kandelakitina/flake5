@@ -80,7 +80,7 @@
     du = "dust";
     df = "duf";
     ps = "procs";
-    cd = "z";
+    # cd = "z";
     grep = "rg";
     dig = "dog";
     cat = "bat";

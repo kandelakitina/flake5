@@ -48,6 +48,7 @@
       inactive =
         "0xaa${lib.removePrefix "#" config.colorScheme.palette.base00}";
     in {
+      ecosystem = { no_update_news = true; };
 
       exec-once = [
         "${pkgs.waybar}/bin/waybar &"
