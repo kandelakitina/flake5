@@ -38,11 +38,46 @@
       ''
         set fish_greeting (echo -e "\e[38;5;135m┏(-_-)┛\e[38;5;15m┗(-_-)┓\e[38;5;196m┗(-_-)┛\e[38;5;226m┏(-_-)┓\e[38;5;82m┏(-_-)┛\e[38;5;87m┗(-_-)┓\e[38;5;33m┗(-_-)┛\e[0m")
         ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+
+        # Carapace
+        set -g CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense'
+        # carapace --init fish | source
+        carapace _carapace fish | source
       '';
 
     plugins = with pkgs.fishPlugins; [
       # Enable a plugin (here grc for colorized command output) from nixpkgs
-      # { name = "grc"; src = grc.src; }
+      {
+        name = "grc";
+        src = grc.src;
+      }
+      {
+        name = "tacklebox";
+        src = pkgs.fetchFromGitHub {
+          owner = "justinmayer";
+          repo = "tacklebox";
+          rev = "1c13cecd5748013be89373ab087dac94e861598d";
+          sha256 = "BGFPnGdF/wmnJH8YJqyBi4Pb6DlPM509fj+GnTnWkQc=";
+        };
+      }
+      {
+        name = "fish-fastdir";
+        src = pkgs.fetchFromGitHub {
+          owner = "danhper";
+          repo = "fish-fastdir";
+          rev = "dddc6c13b4afe271dd91ec004fdd199d3bbb1602";
+          sha256 = "iu7zNO7yKVK2bhIIlj4UKHHqDaGe4q2tIdNgifxPev4=";
+        };
+      }
+      {
+        name = "fish-abbreviation-tips";
+        src = pkgs.fetchFromGitHub {
+          owner = "gazorby";
+          repo = "fish-abbreviation-tips";
+          rev = "8ed76a62bb044ba4ad8e3e6832640178880df485";
+          sha256 = "05b5qp7yly7mwsqykjlb79gl24bs6mbqzaj5b3xfn3v2b7apqnqp";
+        };
+      }
       {
         name = "bass";
         src = bass.src;
@@ -67,10 +102,11 @@
         name = "humantime-fish";
         src = humantime-fish.src;
       }
-      {
-        name = "fifc";
-        src = fifc.src;
-      }
+      # Use carapace instead
+      # {
+      #   name = "fifc";
+      #   src = fifc.src;
+      # }
       {
         name = "fzf-fish";
         src = fzf-fish.src;
@@ -78,6 +114,10 @@
       {
         name = "done";
         src = done.src;
+      }
+      {
+        name = "pisces";
+        src = pisces.src;
       }
       {
         name = "autopair";

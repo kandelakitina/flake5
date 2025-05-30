@@ -56,6 +56,7 @@
 
   home.packages = with pkgs; [
     fd # better find
+    carapace-bridge # bridges for carapace
     choose # a better cut / awk
     curlie # curl + httpie
     du-dust # see file trees ('dust')
