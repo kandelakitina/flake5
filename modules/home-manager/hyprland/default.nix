@@ -1,15 +1,16 @@
 { config, pkgs, lib, ... }: {
   imports = [
     ./bindings.nix
-    ./mako.nix
+    ./dunst.nix
+    ./hypridle.nix
+    ./hyprlock.nix
+    # ./mako.nix
     ./pyprland.nix
     # ./swayidle.nix
     # ./swaylock.nix
-    ./hyprlock.nix
-    ./hypridle.nix
     ./waybar
-    ./wofi.nix
     ./windowrules.nix
+    ./wofi.nix
   ];
   home = {
     packages = with pkgs; [
@@ -52,7 +53,7 @@
 
       exec-once = [
         "${pkgs.waybar}/bin/waybar &"
-        "${pkgs.mako}/bin/mako &"
+        # "${pkgs.mako}/bin/mako &"
         "nm-applet &"
         # "${pkgs.wlsunset}/bin/wlsunset -l 44.56 -L 38.09"
         "wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store"

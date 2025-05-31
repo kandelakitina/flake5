@@ -33,7 +33,7 @@
     # polkit-kde-agent
     swaybg
     # swaynotificationcenter
-    mako
+    # mako
     waybar
     wl-clipboard
     wofi
