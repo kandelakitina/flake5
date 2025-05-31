@@ -1,4 +1,10 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }:
+
+# To test mako run
+# notify-send "hello world\!" "This is a message"
+
+let inherit (config.colorScheme) palette;
+in {
   services.dunst = {
     enable = true;
 
@@ -10,33 +16,38 @@
     settings = {
       global = {
         follow = "keyboard";
-        width = 370;
-        separator_height = 1;
-        padding = 24;
-        horizontal_padding = 24;
-        frame_width = 1;
-        sort = "update";
-        idle_threshold = 120;
-        alignment = "center";
-        word_wrap = "yes";
-        transparency = 5;
-        format = "<b>%s</b>: %b";
-        markup = "full";
-        min_icon_size = 32;
-        max_icon_size = 128;
-        # highlight = mkForce base03;
+        width = 300;
+        font = "${config.fontProfiles.regular.family} 12";
+        word_wrap = true;
+        frame_width = 2;
+        frame_color = "#${palette.base05}";
+        separator_color = "frame";
+        padding = 8;
+        horizontal_padding = 8;
+        corner_radius = 8;
+        transparency = 10;
+        geometry = "300x5-10+10"; # widt
       };
 
       urgency_low = {
-        # foreground = mkForce base0A;
-        # frame_color = mkForce base02;
+        background = "#${palette.base00}";
+        foreground = "#${palette.base03}";
+        frame_color = "#${palette.base03}";
+        timeout = 5;
       };
 
-      # urgency_normal.frame_color = mkForce base02;
+      urgency_normal = {
+        background = "#${palette.base00}";
+        foreground = "#${palette.base05}";
+        frame_color = "#${palette.base05}";
+        timeout = 8;
+      };
 
       urgency_critical = {
-        # foreground = mkForce base08;
-        # frame_color = mkForce base02;
+        background = "#${palette.base00}";
+        foreground = "#${palette.base08}";
+        frame_color = "#${palette.base08}";
+        timeout = 10;
       };
     };
   };

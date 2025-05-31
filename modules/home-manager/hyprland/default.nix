@@ -54,6 +54,7 @@
       exec-once = [
         "${pkgs.waybar}/bin/waybar &"
         # "${pkgs.mako}/bin/mako &"
+        "${pkgs.dunst}/bin/dunst &"
         "nm-applet &"
         # "${pkgs.wlsunset}/bin/wlsunset -l 44.56 -L 38.09"
         "wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store"
