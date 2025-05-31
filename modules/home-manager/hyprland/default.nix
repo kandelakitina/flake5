@@ -44,7 +44,7 @@
     };
 
     settings = let
-      active = "0xaa${lib.removePrefix "#" config.colorScheme.palette.base0B}";
+      active = "0xaa${lib.removePrefix "#" config.colorScheme.palette.base05}";
       inactive =
         "0xaa${lib.removePrefix "#" config.colorScheme.palette.base00}";
     in {
