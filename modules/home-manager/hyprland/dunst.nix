@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-# To test mako run
+# To test run
 # notify-send "hello world\!" "This is a message"
 
 let inherit (config.colorScheme) palette;

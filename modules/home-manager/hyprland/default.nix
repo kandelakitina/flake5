@@ -4,7 +4,6 @@
     ./dunst.nix
     ./hypridle.nix
     ./hyprlock.nix
-    # ./mako.nix
     ./pyprland.nix
     # ./swayidle.nix
     # ./swaylock.nix
@@ -53,7 +52,6 @@
 
       exec-once = [
         "${pkgs.waybar}/bin/waybar &"
-        # "${pkgs.mako}/bin/mako &"
         "${pkgs.dunst}/bin/dunst &"
         "nm-applet &"
         # "${pkgs.wlsunset}/bin/wlsunset -l 44.56 -L 38.09"
