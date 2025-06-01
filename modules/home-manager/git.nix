@@ -32,6 +32,4 @@
   };
 
   home.packages = with pkgs; [ delta ];
-
-  home.shellAliases = { g = "git"; };
 }
