@@ -16,16 +16,16 @@ language-servers = ["vscode-html-language-server", "emmet-ls"]
 # Ruby
 [[language]]
 name = "ruby"
-formatter = { command = "rubyfmt" }
-# formatter = { command = "rubocop", args = [
-#   "--stdin",
-#   "foo.rb",
-#   "-a",
-#   "--stderr",
-#   "--fail-level",
-#   "fatal",
-# ] }
-auto-format = true
+# formatter = { command = "rubyfmt" }
+formatter = { command = "rubocop", args = [
+  "--stdin",
+  "foo.rb",
+  "-a",
+  "--stderr",
+  "--fail-level",
+  "fatal",
+] }
+auto-format = false
 language-servers = [{ name = "solargraph" }]
 # language-servers = ["ruby-lsp"]
 

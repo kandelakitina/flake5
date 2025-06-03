@@ -4,13 +4,11 @@
       ruby
       pry-byebug
 
-      # formatters
-      # rubocop
-      rubyfmt
+      rubocop
+      # rubyfmt
 
-      # LSP
-      solargraph
       # ruby-lsp
+      solargraph
       sorbet-runtime # type checker
     ];
 }
