@@ -14,26 +14,28 @@ language-servers = ["vscode-html-language-server", "emmet-ls"]
 # formatter = { command = 'prettier', args = ["--parser", "html"] }
 
 # Ruby
-[language-server.solargraph]
-command = "bundle"
-args = ["exec", "solargraph", "stdio"]
-config = { diagnostics = false, formatting = false }
-
-[language-server.rubocop]
-command = "bundle"
-args = ["exec", "rubocop", "--lsp", "--stderr", "--fail-level", "fatal"]
-timeout = 3
-
 [[language]]
 name = "ruby"
-language-servers = [
-  "rubocop",
-  { name = "solargraph", except-features = [
-    "format",
-    "diagnostics",
-  ] },
-]
-# auto-format = true
+formatter = { command = "rubyfmt" }
+# formatter = { command = "rubocop", args = [
+#   "--stdin",
+#   "foo.rb",
+#   "-a",
+#   "--stderr",
+#   "--fail-level",
+#   "fatal",
+# ] }
+auto-format = true
+language-servers = [{ name = "solargraph" }]
+# language-servers = ["ruby-lsp"]
+
+# [language-server.ruby-lsp]
+# command = "ruby-lsp"
+# config = { diagnostics = true, formatting = true }
+
+[language-server.solargraph]
+config.diagnostics = true
+config.formatting = false
 
 [[language]]
 name = "markdown"
