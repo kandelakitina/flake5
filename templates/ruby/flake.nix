@@ -15,6 +15,9 @@
             bundler
             pry-byebug
           ];
+        shellHook = ''
+          \e[31mWelcome to the Ruby development shell! \u{1F48E} \u{1F48E}\e[0m
+        '';
       };
     };
 }
