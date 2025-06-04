@@ -1,3 +1,4 @@
+# It's pretty much unfinished. Use inscapist/ruby-nix flake instead
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
