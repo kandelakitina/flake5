@@ -23,6 +23,7 @@
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/gnupg.nix
     ../../modules/home-manager/goldendict.nix
+    ../../modules/home-manager/gum.nix
     ../../modules/home-manager/lazygit.nix
     ../../modules/home-manager/mpv.nix
     # ../../modules/home-manager/nb.nix
