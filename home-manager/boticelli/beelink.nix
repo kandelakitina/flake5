@@ -33,7 +33,7 @@
     ../../modules/home-manager/node.nix
     ../../modules/home-manager/obsidian.nix
     ../../modules/home-manager/proxychains.nix
-    ../../modules/home-manager/ruby.nix
+    # ../../modules/home-manager/ruby.nix
     # ../../modules/home-manager/sops.nix
     ../../modules/home-manager/starship.nix
     ../../modules/home-manager/sgpt.nix
