@@ -3,6 +3,8 @@
 # https://github.com/Frost-Phoenix/nixos-config/blob/2bba124946e7530cee136f554f4d5cd8834bdf20/modules/home/scripts/scripts.nix
 
 let
+  ruby-init =
+    pkgs.writeShellScriptBin "ruby-init" (builtins.readFile ./ruby-init.sh);
   mountUsb =
     pkgs.writeShellScriptBin "mountUsb" (builtins.readFile ./mountUsb.sh);
   mountEncryptedUsb = pkgs.writeShellScriptBin "mountEncryptedUsb"
@@ -41,6 +43,8 @@ let
   # ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
 in {
   home.packages = [
+    ruby-init
+
     waybar-yubikey
     wall-change
     wallpaper-picker
