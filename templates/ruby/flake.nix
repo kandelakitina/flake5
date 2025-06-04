@@ -7,7 +7,14 @@
     flakelight ./. {
       inherit inputs;
       devShell = {
-        packages = pkgs: with pkgs; [ ruby bundlix bundler pry-byebug ];
+        packages = pkgs:
+          with pkgs;
+          with rubyPackages; [
+            ruby
+            bundix
+            bundler
+            pry-byebug
+          ];
         shellHook = ''
           echo -e "\e[1;35m💎 Welcome to the Ruby Dev Shell 💎\e[0m"
         '';
