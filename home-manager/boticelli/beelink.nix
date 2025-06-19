@@ -37,7 +37,7 @@
     # ../../modules/home-manager/ruby.nix
     # ../../modules/home-manager/sops.nix
     ../../modules/home-manager/starship.nix
-    ../../modules/home-manager/sgpt.nix
+    # ../../modules/home-manager/sgpt.nix # use aichat instead
     ../../modules/home-manager/syncVault.nix
     # ../../modules/home-manager/transmission.nix
     ../../modules/home-manager/telegram.nix
