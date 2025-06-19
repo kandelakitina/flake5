@@ -21,7 +21,6 @@
 
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/gnupg.nix
-    ../../modules/nixos/gtk-apps.nix
     ../../modules/nixos/impermanence.nix
     ../../modules/nixos/locale.nix
     ../../modules/nixos/nix.nix
