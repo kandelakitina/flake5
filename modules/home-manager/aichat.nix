@@ -3,7 +3,7 @@ let
   ai = pkgs.writeShellScriptBin "ai" # bash
     ''
       #!/bin/sh
-      aichat "$@"
+      proxychains4 -q aichat "$@"
     '';
 
 in {
