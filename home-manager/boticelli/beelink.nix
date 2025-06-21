@@ -6,13 +6,13 @@
     ../../modules/home-manager/cliTools
     ../../modules/home-manager/helix
     ../../modules/home-manager/zellij
+    ../../modules/home-manager/AI
 
     ../../modules/home-manager/gnome.nix
     ../../modules/home-manager/hyprland
 
     ../../modules/home-manager/scripts
 
-    ../../modules/home-manager/aichat.nix
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/anki.nix
     ../../modules/home-manager/cheatsheets.nix
@@ -37,7 +37,6 @@
     # ../../modules/home-manager/ruby.nix
     # ../../modules/home-manager/sops.nix
     ../../modules/home-manager/starship.nix
-    # ../../modules/home-manager/sgpt.nix # use aichat instead
     ../../modules/home-manager/syncVault.nix
     # ../../modules/home-manager/transmission.nix
     ../../modules/home-manager/telegram.nix
