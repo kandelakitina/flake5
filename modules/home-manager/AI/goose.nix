@@ -2,6 +2,9 @@
 
   home.packages = with pkgs; [ goose-cli ];
 
+  # Force goose to be ran via proxy
+  home.shellAliases = { goose = "proxychains4 -q goose"; };
+
   xdg.configFile."goose/config.yaml".text = # yaml
     ''
       OPENAI_BASE_PATH: v1/chat/completions
