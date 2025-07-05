@@ -26,7 +26,7 @@ echo "Setting up Ruby environment and installing gems..."
 nix develop --command bash -c "
   bundle init
   bundle add rubocop solargraph $EXTRA_GEMS --skip-install
-  bundle lock
+  bundle-lock
   bundix
 "
 
