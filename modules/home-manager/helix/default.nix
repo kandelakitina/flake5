@@ -18,6 +18,7 @@
       editor = {
         shell = [ "fish" "-c" ];
         color-modes = true;
+        continue-comments = false;
         cursorline = true;
         idle-timeout = 1;
         completion-replace = true;
