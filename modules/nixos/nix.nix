@@ -43,7 +43,7 @@
 
     gc = {
       automatic = true;
-      dates = "weekly";
+      dates = "monthly";
       # Delete older generations too
       options = "--delete-older-than 2d";
     };
