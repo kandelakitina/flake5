@@ -74,6 +74,7 @@
     xh # sending HTTP requests in CLi
     xxh # bring your shell with you upon SSH
     unzip
+    usbutils
   ];
 
   home.shellAliases = {
