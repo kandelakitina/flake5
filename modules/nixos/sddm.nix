@@ -2,6 +2,10 @@
   imports = [ inputs.sddm-sugar-candy-nix.nixosModules.default ];
   services = {
     displayManager = {
+      preStart = ''
+        echo "Sleeping to wait for session registration..."
+        sleep 1
+      '';
       defaultSession = "hyprland";
       sddm = {
         enable = true;
