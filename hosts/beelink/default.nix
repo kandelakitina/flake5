@@ -4,9 +4,6 @@
     # inputs.hardware.nixosModules.common-ssd
     # inputs.hardware.nixosModules.lenovo-thinkpad-x1-7th-gen
 
-    # simple flake to solve 'command-not-found' issue
-    # inputs.flake-programs-sqlite.nixosModules.programs-sqlite
-
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
 
@@ -20,6 +17,7 @@
     ../../modules/nixos/hyprland.nix
 
     ../../modules/nixos/bluetooth.nix
+    ../../modules/nixos/command-not-found.nix
     ../../modules/nixos/gnupg.nix
     ../../modules/nixos/impermanence.nix
     ../../modules/nixos/locale.nix
