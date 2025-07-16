@@ -47,7 +47,7 @@ in {
   # ---------
   xdg.configFile."aichat/config.yaml".text = # yaml
     ''
-      model: mistral
+      model: mistral:mistral-medium-latest
 
       clients:
       - type: openai-compatible
