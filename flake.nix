@@ -19,7 +19,7 @@
     sops-nix.url = "github:mic92/sops-nix";
 
     # simple flake to solve 'command-not-found' issue
-    flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
+    # flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
 
     firefox-gnome-theme = {
       url = "github:rafaelmardojai/firefox-gnome-theme";

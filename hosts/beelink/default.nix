@@ -5,7 +5,7 @@
     # inputs.hardware.nixosModules.lenovo-thinkpad-x1-7th-gen
 
     # simple flake to solve 'command-not-found' issue
-    inputs.flake-programs-sqlite.nixosModules.programs-sqlite
+    # inputs.flake-programs-sqlite.nixosModules.programs-sqlite
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
