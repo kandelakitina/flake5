@@ -3,8 +3,8 @@ let
   ai = pkgs.writeShellScriptBin "ai" # bash
     ''
       #!/bin/sh
-      # proxychains4 -q aichat "$@"
-      aichat "$@"
+      proxychains4 -q aichat "$@"
+      # aichat "$@"
     '';
 
 in {
@@ -12,18 +12,18 @@ in {
 
   # OPENAI
   # ------
-  # xdg.configFile."aichat/config.yaml".text = # yaml
-  #   ''
-  #     model: openai:gpt-4o
-  #     clients:
-  #     - type: openai
-  #       # api_key comes from $OPENAI_API_KEY env var
-  #       # See: https://github.com/sigoden/aichat/wiki/Environment-Variables#client-related-envs
-  #       api_key: null
-  #     stream: true
-  #     save: true
-  #     keybindings: v
-  #   '';
+  xdg.configFile."aichat/config.yaml".text = # yaml
+    ''
+      model: openai:gpt-4o
+      clients:
+      - type: openai
+        # api_key comes from $OPENAI_API_KEY env var
+        # See: https://github.com/sigoden/aichat/wiki/Environment-Variables#client-related-envs
+        api_key: null
+      stream: true
+      save: true
+      keybindings: v
+    '';
 
   # CODESTRAL
   # ---------
@@ -45,18 +45,18 @@ in {
 
   # MISTRAL
   # ---------
-  xdg.configFile."aichat/config.yaml".text = # yaml
-    ''
-      model: mistral:mistral-medium-latest
+  # xdg.configFile."aichat/config.yaml".text = # yaml
+  #   ''
+  #     model: mistral:mistral-medium-latest
 
-      clients:
-      - type: openai-compatible
-        name: mistral
-        api_base: https://api.mistral.ai/v1
-        # api_key is defined in MISTRAL_API_KEY variable
+  #     clients:
+  #     - type: openai-compatible
+  #       name: mistral
+  #       api_base: https://api.mistral.ai/v1
+  #       # api_key is defined in MISTRAL_API_KEY variable
 
-      stream: true
-      save: true
-      keybindings: v
-    '';
+  #     stream: true
+  #     save: true
+  #     keybindings: v
+  #   '';
 }
