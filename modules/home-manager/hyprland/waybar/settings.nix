@@ -10,6 +10,7 @@
     modules-left = [ "custom/launcher" "hyprland/workspaces" "custom/yubikey" ];
     modules-center = [ "clock" ];
     modules-right = [
+      "custom/pomodoro"
       "tray"
       "cpu"
       "memory"
@@ -23,7 +24,17 @@
       "hyprland/language"
       "custom/power"
     ];
+    "custom/pomodoro" = {
+      format = "{}";
+      return-type = "json";
+      exec = "WAYBAR=1 pomodoro status";
+      interval = 30;
+      on-click = "pomodoro start";
+      on-click-right = "pomodoro stop";
+      on-click-middle = "pomodoro break";
+    };
     "custom/yubikey" = {
+
       exec = "waybar-yubikey";
       return-type = "json";
     };

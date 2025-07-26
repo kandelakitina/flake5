@@ -113,6 +113,11 @@ in {
           padding-right: 15px;
       }
 
+      #custom-pomodoro {
+          color: ${custom.yellow};
+          padding-left: 10px;
+          padding-right: 15px;
+      }
       #custom-launcher {
           color: ${custom.blue};
           padding-left: 10px;
