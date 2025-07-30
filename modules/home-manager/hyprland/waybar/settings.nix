@@ -22,6 +22,7 @@
       "custom/brightness"
       "custom/temperature"
       "hyprland/language"
+      "idle_inhibitor"
       "custom/power"
     ];
     "custom/pomodoro" = {
@@ -173,6 +174,15 @@
       on-click-right = "pkill wofi || wallpaper-picker";
       tooltip = "false";
     };
+
+    "idle_inhibitor" = {
+      format = "{icon}";
+      format-icons = {
+        activated = "󰅶 ";
+        deactivated = "󰾪 ";
+      };
+    };
+
     "custom/power" = {
       format = "⏻";
       on-click = "pkill wofi || shutdown-script";
