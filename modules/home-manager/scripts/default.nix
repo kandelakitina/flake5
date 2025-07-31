@@ -3,8 +3,20 @@
 # https://github.com/Frost-Phoenix/nixos-config/blob/2bba124946e7530cee136f554f4d5cd8834bdf20/modules/home/scripts/scripts.nix
 
 let
-  ruby-init =
-    pkgs.writeShellScriptBin "ruby-init" (builtins.readFile ./ruby-init.sh);
+  rubyInitFiles = pkgs.stdenv.mkDerivation {
+    name = "ruby-init-files";
+    src = ./ruby-init;
+    installPhase = ''
+      mkdir -p $out
+      cp .rspec .rubocop.yml minimal_formatter.rb ruby-init.sh $out/
+    '';
+  };
+
+  ruby-init = pkgs.writeShellScriptBin "ruby-init" ''
+    export RUBY_INIT_DIR="${rubyInitFiles}"
+    bash "$RUBY_INIT_DIR/ruby-init.sh"
+  '';
+
   mountUsb =
     pkgs.writeShellScriptBin "mountUsb" (builtins.readFile ./mountUsb.sh);
   mountEncryptedUsb = pkgs.writeShellScriptBin "mountEncryptedUsb"
