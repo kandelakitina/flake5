@@ -70,7 +70,7 @@ in {
           margin-right: 7px;
       }
 
-      #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery {
+      #tray, #network, #cpu, #memory, #disk, #clock, #battery {
           color: ${custom.white};
       }
 
@@ -93,7 +93,7 @@ in {
           margin-left: 7px;
       }
 
-      #pulseaudio {
+      #wireplumber {
           padding-left: 15px;
           padding-right: 9px;
           margin-left: 7px;

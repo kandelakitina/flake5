@@ -15,7 +15,7 @@
       "cpu"
       "memory"
       "disk"
-      "pulseaudio"
+      "wireplumber"
       "battery"
       # "network"
       # "custom/gamma"
@@ -148,13 +148,13 @@
       icon-size = 20;
       spacing = 8;
     };
-    pulseaudio = {
+    wireplumber = {
       format = "{icon} {volume:02}%";
       format-muted = "󰖁  {volume}%";
       format-icons = { default = [ " " ]; };
       scroll-step = 5;
       on-click = "pamixer -t";
-      on-click-right = "kill pwvucontrol || pwvucontrol";
+      on-click-right = "pwvucontrol";
     };
     battery = {
       format = "{icon} {capacity}%";
