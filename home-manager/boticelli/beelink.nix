@@ -4,8 +4,8 @@
     inputs.impermanence.nixosModules.home-manager.impermanence
 
     ../../modules/home-manager/cliTools
-    ../../modules/home-manager/helix
     ../../modules/home-manager/zellij
+    ../../modules/home-manager/helix
     ../../modules/home-manager/AI
 
     ../../modules/home-manager/gnome.nix
@@ -25,6 +25,7 @@
     ../../modules/home-manager/goldendict.nix
     ../../modules/home-manager/gum.nix
     ../../modules/home-manager/lazygit.nix
+    ../../modules/home-manager/mime-apps.nix
     ../../modules/home-manager/mpv.nix
     # ../../modules/home-manager/nb.nix
     ../../modules/home-manager/nh.nix
