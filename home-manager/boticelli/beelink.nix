@@ -85,7 +85,10 @@
     username = "boticelli";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
     sessionPath = [ "$HOME/.local/bin" ];
-    shellAliases = { sysrestart = "systemctl --user reset-failed"; };
+    shellAliases = {
+      sysrestart = "systemctl --user reset-failed";
+      nd = "nix develop";
+    };
     sessionVariables = {
       # Flake path for nh
       NH_FLAKE = "$HOME/flake5";
