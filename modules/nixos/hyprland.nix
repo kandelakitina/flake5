@@ -23,6 +23,7 @@
     XDG_SESSION_TYPE = "wayland";
     GDK_BACKEND = "wayland,x11";
     QT_QPA_PLATFORM = "wayland;xcb";
+    XDG_DATA_HOME = "$HOME/.local/share";
   };
 
   environment.systemPackages = with pkgs; [
