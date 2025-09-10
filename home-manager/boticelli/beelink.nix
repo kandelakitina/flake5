@@ -17,6 +17,7 @@
     ../../modules/home-manager/anki.nix
     ../../modules/home-manager/cheatsheets.nix
     ../../modules/home-manager/direnv.nix
+    ../../modules/home-manager/devenv.nix
     ../../modules/home-manager/firefox.nix
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/fonts.nix
