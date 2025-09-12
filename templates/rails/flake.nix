@@ -72,6 +72,7 @@
                 nix-direnv
                 direnv
                 sqlite
+                just
               ]);
           };
         };

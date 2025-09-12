@@ -1,0 +1,19 @@
+install-rails:
+    nix develop --command bash -c "
+      bundle init
+      bundle add $EXTRA_GEMS rails rubocop solargraph --group development --skip-install
+      bundle-lock
+      bundix
+    "
+
+populate-rails:
+    nix develop --command bash -c "
+      rails new . -d sqlite3 --skip-bundle --skip-git --force
+      bundle-lock
+      bundix
+    "
+
+init-git:
+    git init -q
+    git add .
+    git commit -m 'Initial Rails + Nix scaffold' -q
