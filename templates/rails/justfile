@@ -1,19 +1,55 @@
-install-rails:
-    nix develop --command bash -c "
-      bundle init
-      bundle add $EXTRA_GEMS rails rubocop solargraph --group development --skip-install
-      bundle-lock
-      bundix
-    "
+# Justfile for Rails + Nix + Bundix workflow (fish version)
 
-populate-rails:
-    nix develop --command bash -c "
-      rails new . -d sqlite3 --skip-bundle --skip-git --force
-      bundle-lock
-      bundix
-    "
+set shell := ["fish", "-c"]
 
-init-git:
-    git init -q
+# --- Dependency Management ---
+update-deps:
+    bundle-lock
+    bundix
+    direnv reload
+
+add-gem +gems:
+    bundle add {{gems}} --skip-install
+    just update-deps
+
+remove-gem +gems:
+    bundle remove {{gems}}
+    just update-deps
+
+# --- Rails Commands ---
+migrate:
+    bin/rails db:migrate
+
+rollback:
+    bin/rails db:rollback
+
+seed:
+    bin/rails db:seed
+
+console:
+    bin/rails console
+
+server:
+    bin/rails server
+
+test:
+    bin/rails test
+
+# --- Utilities ---
+routes:
+    bin/rails routes
+
+log:
+    tail -f log/development.log
+
+# --- Nix Tools ---
+shell:
+    nix develop
+
+lock:
+    nix flake lock --update-input nixpkgs
+
+# --- Git Helpers ---
+commit msg="chore: update":
     git add .
-    git commit -m 'Initial Rails + Nix scaffold' -q
+    git commit -m "{{msg}}"
