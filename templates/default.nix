@@ -15,9 +15,9 @@ rec {
   rails = {
     path = ./rails;
     description = "Rails dev env with gemfile, bundler, bundlix, etc.";
-    welcomeText = ''
-      Populating Rails environment.
-      Use `nix develop`
-    '';
+    # welcomeText = ''
+    #   Populating Rails environment.
+    #   Use `nix develop`
+    # '';
   };
 }

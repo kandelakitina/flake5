@@ -72,6 +72,11 @@
                 sqlite
                 just
               ]);
+            shellHook = ''
+              echo -e "\n\033[1;31m✅ Rails dev environment loaded\033[0m"
+              echo "📋 Available just commands:"
+              just --summary
+            '';
           };
         };
       });

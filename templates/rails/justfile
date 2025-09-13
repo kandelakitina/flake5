@@ -6,7 +6,6 @@ set shell := ["fish", "-c"]
 update-deps:
     bundle-lock
     bundix
-    direnv reload
 
 add-gem +gems:
     bundle add {{gems}} --skip-install
