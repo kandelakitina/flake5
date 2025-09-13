@@ -7,4 +7,5 @@
       config.global = { hide_env_diff = true; };
     };
   };
+  home.shellAliases = { da = "direnv allow"; };
 }
