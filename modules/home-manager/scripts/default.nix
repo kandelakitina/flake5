@@ -17,6 +17,9 @@ let
     bash "$RUBY_INIT_DIR/ruby-init.sh"
   '';
 
+  rails-init =
+    pkgs.writeShellScriptBin "rails-init" (builtins.readFile ./rails-init.sh);
+
   mountUsb =
     pkgs.writeShellScriptBin "mountUsb" (builtins.readFile ./mountUsb.sh);
   mountEncryptedUsb = pkgs.writeShellScriptBin "mountEncryptedUsb"
@@ -59,6 +62,7 @@ in {
     pomodoro
 
     ruby-init
+    rails-init
 
     waybar-yubikey
     wall-change
