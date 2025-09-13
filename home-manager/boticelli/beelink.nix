@@ -16,8 +16,8 @@
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/anki.nix
     ../../modules/home-manager/cheatsheets.nix
-    ../../modules/home-manager/direnv.nix
-    ../../modules/home-manager/devenv.nix
+    # ../../modules/home-manager/direnv.nix
+    # ../../modules/home-manager/devenv.nix
     ../../modules/home-manager/firefox.nix
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/fonts.nix
@@ -34,7 +34,7 @@
     ../../modules/home-manager/nix.nix
     # ../../modules/home-manager/nixvim.nix
     ../../modules/home-manager/nnn.nix
-    ../../modules/home-manager/node.nix
+    # ../../modules/home-manager/node.nix
     ../../modules/home-manager/obsidian.nix
     ../../modules/home-manager/proxychains.nix
     # ../../modules/home-manager/ruby.nix
