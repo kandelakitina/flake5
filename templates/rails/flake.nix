@@ -1,5 +1,5 @@
 {
-  description = "A simple ruby app demo";
+  description = "A simple Rails app";
 
   nixConfig = {
     extra-substituters = "https://nixpkgs-ruby.cachix.org";
@@ -69,8 +69,6 @@
                 yarn
                 # more packages here
                 nodejs
-                nix-direnv
-                direnv
                 sqlite
                 just
               ]);
