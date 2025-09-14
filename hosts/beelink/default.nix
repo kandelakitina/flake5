@@ -16,12 +16,13 @@
     # ../../modules/nixos/xfce.nix
     ../../modules/nixos/hyprland.nix
 
+    ../../modules/nixos/amnezia.nix
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/command-not-found.nix
     ../../modules/nixos/gnupg.nix
     ../../modules/nixos/impermanence.nix
     ../../modules/nixos/locale.nix
-    ../../modules/nixos/mullvad.nix
+    # ../../modules/nixos/mullvad.nix
     ../../modules/nixos/nix.nix
     ../../modules/nixos/qt.nix
     ../../modules/nixos/sops.nix
