@@ -41,7 +41,7 @@ nix develop --command bash -c "
 
 echo "Installing rubocop, solargraph and extra gems"
 nix develop --command bash -c "
-  bundle add $EXTRA_GEMS rubocop solargraph --group development --skip-install
+  bundle add $EXTRA_GEMS rubocop rubocop-rails solargraph solargraph-rails --group development --skip-install
   bundle-lock
   bundix
 "
