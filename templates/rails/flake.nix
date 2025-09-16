@@ -39,7 +39,7 @@
         gemConfig = { };
 
         # See available versions here: https://github.com/bobvanderlinden/nixpkgs-ruby/blob/master/ruby/versions.json
-        ruby = pkgs.ruby_3_4;
+        ruby = pkgs.ruby;
 
         # Running bundix would regenerate `gemset.nix`
         bundixcli = bundix.packages.${system}.default;
