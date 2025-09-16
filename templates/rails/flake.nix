@@ -12,7 +12,7 @@
     ruby-nix.url = "github:inscapist/ruby-nix";
     # a fork that supports platform dependant gem
     bundix = {
-      url = "github:inscapist/bundix/main";
+      url = "github:kandelakitina/bundix/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     fu.url = "github:numtide/flake-utils";
