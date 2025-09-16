@@ -17,21 +17,21 @@ language-servers = ["vscode-html-language-server", "emmet-ls"]
 [[language]]
 name = "ruby"
 # formatter = { command = "rubyfmt" }
-formatter = { command = "rubocop", args = [
-  "--stdin",
-  "foo.rb",
-  "-a",
-  "--stderr",
-  "--fail-level",
-  "fatal",
-] }
+# formatter = { command = "rubocop", args = [
+#   "--stdin",
+#   "foo.rb",
+#   "-a",
+#   "--stderr",
+#   "--fail-level",
+#   "fatal",
+# ] }
+formatter = {command = "rufo", args = ["--simple-exit"]}
 auto-format = false
-language-servers = [{ name = "solargraph" }]
-# language-servers = ["ruby-lsp"]
+language-servers = ["ruby-lsp", "solargraph"]
 
-# [language-server.ruby-lsp]
-# command = "ruby-lsp"
-# config = { diagnostics = true, formatting = true }
+[language-server.ruby-lsp]
+command = "ruby-lsp"
+config = { diagnostics = true, formatting = true }
 
 [language-server.solargraph]
 config.diagnostics = true
