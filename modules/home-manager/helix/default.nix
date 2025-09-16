@@ -162,7 +162,7 @@
     nil
     nixfmt-classic
     nodePackages.prettier
-    nodePackages.dockerfile-language-server-nodejs
+    dockerfile-language-server
     # nodePackages.stylelint
     # prettierd
     svelte-language-server
