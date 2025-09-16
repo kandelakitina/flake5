@@ -73,8 +73,10 @@
                 just
               ]);
             shellHook = ''
+              export RUBYOPT=-W0 # kills bundler spam and stub warnings
+
               echo -e "\n\033[1;33m🚀 Rails dev environment is live and ready to rock!\033[0m"
-              echo -e "\033[1;34m🎉 Here are your superpowers (just commands):\033[0m"
+              echo -e "\033[1;34m Available just commands:\033[0m"
               just --summary
             '';
           };
