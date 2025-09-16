@@ -67,7 +67,7 @@ gum format --theme dracula <<EOF
 Project \`$PROJECT_NAME\` includes:
 
 - Database: sqlite3
-- Default installed gems: rails, rubocop, solargraph
+- Default installed gems: rails, rufo, ruby-lsp, solargraph
 - Extra gems: $EXTRA_GEMS
 - Git repo initialized
 
