@@ -29,11 +29,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758026051,
-        "narHash": "sha256-SjlZdRcWprxopWKnVUEgsTHz70mDWllsY+F0Cwt8sgo=",
+        "lastModified": 1758026922,
+        "narHash": "sha256-g1wLRgNmBSMV92n0RntHwXK3kc0vs4yVbnuZVYb8LYQ=",
         "owner": "kandelakitina",
         "repo": "bundix",
-        "rev": "a08d7e8ffaaaaf10d36678d64033200c1590a542",
+        "rev": "00aa44358cd1eb37858be973f8ba26008da3dfe5",
         "type": "github"
       },
       "original": {
