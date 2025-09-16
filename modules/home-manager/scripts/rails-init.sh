@@ -16,7 +16,11 @@ cd "$PROJECT_NAME"
 
 # Init flake
 echo "Initializing flake template"
-nix flake init -t github:kandelakitina/flake5#rails
+if [ -n "$NH_FLAKE" ]; then
+  nix flake init -t "$NH_FLAKE#rails"
+else
+  nix flake init -t github:kandelakitina/flake5#rails
+fi
 
 # Installing gems
 DEFAULT_GEMS=("colorize" "rspec-rails" "pry-byebug" "factory_bot_rails" "faker" "annotate" 
