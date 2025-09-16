@@ -12,7 +12,7 @@
     ruby-nix.url = "github:inscapist/ruby-nix";
     # a fork that supports platform dependant gem
     bundix = {
-      url = "github:kandelakitina/bundix/main";
+      url = "github:inscapist/bundix/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     fu.url = "github:numtide/flake-utils";
@@ -39,7 +39,7 @@
         gemConfig = { };
 
         # See available versions here: https://github.com/bobvanderlinden/nixpkgs-ruby/blob/master/ruby/versions.json
-        ruby = pkgs.ruby;
+        ruby = pkgs.ruby_3_1;
 
         # Running bundix would regenerate `gemset.nix`
         bundixcli = bundix.packages.${system}.default;
