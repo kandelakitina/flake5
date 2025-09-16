@@ -22,7 +22,7 @@
     ../../modules/nixos/gnupg.nix
     ../../modules/nixos/impermanence.nix
     ../../modules/nixos/locale.nix
-    # ../../modules/nixos/mullvad.nix
+    ../../modules/nixos/mullvad.nix
     ../../modules/nixos/nix.nix
     ../../modules/nixos/qt.nix
     ../../modules/nixos/sops.nix
