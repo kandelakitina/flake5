@@ -73,8 +73,8 @@
                 just
               ]);
             shellHook = ''
-              echo -e "\n\033[1;31m✅ Rails dev environment loaded\033[0m"
-              echo "📋 Available just commands:"
+              echo -e "\n\033[1;33m🚀 Rails dev environment is live and ready to rock!\033[0m"
+              echo -e "\033[1;34m🎉 Here are your superpowers (just commands):\033[0m"
               just --summary
             '';
           };
