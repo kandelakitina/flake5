@@ -25,7 +25,7 @@ name = "ruby"
 #   "--fail-level",
 #   "fatal",
 # ] }
-formatter = {command = "rufo", args = ["--simple-exit"]}
+formatter = { command = "rufo", args = ["--simple-exit"] }
 auto-format = false
 language-servers = ["ruby-lsp", "solargraph"]
 
@@ -36,6 +36,28 @@ config = { diagnostics = true, formatting = true }
 [language-server.solargraph]
 config.diagnostics = true
 config.formatting = false
+
+[language-server.herb]
+# command = "herb"
+command = "herb-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "erb"
+language-servers = ["herb"]
+file-types = ["erb", "html.erb"]
+roots = ["Gemfile", "package.json"]
+formatter = { command = "erb-format", args = [
+  "--stdin",
+  "--print-width",
+  "80",
+] }
+
+[language.auto-pairs]
+'<' = '>'
+'%' = '%'
+"'" = "'"
+'"' = '"'
 
 [[language]]
 name = "markdown"
