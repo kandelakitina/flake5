@@ -1,0 +1,7 @@
+{
+  "name": "herb-linter-nix",
+  "version": "1.0.0",
+  "dependencies": {
+    "@herb-tools/linter": "^0.6.1"
+  }
+}

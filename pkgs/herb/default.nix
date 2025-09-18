@@ -1,3 +1,4 @@
+# pkgs/herb/default.nix
 { pkgs ? import <nixpkgs> { } }:
 
 let
@@ -31,22 +32,23 @@ in pkgs.stdenv.mkDerivation {
 
   buildInputs = [ pkgs.nodejs ];
 
+  dontCopyLocalSources = true; # Critical to avoid read-only files
+
   buildPhase = ''
+    # Create a writable directory *within* the build sandbox (NIX_BUILD_TOP)
+    # This is where npm ci will run and be able to write freely.
+    mkdir -p $NIX_BUILD_TOP/npm-project-root
+    cd $NIX_BUILD_TOP/npm-project-root
+
+    # Copy only the package metadata that npm ci needs.
+    # These files will be writable because they are copied into the writable sandbox.
+    cp $src/package.json .
+    cp $src/package-lock.json .
+
     export HOME=$PWD/.home
     export npm_config_cache=$PWD/.npm
-    mkdir -p $out/js
-    # Copy only necessary files, excluding node_modules to avoid permission issues
-    cp -r $src/{package.json,package-lock.json} $out/js/
-    # If there are other source files (e.g., actual server code, src directory)
-    # cp -r $src/lib $out/js/lib # Example for other source files
-    # cp -r $src/bin $out/js/bin # Example for bin directory if it contains scripts
 
-    cd $out/js
-
-    # Remove any pre-existing node_modules or .bin if they were accidentally copied
-    # This might not be strictly necessary if we only copy package.json/lockfile,
-    # but it acts as a safeguard.
-    rm -rf node_modules .bin
+    # No need for rm -rf node_modules here because npm ci starts clean
 
     while read package; do
       echo "caching $package"
@@ -57,9 +59,14 @@ in pkgs.stdenv.mkDerivation {
   '';
 
   installPhase = ''
+    # Create the full path for the scoped package
+    mkdir -p $out/lib/node_modules/@herb-tools/
+
+    # Copy the 'language-server' package into the @herb-tools directory
+    # This results in: $out/lib/node_modules/@herb-tools/language-server/
+    cp -r $NIX_BUILD_TOP/npm-project-root/node_modules/@herb-tools/language-server $out/lib/node_modules/@herb-tools/
+
     mkdir -p $out/bin
-    # The actual path to the executable might be different.
-    # Check $out/js/node_modules/@herb-tools/language-server/ after npm ci if this fails.
-    ln -s $out/js/node_modules/@herb-tools/language-server/bin/herb-language-server $out/bin/herb-language-server
+    ln -s $out/lib/node_modules/@herb-tools/language-server/bin/herb-language-server $out/bin/herb-language-server
   '';
 }
