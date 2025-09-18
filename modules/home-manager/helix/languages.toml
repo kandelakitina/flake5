@@ -44,7 +44,12 @@ args = ["--stdio"]
 
 [[language]]
 name = "erb"
-language-servers = ["herb"]
+language-servers = [
+  "herb",
+  "vscode-html-language-server",
+  "emmet-ls",
+  "ruby-lsp",
+]
 file-types = ["erb", "html.erb"]
 roots = ["Gemfile", "package.json"]
 formatter = { command = "erb-format", args = [
