@@ -47,7 +47,7 @@ echo "Installing ruby formatter, ruby-lsp, solargraph and extra gems"
 # rubocop and rubocop-rails are optional, currently disabled
 nix develop --command bash -c "
   bundle add $EXTRA_GEMS \
-    erb-format \
+    erb-formatter \
     herb \
     rufo \
     ruby-lsp \
