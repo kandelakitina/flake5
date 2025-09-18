@@ -38,7 +38,6 @@ config.diagnostics = true
 config.formatting = false
 
 [language-server.herb]
-# command = "herb"
 command = "herb-language-server"
 args = ["--stdio"]
 

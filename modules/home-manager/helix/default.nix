@@ -154,6 +154,7 @@
     #   with nodePackages; [
   };
   home.packages = with pkgs; [
+    inputs.self.packages.${pkgs.system}.herb
     bash-language-server
     emmet-language-server
     eslint
