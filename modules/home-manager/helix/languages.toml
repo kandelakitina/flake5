@@ -11,7 +11,7 @@ args = ["--stdio"]
 name = "html"
 auto-format = true
 language-servers = ["vscode-html-language-server", "emmet-ls"]
-# formatter = { command = 'prettier', args = ["--parser", "html"] }
+formatter = { command = 'prettier', args = ["--parser", "html"] }
 
 # Ruby
 [[language]]
@@ -37,17 +37,16 @@ config = { diagnostics = true, formatting = true }
 config.diagnostics = true
 config.formatting = false
 
-[language-server.herb]
-command = "herb-language-server"
-args = ["--stdio"]
 
 [[language]]
 name = "erb"
 language-servers = [
-  "herb",
+  "herb-lsp",
+  # "herb-lint",
   "vscode-html-language-server",
   "emmet-ls",
   "ruby-lsp",
+  # "rubocop",
 ]
 file-types = ["erb", "html.erb"]
 roots = ["Gemfile", "package.json"]
@@ -56,6 +55,15 @@ formatter = { command = "erb-format", args = [
   "--print-width",
   "80",
 ] }
+
+[language-server.herb-lsp]
+command = "herb-language-server"
+args = ["--stdio"]
+
+# [language-server.herb-lint]
+# command = "herb-lint"
+# args = ["--stdin", "--filename", "%f"]
+# json = true
 
 [language.auto-pairs]
 '<' = '>'
