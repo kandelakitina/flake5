@@ -35,6 +35,12 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    plugins = with pkgs.hyprlandPlugins;
+      [
+        # hyprfocus
+        hypr-dynamic-cursors
+      ];
+
     systemd = {
       enable = true;
       extraCommands = lib.mkBefore [
@@ -48,6 +54,22 @@
       inactive =
         "0xaa${lib.removePrefix "#" config.colorScheme.palette.base00}";
     in {
+
+      # # Most probably conflicts with animantions below
+      # plugin.hyprfocus = {
+      #   enabled = "yes";
+      #   animate_floating = "yes";
+      #   animate_workspacechange = "yes";
+      #   focus_animation = "shrink";
+      #   shrink = {
+      #     shrink_percentage = 0.99;
+      #     in_bezier = "realsmoooth";
+      #     in_speed = 1;
+      #     out_bezier = "realsmooth";
+      #     out_speed = 2;
+      #   };
+      # };
+
       ecosystem = { no_update_news = true; };
 
       exec-once = [
