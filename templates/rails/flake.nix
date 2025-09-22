@@ -1,5 +1,5 @@
 {
-  description = "A simple Rails app";
+  description = "A simple Rails app with Tailwind + daisyUI";
 
   nixConfig = {
     extra-substituters = "https://nixpkgs-ruby.cachix.org";
@@ -20,7 +20,7 @@
     bob-ruby.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, fu, ruby-nix, bundix, bob-ruby, }:
+  outputs = { self, nixpkgs, fu, ruby-nix, bundix, bob-ruby, ... }:
     with fu.lib;
     eachDefaultSystem (system:
       let
@@ -30,7 +30,6 @@
         };
         rubyNix = ruby-nix.lib pkgs;
 
-        # TODO generate gemset.nix with bundix
         gemset =
           if builtins.pathExists ./gemset.nix then import ./gemset.nix else { };
 
@@ -53,6 +52,14 @@
           export BUNDLE_PATH=vendor/bundle
           bundle lock --update
         '';
+
+        # --- Node2nix integration ---
+        # Generate with:
+        #   node2nix -i package.json -o node-packages.nix -c composition.nix
+        nodeEnv = if builtins.pathExists ./node-packages.nix then
+          import ./composition.nix { inherit pkgs system; }
+        else
+          null;
       in rec {
         inherit (rubyNix {
           inherit gemset ruby;
@@ -67,17 +74,19 @@
             buildInputs = [ env bundixcli bundleLock bundleUpdate ]
               ++ (with pkgs; [
                 yarn
-                # more packages here
                 nodejs
                 sqlite
                 just
                 tailwindcss
                 foreman
-              ]);
+                node2nix
+              ]) ++ pkgs.lib.optional (nodeEnv != null) nodeEnv;
+
             shellHook = ''
               export RUBYOPT=-W0 # kills bundler spam and stub warnings
+              export PATH=$PATH:./node_modules/.bin
 
-              echo -e "\n\033[1;33m🚀 Rails dev environment is live and ready to rock!\033[0m"
+              echo -e "\n\033[1;33m🚀 Rails dev environment is live with Tailwind + daisyUI!\033[0m"
               echo -e "\033[1;34m Available just commands:\033[0m"
               just --summary
             '';
