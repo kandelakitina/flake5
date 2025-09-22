@@ -47,6 +47,7 @@ echo "Installing ruby formatter, ruby-lsp, solargraph and extra gems"
 # rubocop and rubocop-rails are optional, currently disabled
 nix develop --command bash -c "
   bundle add $EXTRA_GEMS \
+    foreman \
     erb-formatter \
     herb \
     rufo \
@@ -73,7 +74,7 @@ gum format --theme dracula <<EOF
 Project \`$PROJECT_NAME\` includes:
 
 - Database: sqlite3
-- Default installed gems: rails, rufo, ruby-lsp, solargraph
+- Default installed gems: rails, foreman, rufo, ruby-lsp, solargraph
 - Extra gems: $EXTRA_GEMS
 - Git repo initialized
 

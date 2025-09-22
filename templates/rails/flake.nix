@@ -71,6 +71,8 @@
                 nodejs
                 sqlite
                 just
+                tailwindcss
+                foreman
               ]);
             shellHook = ''
               export RUBYOPT=-W0 # kills bundler spam and stub warnings

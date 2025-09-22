@@ -29,7 +29,7 @@ console:
     bin/rails console
 
 server:
-    bin/rails server
+    foreman start
 
 test:
     bin/rails test
