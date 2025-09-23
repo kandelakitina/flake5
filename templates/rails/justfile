@@ -9,7 +9,7 @@ update-gems:
 
 add-gem +gems:
     bundle add {{gems}} --skip-install
-    just update-deps
+    just update-gems
 
 add-node +nodes:
     npm install {{nodes}} --save-dev
