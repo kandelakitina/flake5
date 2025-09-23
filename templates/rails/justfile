@@ -7,16 +7,12 @@ update-gems:
     bundle-lock
     bundix
 
-update-nodes:
-    node2nix -i package.json -o node-packages.nix -c composition.nix
-
 add-gem +gems:
     bundle add {{gems}} --skip-install
     just update-deps
 
 add-node +nodes:
     npm install {{nodes}} --save-dev
-    just update-nodes
 
 remove-gem +gems:
     bundle remove {{gems}}

@@ -22,12 +22,18 @@ else
   nix flake init -t github:kandelakitina/flake5#rails
 fi
 
-# Installing gems
+# Selecting gems
 DEFAULT_GEMS=("colorize" "rspec-rails" "pry-byebug" "factory_bot_rails" "faker" "annotate" 
 "bullet" "dotenv-rails" "rack-mini-profiler" "rails-erd")
-EXTRA_GEMS=$(gum choose --no-limit "${DEFAULT_GEMS[@]}" --header "Select additional gems:")
-EXTRA_GEMS=$(echo "$EXTRA_GEMS" | xargs)  # Flatten multiline to space-separated
+PICKED_GEMS=$(gum choose --no-limit "${DEFAULT_GEMS[@]}" --header "Select additional gems:")
+PICKED_GEMS=$(echo "$PICKED_GEMS" | xargs)  # Flatten multiline to space-separated
 
+# Selecting NPM modules
+DEFAULT_NPM_MODULES=("tailwindcss" "daisyui" "autoprefixer" "postcss" "eslint" "prettier")
+PICKED_NPM_MODULES=$(gum choose --no-limit "${DEFAULT_NPM_MODULES[@]}" --header "Select additional NPM modules:")
+PICKED_NPM_MODULES=$(echo "$PICKED_NPM_MODULES" | xargs)
+
+# Installation phase
 echo "Installing Rails"
 nix develop --command bash -c "
   bundle init
@@ -43,10 +49,10 @@ nix develop --command bash -c "
   bundix
 "
 
-echo "Installing ruby formatter, ruby-lsp, solargraph and extra gems"
+echo "Installing ruby formatter, ruby-lsp, solargraph and picked gems"
 # rubocop and rubocop-rails are optional, currently disabled
 nix develop --command bash -c "
-  bundle add $EXTRA_GEMS \
+  bundle add $PICKED_GEMS \
     foreman \
     erb-formatter \
     herb \
@@ -59,6 +65,12 @@ nix develop --command bash -c "
 
   bundle lock
   bundix
+"
+
+# Install selected NPM modules inside nix develop
+echo "Installing NPM modules"
+nix develop --command bash -c "
+  npm install --save-dev $PICKED_NPM_MODULES
 "
 
 # Git repo
@@ -75,7 +87,8 @@ Project \`$PROJECT_NAME\` includes:
 
 - Database: sqlite3
 - Default installed gems: rails, foreman, rufo, ruby-lsp, solargraph
-- Extra gems: $EXTRA_GEMS
+- Extra gems: $PICKED_GEMS
+- NPM dev modules: $PICKED_NPM_MODULES
 - Git repo initialized
 
 To get started:
@@ -83,6 +96,6 @@ To get started:
 \`\`\`bash
 cd $PROJECT_NAME
 nix develop
-bin/rails server
+just server
 \`\`\`
 EOF
