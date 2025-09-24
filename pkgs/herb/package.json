@@ -1,7 +1,0 @@
-{
-  "name": "herb-language-server-nix",
-  "version": "1.0.0",
-  "dependencies": {
-    "@herb-tools/language-server": "^0.6.1"
-  }
-}

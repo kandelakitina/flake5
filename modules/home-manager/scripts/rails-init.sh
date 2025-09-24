@@ -29,7 +29,7 @@ PICKED_GEMS=$(gum choose --no-limit "${DEFAULT_GEMS[@]}" --header "Select additi
 PICKED_GEMS=$(echo "$PICKED_GEMS" | xargs)  # Flatten multiline to space-separated
 
 # Selecting NPM modules
-DEFAULT_NPM_MODULES=("tailwindcss" "daisyui" "autoprefixer" "postcss" "eslint" "prettier")
+DEFAULT_NPM_MODULES=("daisyui" "autoprefixer" "postcss" "eslint" "prettier")
 PICKED_NPM_MODULES=$(gum choose --no-limit "${DEFAULT_NPM_MODULES[@]}" --header "Select additional NPM modules:")
 PICKED_NPM_MODULES=$(echo "$PICKED_NPM_MODULES" | xargs)
 
@@ -55,7 +55,6 @@ nix develop --command bash -c "
   bundle add $PICKED_GEMS \
     foreman \
     erb-formatter \
-    herb \
     rufo \
     ruby-lsp \
     solargraph \
@@ -70,7 +69,8 @@ nix develop --command bash -c "
 # Install selected NPM modules inside nix develop
 echo "Installing NPM modules"
 nix develop --command bash -c "
-  npm install --save-dev $PICKED_NPM_MODULES
+  npm install --save-dev $PICKED_NPM_MODULES \
+    @herb-tools/language-server
 "
 
 # Git repo

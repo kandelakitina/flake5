@@ -1,7 +1,6 @@
 # { pkgs ? (import ../nixpkgs.nix) { } }: {
-{ pkgs ? import <nixpkgs> { } }: {
-  herb = pkgs.callPackage ./herb { };
-  herb-linter = pkgs.callPackage ./herb-linter { };
+{ pkgs ? import <nixpkgs> { } }:
+{
   # atuin-export-fish = pkgs.callPackage ./atuin-export-fish-history.nix {};
   # headsetcontrol2 = pkgs.callPackage ./headsetcontrol.nix {};
   # all-ways-egpu = pkgs.callPackage ./all-ways-egpu.nix {};
