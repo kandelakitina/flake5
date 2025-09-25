@@ -27,8 +27,9 @@
     ../../modules/home-manager/goldendict.nix
     ../../modules/home-manager/gum.nix
     ../../modules/home-manager/lazygit.nix
-    ../../modules/home-manager/mime-apps.nix
-    ../../modules/home-manager/mpv.nix
+    # ../../modules/home-manager/lf
+    # ../../modules/home-manager/mime-apps.nix
+    # ../../modules/home-manager/mpv.nix
     # ../../modules/home-manager/nb.nix
     ../../modules/home-manager/nh.nix
     ../../modules/home-manager/nix.nix
