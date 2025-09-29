@@ -1,4 +1,4 @@
-{
+{ lib, ... }: {
 
   programs.gpg = {
     enable = true;
@@ -19,6 +19,12 @@
     enable = true;
     enableSshSupport = true;
   };
+
+  home.activation.fixGpgPermissions =
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      chmod 700 "$HOME/.gnupg" 2>/dev/null || true
+      find "$HOME/.gnupg" -type f -exec chmod 600 {} +
+    '';
 
   home = {
     persistence = {
