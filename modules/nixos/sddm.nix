@@ -35,13 +35,26 @@
       };
     };
   };
+
   environment.systemPackages = [
+
+    # https://github.com/stepanzubkov/where-is-my-sddm-theme
+
     (pkgs.where-is-my-sddm-theme.override {
       themeConfig.General = {
-        hideCursor = true;
-        # backgroundFill = "${config.colorScheme.palette.base00}";
-        # basicTextColor = "${config.colorScheme.palette.base05}";
-        # passwordCursorColor = "${config.colorScheme.palette.base0B}";
+        hideCursor = false;
+        # showUsersByDefault = true;
+        # showUserRealNameByDefault = true;
+        # usersFontSize = 48;
+
+        background = "${../../images/magentaAbstract.jpg}";
+        blurRadius = 20;
+        # backgroundFill = "#101421"; # deep blue
+
+        basicTextColor = "#f6c744"; # yellow
+        # basicTextColor = "#e5e9f0"; # white
+        passwordCursorColor = "#a47de9"; # magenta
+        passwordTextColor = "#f6c744"; # yellow
         passwordCharacter = "•";
         passwordInputWidth = "1";
         passwordFontSize = 62;
