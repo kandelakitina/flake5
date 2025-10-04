@@ -48,6 +48,7 @@
       inactive =
         "0xaa${lib.removePrefix "#" config.colorScheme.palette.base00}";
     in {
+      monitor = [ "HDMI-A-2,disable" "HDMI-A-1,preferred,auto,1" ];
       ecosystem = { no_update_news = true; };
 
       exec-once = [
@@ -64,7 +65,6 @@
         "${pkgs.bluez}/bin/bluetoothctl power on" # Ensures Bluetooth is turned on
         "${pkgs.pyprland}/bin/pypr"
       ];
-      monitor = [ ",preferred,auto,auto" "eDP-1,preferred,auto,1" ];
       # cursor = { inactive_timeout = 4; };
       general = {
         resize_on_border = true;
