@@ -15,5 +15,4 @@
     #   };
     # };
   };
-  home.shellAliases = { f = "nnn"; };
 }
