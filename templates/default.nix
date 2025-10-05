@@ -20,4 +20,8 @@ rec {
     #   Use `nix develop`
     # '';
   };
+  node = {
+    path = ./node;
+    description = "Minimal nodeJS env with node2nix and just";
+  };
 }
