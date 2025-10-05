@@ -7,7 +7,7 @@
       devShell = pkgs: {
         packages = with pkgs; [ nodejs just node2nix ];
         shellHook = ''
-          echo "node `${pkgs.node}/bin/node --version`"
+          echo "node `${pkgs.nodejs}/bin/node --version`"
         '';
       };
     };
