@@ -156,22 +156,24 @@
   home.packages = with pkgs; [
     bash-language-server
     emmet-language-server
-    eslint
+    # eslint
     # lua-language-server
     marksman
     nil
     nixfmt-classic
-    nodePackages.prettier
+    # nodePackages.prettier
     dockerfile-language-server
     # nodePackages.stylelint
     # prettierd
-    svelte-language-server
+    # svelte-language-server
     tailwindcss-language-server
     taplo
-    typescript-language-server
+    # typescript-language-server
     vscode-langservers-extracted
     vue-language-server
     yaml-language-server
+
+    deno
   ];
 
   home.file.".config/helix/ignore".text = ''
