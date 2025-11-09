@@ -42,8 +42,8 @@
 
         lsp = {
           display-messages = true;
-          auto-signature-help = false;
-          # display-inlay-hints = true;
+          auto-signature-help = true;
+          display-inlay-hints = true;
         };
 
         # Minimum severity to show a diagnostic after the end of a line
@@ -161,7 +161,7 @@
     marksman
     nil
     nixfmt-classic
-    # nodePackages.prettier
+    nodePackages.prettier
     dockerfile-language-server
     # nodePackages.stylelint
     # prettierd
