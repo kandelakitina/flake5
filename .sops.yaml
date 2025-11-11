@@ -1,7 +1,7 @@
 keys:
   - &boticelli 0098D3F49DA1184BAADA5BBB98C7C7A7441867D1
   - &beelink age1esz5xqtsecn38chd0n2qh3xvx7c3zvgm2te6v2mdsn9tzfqep94s2wrjn9
-  - &minisforum age1st2k2lnqal5gh3m4ekclmje9yrzeq5s7tzhv05v36emgvud7cfys53swf7
+  - &minisforum age13guvh6sk7sytx65uakhew7pcxq82f78ulemjxykf3rdvchkkxyvq90aylc
 creation_rules:
   - path_regex: secrets.yaml$
     key_groups:

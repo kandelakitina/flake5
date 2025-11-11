@@ -135,10 +135,10 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/iso ];
         };
-	minisforum = lib.nixosSystem {
-	  specialArgs = { inherit inputs outputs; };
-	  modules = [ ./hosts/minisforum ];
- 	};
+        minisforum = lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/minisforum ];
+        };
       };
 
       homeConfigurations = {
@@ -148,6 +148,12 @@
         #   modules = [ ./home-manager/boticelli/vm.nix ];
         # };
         "boticelli@beelink" = lib.homeManagerConfiguration {
+          pkgs = pkgsFor.x86_64-linux;
+          # pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit nix-colors inputs outputs; };
+          modules = [ ./home-manager/boticelli/beelink.nix ];
+        };
+        "boticelli@minisforum" = lib.homeManagerConfiguration {
           pkgs = pkgsFor.x86_64-linux;
           # pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit nix-colors inputs outputs; };
