@@ -55,7 +55,7 @@
   
   # Extra for dual booting with Windows
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-partlabel/nixos";
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-partlabel/luks";
   boot.loader.grub.useOSProber = true;
   boot.loader.systemd-boot.configurationLimit = 5;
 }
