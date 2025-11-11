@@ -8,25 +8,24 @@
         partitions = {
           ESP = {
             label = "EFI";
-            size = "512MiB";
+            size = "512M";
             type = "EF00";
             content = {
               type = "filesystem";
               format = "vfat";
               mountpoint = "/boot";
-              mountOptions = [ "umask=0077" ];
+              mountOptions = [ "defaults" ];
             };
           };
 
           MSR = {
-            label = "MSR";
-            size = "128MiB";
+            size = "128M";
             type = "0C01"; # Microsoft reserved partition
           };
 
           nixos = {
             label = "luks";
-            size = "150GiB"; # or adjust to taste
+            size = "150G"; # or adjust to taste
             type = "8300";
             content = {
               type = "luks";
