@@ -135,6 +135,10 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/iso ];
         };
+	minisforum = lib.nixosSystem {
+	  specialArgs = { inherit inputs outputs; };
+	  modules = [ ./hosts/minisforum ];
+ 	};
       };
 
       homeConfigurations = {
