@@ -7,7 +7,9 @@
     ./hardware-configuration.nix
 
     inputs.disko.nixosModules.disko
-    (import ../../diskoConfigs/DualbootWinNixLuksBtfrs.nix { device = "/dev/nvme0n1"; })
+    (import ../../diskoConfigs/DualbootWinNixLuksBtfrs.nix {
+      device = "/dev/nvme0n1";
+    })
 
     ../../modules/nixos/sddm.nix
     # ../../modules/nixos/greetd.nix
@@ -16,6 +18,7 @@
     ../../modules/nixos/hyprland.nix
 
     # ../../modules/nixos/amnezia.nix
+    ../../modules/nixos/amd.nix
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/command-not-found.nix
     ../../modules/nixos/gnupg.nix
@@ -52,7 +55,7 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
-  
+
   # Extra for dual booting with Windows
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.luks.devices."enc".device = "/dev/disk/by-partlabel/luks";
