@@ -1,10 +1,9 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ whatsapp-for-linux ];
+  home.packages = with pkgs; [ wasistlos ];
   home = {
     persistence = {
       "/persist/home/boticelli" = {
-        directories =
-          [ ".local/share/whatsapp-for-linux" ".config/whatsapp-for-linux" ];
+        directories = [ ".local/share/wasistlost" ".config/wasistlost" ];
         files = [ ];
       };
     };
