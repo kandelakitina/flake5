@@ -31,9 +31,9 @@
   # colorScheme = nix-colors.colorSchemes.dracula;
 
   # Enable home-manager and git
-  programs.git = {
-    userName = "boticelli";
-    userEmail = "kandelakitina@gmail.com";
+  programs.git.settings = {
+    user.name = "boticelli";
+    user.email = "kandelakitina@gmail.com";
   };
 
   home = {
