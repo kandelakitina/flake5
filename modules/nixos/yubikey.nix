@@ -14,6 +14,7 @@
   };
 
   security.pam.services = {
+    hyprlock.u2fAuth = false;
     swaylock.u2fAuth = false;
     login.u2fAuth = false;
     sudo.u2fAuth = false;
@@ -27,12 +28,13 @@
   #   id = [ "25940960" ];
   # };
 
-  services.udev.extraRules = ''
-    ACTION=="remove",\
-     ENV{ID_BUS}=="usb",\
-     ENV{ID_MODEL_ID}=="0407",\
-     ENV{ID_VENDOR_ID}=="1050",\
-     ENV{ID_VENDOR}=="Yubico",\
-     RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
-  '';
+  # Lock upon unplugging Yubikey
+  # services.udev.extraRules = ''
+  #   ACTION=="remove",\
+  #    ENV{ID_BUS}=="usb",\
+  #    ENV{ID_MODEL_ID}=="0407",\
+  #    ENV{ID_VENDOR_ID}=="1050",\
+  #    ENV{ID_VENDOR}=="Yubico",\
+  #    RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
+  # '';
 }
