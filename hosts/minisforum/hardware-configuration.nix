@@ -10,7 +10,21 @@
     [ "xhci_pci" "nvme" "thunderbolt" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
+  # boot.kernelPackages = pkgs.linuxPackages_6_1;
   boot.extraModulePackages = [ ];
+
+  # Random reboots fix
+  boot.kernelParams = [
+    # "processor.max_cstate=1"
+    # "idle=nomwait"
+    "amd_pstate=passive"
+    "cpufreq.default_governor=performance"
+    "pcie_aspm=off"
+    # "amdgpu.runpm=0"
+    # "amdgpu.aspm=0"
+  ];
+  services.power-profiles-daemon.enable = false;
+  powerManagement.cpuFreqGovernor = "performance";
 
   swapDevices = [ ];
 
