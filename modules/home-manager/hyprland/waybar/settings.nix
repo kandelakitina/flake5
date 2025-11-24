@@ -153,8 +153,10 @@
       format-muted = "󰖁  {volume}%";
       format-icons = { default = [ " " ]; };
       scroll-step = 5;
-      on-click = "pamixer -t";
+      on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
       on-click-right = "pwvucontrol";
+      on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+      on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
     };
     battery = {
       format = "{icon} {capacity}%";
