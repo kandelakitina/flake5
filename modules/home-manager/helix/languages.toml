@@ -9,9 +9,18 @@ args = ["--stdio"]
 
 [[language]]
 name = "html"
-auto-format = true
+auto-format = false
 language-servers = ["vscode-html-language-server", "emmet-ls"]
 formatter = { command = 'prettier', args = ["--parser", "html"] }
+
+[[language]]
+name = "css"
+auto-format = false
+language-servers = [
+  # "stylelint",
+  "vscode-css-language-server",
+]
+formatter = { command = 'prettier', args = ["--parser", "css"] }
 
 # Ruby
 [[language]]
@@ -120,14 +129,6 @@ roots = ["deno.json", "deno.jsonc", "package.json"]
 # name = "json"
 # formatter = { command = 'prettier', args = ["--parser", "json"] }
 
-# [[language]]
-# name = "css"
-# language-servers = [
-#   "stylelint",
-#   "vscode-css-language-server",
-# ]
-# auto-format = true
-# formatter = { command = 'prettier', args = ["--parser", "css"] }
 
 # [[language]]
 # name = "vue"
