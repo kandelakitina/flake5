@@ -24,4 +24,8 @@ rec {
     path = ./node;
     description = "Minimal nodeJS env with node2nix and just";
   };
+  deno = {
+    path = ./deno;
+    description = "Minimal deno env with just";
+  };
 }
