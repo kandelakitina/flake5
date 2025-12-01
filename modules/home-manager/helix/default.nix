@@ -4,8 +4,33 @@
 #   # languages = import ./languages.nix { inherit pkgs inputs; };
 # in
 {
-  home.file = { ".config/helix/languages.toml".source = ./languages.toml; };
+  home.file = { ".config/helix/languages.toml".source = ./biome.toml; };
 
+  home.packages = with pkgs; [
+    biome
+    treefmt
+    emmet-language-server
+    tailwindcss-language-server
+    typescript-language-server
+    vscode-langservers-extracted
+    taplo
+    yaml-language-server
+
+    # bash-language-server
+    # eslint
+    # lua-language-server
+    # marksman
+    # nil
+    # nixfmt-classic
+    # dockerfile-language-server
+    # nodePackages.stylelint
+    # prettierd
+    # svelte-language-server
+
+    # nodePackages.prettier
+    # vue-language-server
+    # deno
+  ];
   programs.helix = {
     # inherit languages;
     enable = true;
@@ -153,28 +178,6 @@
     # extraPackages = with pkgs;
     #   with nodePackages; [
   };
-  home.packages = with pkgs; [
-    bash-language-server
-    emmet-language-server
-    # eslint
-    # lua-language-server
-    marksman
-    nil
-    nixfmt-classic
-    nodePackages.prettier
-    dockerfile-language-server
-    # nodePackages.stylelint
-    # prettierd
-    # svelte-language-server
-    tailwindcss-language-server
-    taplo
-    # typescript-language-server
-    vscode-langservers-extracted
-    vue-language-server
-    yaml-language-server
-
-    deno
-  ];
 
   home.file.".config/helix/ignore".text = ''
     !.*env*

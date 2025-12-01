@@ -1,0 +1,51 @@
+
+# Ruby
+[[language]]
+name = "ruby"
+# formatter = { command = "rubyfmt" }
+# formatter = { command = "rubocop", args = [
+#   "--stdin",
+#   "foo.rb",
+#   "-a",
+#   "--stderr",
+#   "--fail-level",
+#   "fatal",
+# ] }
+formatter = { command = "rufo", args = ["--simple-exit"] }
+auto-format = false
+language-servers = ["ruby-lsp", "solargraph"]
+
+[language-server.ruby-lsp]
+command = "ruby-lsp"
+config = { diagnostics = true, formatting = true }
+
+[language-server.solargraph]
+config.diagnostics = true
+config.formatting = false
+
+[[language]]
+name = "erb"
+language-servers = [
+  "herb-lsp",
+  # "herb-lint",
+  "vscode-html-language-server",
+  "emmet-ls",
+  "ruby-lsp",
+  # "rubocop",
+]
+file-types = ["erb", "html.erb"]
+roots = ["Gemfile", "package.json"]
+formatter = { command = "erb-format", args = [
+  "--stdin",
+  "--print-width",
+  "80",
+] }
+
+[language-server.herb-lsp]
+command = "herb-language-server"
+args = ["--stdio"]
+
+# [language-server.herb-lint]
+# command = "herb-lint"
+# args = ["--stdin", "--filename", "%f"]
+# json = true

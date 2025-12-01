@@ -1,0 +1,42 @@
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+config.deno.enable = true
+
+[[language]]
+name = "typescript"
+language-servers = ["deno-lsp"]
+auto-format = true
+roots = ["deno.json", "deno.jsonc", "package.json"]
+# language-servers = ["typescript-language-server", "vscode-eslint-language-server"]
+# formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+
+[[language]]
+name = "javascript"
+language-servers = ["deno-lsp"]
+auto-format = true
+roots = ["deno.json", "deno.jsonc", "package.json"]
+# formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+# language-servers = ["typescript-language-server"]
+
+# [[language]]
+# name = "tsx"
+# auto-format = true
+# language-servers = ["typescript-language-server", "vscode-eslint-language-server", "emmet-ls"]
+# formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+
+# [[language]]
+# name = "jsx"
+# auto-format = true
+# language-servers = ["typescript-language-server", "vscode-eslint-language-server", "emmet-ls"]
+# formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+
+# [[language]]
+# name = "json"
+# formatter = { command = 'prettier', args = ["--parser", "json"] }
+
+
+# [[language]]
+# name = "vue"
+# formatter = { command = 'prettier', args = ["--parser", "vue"] }
+# auto-format = true
