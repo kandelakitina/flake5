@@ -68,7 +68,7 @@
         lsp = {
           display-messages = true;
           auto-signature-help = true;
-          display-inlay-hints = true;
+          display-inlay-hints = false;
         };
 
         # Minimum severity to show a diagnostic after the end of a line
@@ -172,6 +172,7 @@
         f = ":format"; # format using LSP formatter
         s = ":toggle whitespace.render all none"; # show special symbols
         w = ":toggle soft-wrap.enable"; # toggle line wrap
+        h = ":toggle lsp.display-inlay-hints"; # toggle line wrap
       };
     };
 
