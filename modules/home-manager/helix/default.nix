@@ -3,25 +3,33 @@
 #   inherit (config) colorScheme;
 #   # languages = import ./languages.nix { inherit pkgs inputs; };
 # in
-{
-  home.file = { ".config/helix/languages.toml".source = ./biome.toml; };
+let
+  combined = builtins.toFile "languages.toml" ''
+    ${builtins.readFile ./nix.toml}
+    ${builtins.readFile ./biome.toml}
+    ${builtins.readFile ./yaml_toml.toml}
+  '';
+in {
+  home.file.".config/helix/languages.toml".source = combined;
 
   home.packages = with pkgs; [
     biome
-    treefmt
+    # treefmt
     emmet-language-server
     tailwindcss-language-server
     typescript-language-server
     vscode-langservers-extracted
     taplo
     yaml-language-server
+    nixfmt-classic
+    nixd
+    dprint
+    # nil
 
     # bash-language-server
     # eslint
     # lua-language-server
     # marksman
-    # nil
-    # nixfmt-classic
     # dockerfile-language-server
     # nodePackages.stylelint
     # prettierd

@@ -1,0 +1,26 @@
+[[language]]
+name = "toml"
+scope = "source.toml"
+file-types = ["toml"]
+roots = [".git", "Cargo.toml", "pyproject.toml"]
+language-servers = ["taplo-lsp"]
+indent = { tab-width = 2, unit = "  " }
+auto-format = true
+formatter = { command = "taplo", args = ["format", "-"] }
+
+# --- YAML Language Configuration ---
+[[language]]
+name = "yaml"
+scope = "source.yaml"
+file-types = ["yaml", "yml"]
+roots = [".git", "dprint.json"]
+language-servers = ["yaml-language-server"]
+indent = { tab-width = 2, unit = "  " }
+auto-format = true
+formatter = { command = "dprint", args = [
+  "fmt",
+  "--stdin",
+  "%",
+  "--language",
+  "yaml",
+] }

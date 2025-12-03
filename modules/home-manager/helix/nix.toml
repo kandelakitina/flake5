@@ -1,0 +1,10 @@
+[language-server.nixd]
+command = "nixd"
+
+[[language]]
+name = "nix"
+scope = "source.nix"
+file-types = ["nix"]
+auto-format = false
+formatter = { command = "nixfmt" }
+language-servers = ["nixd"]
