@@ -63,6 +63,7 @@
     duf # better 'df' (disk usage)
     gdu # disk usage (folders)
     # dogdns             # a CLI dns client
+    lsof # List all open files and network connections
     httpie # CLI HTTP client for APIs access
     ouch # better unzip
     procs # better ps
