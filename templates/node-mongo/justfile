@@ -4,11 +4,11 @@ set shell := ["fish", "-c"]
 
 mongo-start:
     mkdir -p ./mongo-data
-    touch ./mongo.log
-    mongod --dbpath ./mongo-data --logpath ./mongo.log --fork --quiet
+    touch ./mongo-data/mongo.log
+    mongod --dbpath ./mongo-data --logpath ./mongo-data/mongo.log --fork --quiet
 
 mongo-stop:
-    mongosh --eval "db.getSiblingDB('admin').shutdownServer()"
+    -mongosh --eval "db.getSiblingDB('admin').shutdownServer()"
 
 mongo-reset:
     rm -rf ./mongo-data
