@@ -76,6 +76,7 @@
     xxh # bring your shell with you upon SSH
     unzip
     usbutils
+    wuzz # interactive HTTP requests
   ];
 
   home.shellAliases = {
