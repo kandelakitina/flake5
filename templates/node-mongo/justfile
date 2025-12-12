@@ -3,10 +3,12 @@
 set shell := ["fish", "-c"]
 
 mongo-start:
-    ./scripts/mongo-start.sh
+    mkdir -p ./mongo-data
+    touch ./mongo.log
+    mongod --dbpath ./mongo-data --logpath ./mongo.log --fork --quiet
 
 mongo-stop:
-    ./scripts/mongo-stop.sh
+    mongosh --eval "db.getSiblingDB('admin').shutdownServer()"
 
 mongo-reset:
     rm -rf ./mongo-data
