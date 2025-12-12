@@ -1,0 +1,13 @@
+# Justfile for nodejs
+
+set shell := ["fish", "-c"]
+
+mongo-start:
+    ./scripts/mongo-start.sh
+
+mongo-stop:
+    ./scripts/mongo-stop.sh
+
+mongo-reset:
+    rm -rf ./mongo-data
+    mkdir -p ./mongo-data

@@ -24,6 +24,10 @@ rec {
     path = ./node;
     description = "Minimal nodeJS env with node2nix and just";
   };
+  node-mongo = {
+    path = ./node-mongo;
+    description = "NodeJS devShell with precompiled MongoDB binary";
+  };
   deno = {
     path = ./deno;
     description = "Minimal deno env with just";
