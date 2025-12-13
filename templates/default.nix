@@ -28,6 +28,10 @@ rec {
     path = ./node-mongo;
     description = "NodeJS devShell with precompiled MongoDB binary";
   };
+  node-podman-mongo = {
+    path = ./node-podman-mongo;
+    description = "NodeJS devShell with podman and MongoDB";
+  };
   deno = {
     path = ./deno;
     description = "Minimal deno env with just";

@@ -11,11 +11,11 @@ up:
   podman-compose up -d >/dev/null 2>&1
 
 down:
-  podman-compose down
+  podman-compose down --remove-orphans
   @echo "Podman shut down"
 
 reset:
-  podman-compose down -v
+  podman-compose down -v --remove-orphans
   rm -rf ./.database
   @echo "Database reset"
 
