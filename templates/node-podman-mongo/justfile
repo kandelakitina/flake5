@@ -1,0 +1,45 @@
+# Use bash with strict mode
+set shell := ["bash", "-eu", "-o", "pipefail", "-c"]
+
+FORMAT_STRING := '{{.Host.Security.Rootless}}'
+
+ls:
+  @just --list
+
+up:
+  @echo "🚀 Starting podman"
+  podman-compose up -d >/dev/null 2>&1
+
+down:
+  podman-compose down
+  @echo "Podman shut down"
+
+reset:
+  podman-compose down -v
+  rm -rf ./.database
+  @echo "Database reset"
+
+logs:
+  podman-compose logs -f
+
+ps:
+  podman ps
+
+images:
+  podman images
+
+clean-containers:
+  podman rm -f $(podman ps -aq) || true
+
+clean-images:
+  podman rmi -f $(podman images -q) || true
+
+clean:
+  just clean-containers
+  just clean-images
+
+prune:
+  podman system prune -f
+
+check-root:
+  podman info --format {{FORMAT_STRING}}
