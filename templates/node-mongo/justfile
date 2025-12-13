@@ -2,6 +2,9 @@
 
 set shell := ["fish", "-c"]
 
+mongols:
+    -lsof -i -P -n | grep mongod
+
 mongostart:
     mkdir -p ./.database
     touch ./.database/mongo.log
