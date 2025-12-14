@@ -6,9 +6,8 @@ mongols:
     -lsof -i -P -n | grep mongod
 
 mongostart:
-    mkdir -p ./.database
-    touch ./.database/mongo.log
-    mongod --dbpath ./.database --logpath ./.database/mongo.log --fork --quiet
+    mongod --config ./mongo.conf
+    just mongols
 
 mongostop:
     -mongosh --eval "db.getSiblingDB('admin').shutdownServer()"
