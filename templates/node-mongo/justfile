@@ -6,6 +6,8 @@ mongols:
     -lsof -i -P -n | grep mongod
 
 mongostart:
+    mkdir -p ./.database
+    touch ./.database/mongo.conf
     mongod --config ./mongo.conf
     just mongols
 
