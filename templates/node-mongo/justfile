@@ -2,6 +2,9 @@
 
 set shell := ["fish", "-c"]
 
+dev:
+    nodemon index.js
+
 mongols:
     -lsof -i -P -n | grep mongod
 

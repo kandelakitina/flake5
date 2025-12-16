@@ -15,6 +15,7 @@
           nodejs
           just
           live-server
+          nodemon
 
           # Precompiled MongoDB packages
           mongodb-bin.packages.x86_64-linux.default
@@ -28,7 +29,7 @@
 
           node --version
           mongod --version | head -n 1
-          echo "Shell includes: node, mongod, mongosh, just, live-server"
+          echo "Shell includes: node, mongod, mongosh, just, live-server, nodemon"
         '';
       };
     };
