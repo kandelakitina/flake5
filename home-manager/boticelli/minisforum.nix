@@ -43,7 +43,7 @@
     ../../modules/home-manager/starship.nix
     ../../modules/home-manager/syncVault.nix
     # ../../modules/home-manager/transmission.nix
-    ../../modules/home-manager/telegram.nix
+    # ../../modules/home-manager/telegram.nix
     ../../modules/home-manager/whatsapp.nix
     ../../modules/home-manager/wallpaper.nix
     ../../modules/home-manager/yubikey.nix

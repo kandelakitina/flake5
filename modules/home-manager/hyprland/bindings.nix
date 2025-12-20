@@ -54,7 +54,7 @@
       "SUPER, B, exec, ${pkgs.firefox}/bin/firefox --show drun"
       "SUPER, V, exec, ${pkgs.cliphist}/bin/cliphist list | wofi --dmenu | cliphist decode | wl-copy"
       "SUPER, O, exec, ${pkgs.obsidian}/bin/obsidian"
-      "SUPER, T, exec, ${pkgs.telegram-desktop}/bin/Telegram"
+      # "SUPER, T, exec, ${pkgs.telegram-desktop}/bin/Telegram"
 
       # To OCR
       "ALT,Print,exec,${grimblast} --freeze save area - | ${tesseract} - - | wl-copy && ${notify-send} -t 3000 'OCR result copied to buffer'"
