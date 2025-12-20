@@ -48,7 +48,7 @@
       # Tools 
       "SUPER, X ,exec, hyprpicker -a"
       "SUPER, C, exec, goldendict $(wl-paste -n -p)"
-      "SUPER, Return, exec, run-alacritty" # my script to only have one alacritty on workspace
+      "SUPER, Return, exec, DRI_PRIME=1 run-alacritty" # my script to only have one alacritty on workspace
       "SUPER, W, exec, ${pkgs.wofi}/bin/wofi -S drun"
       "SUPER, D, exec, ${pkgs.wofi}/bin/wofi -S run"
       "SUPER, B, exec, ${pkgs.firefox}/bin/firefox --show drun"
