@@ -119,6 +119,11 @@ in {
 
       keys.normal = {
 
+        # Yank to system clipboard
+        "y" = ":clipboard-yank";
+        "p" = ":clipboard-paste-before";
+        "P" = ":clipboard-paste-after";
+
         # Jump around with enter
         "ret" = "goto_word";
 
@@ -142,6 +147,11 @@ in {
           "move_line_up"
           "paste_before"
         ];
+
+       
+        # Insert empty lines
+        "C-h" = [ "add_newline_above" ];
+        "C-l" = [ "add_newline_below" ];
 
         # "C-(" = [ "rotate_selection_contents_backward" ];
         # "C-)" = [ "rotate_selection_contents_forward" ];
