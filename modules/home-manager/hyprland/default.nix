@@ -48,7 +48,10 @@
       inactive =
         "0xaa${lib.removePrefix "#" config.colorScheme.palette.base00}";
     in {
-      monitor = [ "HDMI-A-2,3840x2160@120,0x0,2" ];
+      monitor = [
+        "desc: BNQ BenQ GW2750H 4AD04227SL0, 1920x1080@60, 0x0, 1"
+        # "HDMI-A-2,3840x2160@120,0x0,2"
+      ];
       # monitor = [ "HDMI-A-2,disable" "HDMI-A-1,preferred,auto,1" ];
       ecosystem = { no_update_news = true; };
 
