@@ -7,6 +7,7 @@ let
   combined = builtins.toFile "languages.toml" ''
     ${builtins.readFile ./nix.toml}
     ${builtins.readFile ./biome.toml}
+    ${builtins.readFile ./deno.toml}
     ${builtins.readFile ./yaml_toml.toml}
   '';
 in {
