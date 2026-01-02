@@ -1,0 +1,5 @@
+{
+	"name": "My Deno app",
+	"exports": "./main.ts",
+	"version": "0.0.1"
+}

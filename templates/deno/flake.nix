@@ -11,7 +11,8 @@
         ];
         shellHook = ''
           # 'deno info' to see deno's install folders
-          export PATH="$HOME/.deno/bin:$PATH"
+          # export DENO_DIR="$HOME/.deno-local"
+          export PATH="$HOME/.deno/bin:$PATH" # global installs
 
           deno --version
         '';
