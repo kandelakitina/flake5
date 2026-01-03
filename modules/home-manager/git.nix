@@ -31,5 +31,8 @@
     };
   };
 
-  home.packages = with pkgs; [ delta ];
+  home.packages = with pkgs; [
+    delta
+    git-open # open reop in the browser
+  ];
 }
