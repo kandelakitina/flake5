@@ -2,5 +2,5 @@
 
 set shell := ["fish", "-c"]
 
-dev:
-    nodemon index.js
+dev *args:
+    nodemon index.js {{args}}
