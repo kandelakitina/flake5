@@ -157,7 +157,7 @@
           pkgs = pkgsFor.x86_64-linux;
           # pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit nix-colors inputs outputs; };
-          modules = [ ./home-manager/boticelli/beelink.nix ];
+          modules = [ ./home-manager/boticelli/minisforum.nix ];
         };
       };
     };
