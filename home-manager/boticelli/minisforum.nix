@@ -8,7 +8,7 @@
     ../../modules/home-manager/helix
     ../../modules/home-manager/AI
 
-    ../../modules/home-manager/gnome.nix
+    # ../../modules/home-manager/gnome.nix
     ../../modules/home-manager/hyprland
 
     ../../modules/home-manager/scripts
