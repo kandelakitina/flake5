@@ -1,60 +1,5 @@
 { lib, pkgs, ... }: {
 
-  # qt = {
-  #   enable = true;
-  #   platformTheme = "gnome";
-  #   style = "adwaita-dark";
-  # };
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-
-    # iconTheme = {
-    #   name = "Colloid-dark";
-    #   package = pkgs.colloid-icon-theme;
-    # };
-
-    # theme = {
-    #   name = "Adementary-dark";
-    #   package = pkgs.adementary-theme;
-    # };
-
-    # cursorTheme = {
-    # name = "Bibata-Cursor";
-    # package = pkgs.bibata-cursors;
-    # name = "Numix-Cursor";
-    # package = pkgs.numix-cursor-theme;
-    # };
-
-    # gtk3.extraConfig = {
-    #   Settings = ''
-    #     gtk-application-prefer-dark-theme=1
-    #   '';
-    # };
-
-    # gtk4.extraConfig = {
-    #   Settings = ''
-    #     gtk-application-prefer-dark-theme=1
-    #   '';
-    # };
-
-    font = {
-      name = "Ubuntu Nerd Font";
-      size = 13;
-    };
-  };
-
-  home.pointerCursor = {
-    gtk.enable = true;
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
-    # size = 32;
-  };
-
   # home.sessionVariables = {
   #   GTK_THEME = "Colloid-Dark";
   #   WINIT_UNIX_BACKEND = "x11";
@@ -195,16 +140,6 @@
 
     # "org/gnome/shell/extensions/space-bar" = {
     # };
-    "org/gnome/desktop/interface" = {
-      # gtk-theme = "Adementary-dark";
-      color-scheme = "prefer-dark";
-      enable-hot-corners = false;
-      clock-show-weekday = true;
-      show-battery-percentage = true;
-      # document-font-name = "UbuntuMono Nerd Font Propo 12";
-      # font-name = "UbuntuMono Nerd Font Propo 12";
-      # monospace-name = "UbuntuMono Nerd Font Mono 12";
-    };
     "org/gnome/gnome/mutter" = { edge-tiling = true; };
 
     "org/gnome/desktop/wm/preferences" = {
