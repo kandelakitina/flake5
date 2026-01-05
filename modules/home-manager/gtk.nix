@@ -11,8 +11,8 @@
       name = "Ubuntu Nerd Font";
       size = 13;
     };
-
   };
+
   home.pointerCursor = {
     gtk.enable = true;
     name = "Bibata-Modern-Ice";

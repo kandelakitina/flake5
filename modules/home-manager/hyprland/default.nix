@@ -11,6 +11,7 @@
     ./windowrules.nix
     ./wofi.nix
   ];
+
   home = {
     packages = with pkgs; [
       pamixer
@@ -48,6 +49,24 @@
       inactive =
         "0xaa${lib.removePrefix "#" config.colorScheme.palette.base00}";
     in {
+      end = [
+        # Cursor size
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+
+        # Cursor theme
+        "XCURSOR_THEME,Adwaita"
+        "HYPRCURSOR_THEME,Adwaita"
+
+        # Force all apps to use Wayland
+        "GDK_BACKEND,wayland"
+        "QT_QPA_PLATFORM,wayland"
+        "QT_STYLE_OVERRIDE,kvantum"
+        "SDL_VIDEODRIVER,wayland"
+        "MOZ_ENABLE_WAYLAND,1"
+        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
+        "OZONE_PLATFORM,wayland"
+      ];
       monitor = [
         "desc: BNQ BenQ GW2750H 4AD04227SL0, 1920x1080@60, 0x0, 1"
         "desc: LG Electronics LG TV SSCR2 0x01010101, 3840x2160@120, 0x0, 2"
@@ -64,7 +83,7 @@
         "wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store"
         # "${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"
         "${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/wallpaper --mode fill"
-        "${pkgs.yubikey-touch-detector}/bin/yubikey-touch-detector" ## -libnotify
+        "${pkgs.yubikey-touch-detector}/bin/yubikey-touch-detector" # # -libnotify
         "${pkgs.blueman}/bin/blueman-applet &"
         "${pkgs.bluez}/bin/bluetoothctl power on" # Ensures Bluetooth is turned on
         "${pkgs.pyprland}/bin/pypr"
