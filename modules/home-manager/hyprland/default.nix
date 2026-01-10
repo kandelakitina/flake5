@@ -128,7 +128,7 @@
         close_special_on_empty = true;
         focus_on_activate = true;
         # Unfullscreen when opening something
-        new_window_takes_over_fullscreen = 2;
+        # new_window_takes_over_fullscreen = 2;
       };
 
       decoration = {
@@ -154,14 +154,14 @@
       };
 
       layerrule = [
-        "animation fade,waybar"
-        "blur,waybar"
-        "ignorezero,waybar"
-        "blur,notifications"
-        "ignorezero,notifications"
-        "blur,wofi"
-        "ignorezero,wofi"
-        "noanim,wallpaper"
+        "animation fade, match:namespace ^(waybar)$"
+        "blur on, match:namespace ^(waybar)$"
+        "ignore_alpha 0, match:namespace ^(waybar)$"
+        "blur on, match:namespace ^(notifications)$"
+        "ignore_alpha 0, match:namespace ^(notifications)$"
+        "blur on, match:namespace ^(wofi)$"
+        "ignore_alpha 0, match:namespace ^(wofi)$"
+        "no_anim on, match:namespace ^(wallpaper)$"
       ];
 
       animations = {
