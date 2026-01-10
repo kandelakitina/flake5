@@ -1,31 +1,32 @@
 {
   wayland.windowManager.hyprland = {
-    extraConfig = # hyprland
-      ''
+    settings = {
+      windowrule = [
         # Pipewire Volume Control
-        windowrulev2 = float, title:^(Pipewire Volume Control)$
-        windowrulev2 = size 50% 20%, title:^(Pipewire Volume Control)$
-        windowrulev2 = move 45% 10%, title:^(Pipewire Volume Control)$
+        "float true, match:title ^(Pipewire Volume Control)$"
+        "size 50% 20%, match:title ^(Pipewire Volume Control)$"
+        "move 45% 10%, match:title ^(Pipewire Volume Control)$"
 
         # Blueman applet
-        windowrulev2 = float, title:^(Bluetooth Devices)$
-        windowrulev2 = size 50% 20%, title:^(Bluetooth Devices)$
-        windowrulev2 = move 45% 20%, title:^(Bluetooth Devices)$
+        "float true, match:title ^(Bluetooth Devices)$"
+        "size 50% 20%, match:title ^(Bluetooth Devices)$"
+        "move 45% 20%, match:title ^(Bluetooth Devices)$"
 
         # Goldendict
-        windowrulev2 = float, class:GoldenDict-ng
+        "float true, match:class GoldenDict-ng"
 
         # Telegram
-        windowrulev2 = workspace 4, title:Telegram*
+        "workspace 4, match:title Telegram*"
 
         # Whatsapp
-        windowrulev2 = workspace 4, title:^(WhatsApp for Linux)$
+        "workspace 4, match:title ^(WhatsApp for Linux)$"
 
-        # Whatsapp
-        windowrulev2 = workspace 3, class:obsidian
+        # Obsidian
+        "workspace 3, match:class obsidian"
 
         # zk last scratchpad
-        # windowrulev2 = float, move 50% 0,resize set 50% 100%,title:zklast
-      '';
+        # "float true,move 50% 0,size 50% 100%, match:title zklast"
+      ];
+    };
   };
 }
