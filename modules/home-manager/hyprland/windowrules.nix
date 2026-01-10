@@ -4,13 +4,13 @@
       windowrule = [
         # Pipewire Volume Control
         "float true, match:title ^(Pipewire Volume Control)$"
-        "size 50% 20%, match:title ^(Pipewire Volume Control)$"
-        "move 45% 10%, match:title ^(Pipewire Volume Control)$"
+        "size 740 455, match:title ^(Pipewire Volume Control)$"
+        "move 954 40, match:title ^(Pipewire Volume Control)$"
 
         # Blueman applet
         "float true, match:title ^(Bluetooth Devices)$"
-        "size 50% 20%, match:title ^(Bluetooth Devices)$"
-        "move 45% 20%, match:title ^(Bluetooth Devices)$"
+        "size 531 383, match:title ^(Bluetooth Devices)$"
+        "move 1025 41, match:title ^(Bluetooth Devices)$"
 
         # Goldendict
         "float true, match:class GoldenDict-ng"
