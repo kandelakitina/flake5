@@ -11,7 +11,8 @@
 
     disko.url = "github:nix-community/disko";
 
-    impermanence.url = "github:nix-community/impermanence";
+    # Pin impermanence to version for compatibility with stand-alone Home Manager
+    impermanence.url = "github:nix-community/impermanence/4b3e914cdf97a5b536a889e939fb2fd2b043a170";
     persist-retro.url = "github:Geometer1729/persist-retro";
 
     nix-colors.url = "github:misterio77/nix-colors";
