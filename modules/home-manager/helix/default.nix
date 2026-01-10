@@ -22,7 +22,7 @@ in {
     vscode-langservers-extracted
     taplo
     yaml-language-server
-    nixfmt-classic
+    nixfmt
     nixd
     dprint
     # nil
