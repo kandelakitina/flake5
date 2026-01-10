@@ -1,5 +1,8 @@
 {
 	"name": "My Deno app",
 	"exports": "./main.ts",
-	"version": "0.0.1"
+	"version": "0.0.1",
+	"tasks": {
+		"dev": "deno run main.ts"
+	}
 }

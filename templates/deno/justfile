@@ -3,4 +3,4 @@
 set shell := ["fish", "-c"]
 
 dev *args:
-    deno run --watch main.ts {{args}}
+    @deno run dev {{args}}
