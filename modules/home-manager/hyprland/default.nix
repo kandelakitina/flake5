@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, inputs, ... }: {
   imports = [
     ./bindings.nix
     ./dunst.nix
@@ -23,7 +23,7 @@
       swayidle
       # swaylock
       wl-gammarelay-rs
-      pyprland
+      inputs.pyprland.packages.${pkgs.system}.pyprland
     ];
   };
 
@@ -86,7 +86,7 @@
         "${pkgs.yubikey-touch-detector}/bin/yubikey-touch-detector" # # -libnotify
         "${pkgs.blueman}/bin/blueman-applet &"
         "${pkgs.bluez}/bin/bluetoothctl power on" # Ensures Bluetooth is turned on
-        "${pkgs.pyprland}/bin/pypr"
+        "${inputs.pyprland.packages.${pkgs.system}.pyprland}/bin/pypr"
       ];
       # cursor = { inactive_timeout = 4; };
       general = {
