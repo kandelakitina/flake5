@@ -51,7 +51,8 @@
       "SUPER, Return, exec, DRI_PRIME=1 run-alacritty" # my script to only have one alacritty on workspace
       "SUPER, W, exec, ${pkgs.wofi}/bin/wofi -S drun"
       "SUPER, D, exec, ${pkgs.wofi}/bin/wofi -S run"
-      "SUPER, B, exec, ${pkgs.firefox}/bin/firefox --show drun"
+      "SUPER, B, exec, run-firefox" # script to only have one firefox on workspace
+      # "SUPER, B, exec, ${pkgs.firefox}/bin/firefox --show drun"
       "SUPER, V, exec, ${pkgs.cliphist}/bin/cliphist list | wofi --dmenu | cliphist decode | wl-copy"
       "SUPER, O, exec, ${pkgs.obsidian}/bin/obsidian"
       # "SUPER, T, exec, ${pkgs.telegram-desktop}/bin/Telegram"
