@@ -36,4 +36,8 @@ rec {
     path = ./deno;
     description = "Minimal deno env with just";
   };
+  deno-sops = {
+    path = ./deno-sops;
+    description = "Minimal deno env with just and secrets managed with SOPS";
+  };
 }
