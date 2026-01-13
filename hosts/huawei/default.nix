@@ -41,6 +41,8 @@
 
   services.throttled.enable = false;
 
+  services.xserver.libinput.enable = true; # fix touchpad on Huawei
+
   # FIXME: Add the rest of your current configuration
 
   home-manager.extraSpecialArgs = { inherit inputs outputs; };
