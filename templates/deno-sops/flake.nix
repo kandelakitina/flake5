@@ -22,7 +22,6 @@
 
           deno --version
           sops --version --check-for-updates
-          direnv allow
         '';
       };
     };
