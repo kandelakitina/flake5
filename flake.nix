@@ -140,6 +140,10 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/minisforum ];
         };
+        huawei = lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/huawei ];
+        };
       };
 
       homeConfigurations = {
@@ -159,6 +163,12 @@
           # pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit nix-colors inputs outputs; };
           modules = [ ./home-manager/boticelli/minisforum.nix ];
+        };
+        "boticelli@huawei" = lib.homeManagerConfiguration {
+          pkgs = pkgsFor.x86_64-linux;
+          # pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit nix-colors inputs outputs; };
+          modules = [ ./home-manager/boticelli/huawei.nix ];
         };
       };
     };
