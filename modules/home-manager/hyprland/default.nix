@@ -112,6 +112,9 @@
         accel_profile = "flat";
         follow_mouse = 2;
 
+        # Touchpad
+        touchpad.natural_scroll = true;
+
         # Keyboard
         kb_layout = "us,ru";
         kb_options = "grp:alt_shift_toggle,caps:escape";

@@ -43,9 +43,9 @@
       format = "{}";
       format-ru =
         # "<span foreground='#${config.colorScheme.palette.base08}'>русский</span>";
-        "<span foreground='#${config.colorScheme.palette.base08}'>русский</span>";
+        "<span foreground='#${config.colorScheme.palette.base08}'>рус</span>";
       format-en =
-        "<span foreground='#${config.colorScheme.palette.base0B}'>english</span>";
+        "<span foreground='#${config.colorScheme.palette.base0B}'>eng</span>";
     };
     "custom/temperature" = {
       format = "{} ";
