@@ -1,4 +1,5 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, ... }:
+{
 
   networking = {
     networkmanager.enable = true;
@@ -22,10 +23,18 @@
   # security.polkit.enable = true;
   # environment.systemPackages = with pkgs; [ gnome.seahorse libsecret ];
 
-  # Clipboard share in VM 
+  # Clipboard share in VM
   services.spice-vdagentd.enable = true;
 
   environment.defaultPackages = with pkgs; lib.mkForce [ wget ];
 
   home-manager.backupFileExtension = "backup";
+
+  # Increase font in TTY, including on boot load
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    earlySetup = true;
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
+    packages = with pkgs; [ terminus_font ];
+  };
 }
