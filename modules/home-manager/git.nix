@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   programs.git = {
     enable = true;
 
@@ -8,9 +9,13 @@
         pager = "delta";
       };
 
-      color = { ui = true; };
+      color = {
+        ui = true;
+      };
 
-      interactive = { diffFitler = "delta --color-only"; };
+      interactive = {
+        diffFitler = "delta --color-only";
+      };
 
       delta = {
         enable = true;
@@ -20,19 +25,36 @@
         options.syntax-theme = "catppuccin";
       };
 
-      pull = { ff = "only"; };
+      pull = {
+        ff = "only";
+      };
 
       push = {
         default = "current";
         autoSetupRemote = true;
       };
 
-      init = { defaultBranch = "main"; };
+      init = {
+        defaultBranch = "main";
+      };
     };
   };
 
   home.packages = with pkgs; [
     delta
     git-open # open reop in the browser
+    gh
   ];
+
+  home = {
+    persistence = {
+      "/persist/home/boticelli" = {
+        directories = [
+          ".config/git"
+        ];
+        files = [ ];
+      };
+    };
+  };
+
 }
