@@ -3,7 +3,7 @@ let
   custom = {
     font = config.fontProfiles.monospace.family;
     # font = "Ubuntu Nerd Font";
-    font_size = "15px";
+    font_size = "10px";
     font_weight = "normal";
     darkGrey = "#${config.colorScheme.palette.base01}";
     magenta = "#${config.colorScheme.palette.base03}";

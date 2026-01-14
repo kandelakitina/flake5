@@ -1,17 +1,24 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.waybar.settings.mainBar = {
     position = "top";
     layer = "top";
-    height = 5;
+    # height = 5;
     margin-top = 0;
     margin-bottom = 0;
     margin-left = 0;
     margin-right = 0;
-    modules-left = [ "custom/launcher" "hyprland/workspaces" "custom/yubikey" ];
-    modules-center = [ "clock" ];
-    modules-right = [
+    modules-left = [
+      "custom/launcher"
+      "hyprland/workspaces"
+      "custom/yubikey"
       "custom/pomodoro"
       "tray"
+    ];
+    modules-center = [
+      "clock"
+    ];
+    modules-right = [
       "cpu"
       "memory"
       "disk"
@@ -44,30 +51,22 @@
       format-ru =
         # "<span foreground='#${config.colorScheme.palette.base08}'>русский</span>";
         "<span foreground='#${config.colorScheme.palette.base08}'>рус</span>";
-      format-en =
-        "<span foreground='#${config.colorScheme.palette.base0B}'>eng</span>";
+      format-en = "<span foreground='#${config.colorScheme.palette.base0B}'>eng</span>";
     };
     "custom/temperature" = {
       format = "{} ";
       exec = "wl-gammarelay-rs watch {t}";
-      on-scroll-up =
-        "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
-      on-scroll-down =
-        "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
-      on-click =
-        "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3500";
-      on-click-right =
-        "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
+      on-scroll-up = "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
+      on-scroll-down = "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
+      on-click = "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3500";
+      on-click-right = "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
     };
     "custom/brightness" = {
       format = "{}% ";
       exec = "wl-gammarelay-rs watch {bp}";
-      on-scroll-up =
-        "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02";
-      on-scroll-down =
-        "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02";
-      on-click =
-        "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1";
+      on-scroll-up = "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02";
+      on-scroll-down = "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02";
+      on-click = "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1";
     };
     # "custom/gamma" = {
     #   format = "{}% γ";
@@ -81,7 +80,9 @@
     # };
     clock = {
       calendar = {
-        format = { today = "<span color='#b4befe'><b><u>{}</u></b></span>"; };
+        format = {
+          today = "<span color='#b4befe'><b><u>{}</u></b></span>";
+        };
       };
       format = "{:%H:%M %d/%m}";
       tooltip = "true";
@@ -151,19 +152,29 @@
     wireplumber = {
       format = "{icon} {volume:02}%";
       format-muted = "󰖁  {volume}%";
-      format-icons = { default = [ " " ]; };
+      format-icons = {
+        default = [ " " ];
+      };
       scroll-step = 5;
       on-click = "pamixer -t";
       on-click-right = "pwvucontrol";
     };
     battery = {
       format = "{icon} {capacity}%";
-      format-icons = [ " " " " " " " " " " ];
+      format-icons = [
+        " "
+        " "
+        " "
+        " "
+        " "
+      ];
       format-charging = " {capacity}%";
       format-full = " {capacity}%";
       format-warning = " {capacity}%";
       interval = 5;
-      states = { warning = 20; };
+      states = {
+        warning = 20;
+      };
       format-time = "{H}h{M}m";
       tooltip = true;
       tooltip-format = "{time}";
