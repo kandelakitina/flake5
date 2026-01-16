@@ -2,7 +2,7 @@
   imports = [
     # ./sgpt.nix
     ./aichat.nix
-    # ./goose.nix
+    ./goose.nix
     ./opencode.nix
   ];
 }
