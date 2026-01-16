@@ -4,7 +4,7 @@
       windowrule = [
         # Pipewire Volume Control
         "float true, match:title ^(Pipewire Volume Control)$"
-        "size 740 655, match:title ^(Pipewire Volume Control)$"
+        "size 740 750, match:title ^(Pipewire Volume Control)$"
         "move 754 40, match:title ^(Pipewire Volume Control)$"
 
         # Blueman applet
