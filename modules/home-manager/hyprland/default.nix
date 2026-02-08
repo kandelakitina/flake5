@@ -78,6 +78,7 @@
         monitor = [
           "desc: BNQ BenQ GW2750H 4AD04227SL0, 1920x1080@60, 0x0, 1"
           "desc: LG Electronics LG TV SSCR2 0x01010101, 3840x2160@120, 0x0, 2"
+          "desc: Xiaomi Corporation Mi Monitor 5745710082491, 2560x1440@143.98Hz, 0x0, 1"
         ];
         # monitor = [ "HDMI-A-2,disable" "HDMI-A-1,preferred,auto,1" ];
         ecosystem = {
