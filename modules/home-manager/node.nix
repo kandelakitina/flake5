@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; with nodePackages; [ nodejs ];
+  home.packages = with pkgs; [ nodejs_25 ];
 }
