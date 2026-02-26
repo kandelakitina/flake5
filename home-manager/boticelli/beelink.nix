@@ -36,7 +36,7 @@
     ../../modules/home-manager/nix.nix
     # ../../modules/home-manager/nixvim.nix
     ../../modules/home-manager/nnn.nix
-    # ../../modules/home-manager/node.nix
+    ../../modules/home-manager/node.nix
     ../../modules/home-manager/obsidian.nix
     ../../modules/home-manager/proxychains.nix
     # ../../modules/home-manager/ruby.nix
