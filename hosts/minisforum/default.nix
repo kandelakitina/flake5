@@ -1,4 +1,12 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.lenovo-thinkpad-x1-7th-gen
@@ -46,16 +54,20 @@
 
   networking.hostName = "minisforum";
 
-  boot.loader.systemd-boot.enable = true;
-
   environment.variables.EDITOR = "hx";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
-  
+
   # Extra for dual booting with Windows
-  boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.luks.devices."enc".device = "/dev/disk/by-partlabel/luks";
-  boot.loader.grub.useOSProber = true;
-  boot.loader.systemd-boot.configurationLimit = 5;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub.useOSProber = true;
+    timeout = 5;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 5;
+    };
+  };
 }
