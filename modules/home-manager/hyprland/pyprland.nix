@@ -9,19 +9,22 @@
       [pyprland]
       plugins = ["scratchpads"]
 
-      [scratchpads.zk]
-      lazy = true
+      # [scratchpads.zk]
+      # lazy = true
       # excludes = "*"
       # restore_excluded = true
 
       [scratchpads.zklast]
       command = "alacritty --title zklast -e zk last"
-      use = "zk"
-      # class = "zklast"
+      lazy = true
+      class = "zklast"
+      # use = "zk"
 
       [scratchpads.zkopen]
       command = "alacritty --title zkopen -e zk open"
-      use = "zk"
+      lazy = true
+      class = "zkopen"
+      # use = "zk"
 
       # [scratchpads.alacritty]
       # command = "alacritty"
