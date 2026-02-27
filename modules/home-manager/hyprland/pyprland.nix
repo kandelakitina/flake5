@@ -4,7 +4,7 @@
     "SUPER, z, exec, pypr toggle zkopen && hyprctl dispatch bringactivetotop"
   ];
 
-  home.file.".config/hypr/pyprland.toml".text = # toml
+  home.file.".config/pypr/config.toml".text = # toml
     ''
       [pyprland]
       plugins = ["scratchpads"]
