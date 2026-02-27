@@ -17,13 +17,13 @@
       [scratchpads.zklast]
       command = "alacritty --title zklast -e zk last"
       lazy = true
-      class = "zklast"
+      # class = "zklast"
       # use = "zk"
 
       [scratchpads.zkopen]
       command = "alacritty --title zkopen -e zk open"
       lazy = true
-      class = "zkopen"
+      # class = "zkopen"
       # use = "zk"
 
       # [scratchpads.alacritty]
