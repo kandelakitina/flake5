@@ -2,7 +2,7 @@
   # imports = [ inputs.sddm-sugar-candy-nix.nixosModules.default ];
   services = {
     displayManager = {
-      preStart = ''
+      generic.preStart = ''
         echo "Sleeping to wait for session registration..."
         sleep 1
       '';
