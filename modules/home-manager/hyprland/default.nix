@@ -121,7 +121,7 @@
 
         input = {
           # Mouse
-          sensitivity = 0;
+          sensitivity = -0.3;
           accel_profile = "flat";
           follow_mouse = 2;
 
