@@ -16,6 +16,7 @@
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/anki.nix
     ../../modules/home-manager/cheatsheets.nix
+    ../../modules/home-manager/chrome.nix
     # ../../modules/home-manager/direnv.nix
     # ../../modules/home-manager/devenv.nix
     ../../modules/home-manager/firefox.nix

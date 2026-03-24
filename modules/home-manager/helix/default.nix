@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 # let
 #   inherit (config) colorScheme;
 #   # languages = import ./languages.nix { inherit pkgs inputs; };
@@ -9,11 +14,14 @@ let
     ${builtins.readFile ./biome.toml}
     ${builtins.readFile ./deno.toml}
     ${builtins.readFile ./yaml_toml.toml}
+    ${builtins.readFile ./svelte.toml}
   '';
-in {
+in
+{
   home.file.".config/helix/languages.toml".source = combined;
 
   home.packages = with pkgs; [
+    svelte-language-server
     biome
     # treefmt
     emmet-language-server
@@ -50,7 +58,10 @@ in {
       theme = "boticelliZero";
 
       editor = {
-        shell = [ "fish" "-c" ];
+        shell = [
+          "fish"
+          "-c"
+        ];
         color-modes = true;
         continue-comments = false;
         cursorline = true;
@@ -87,7 +98,12 @@ in {
           other-lines = "disable";
         };
 
-        gutters = [ "diagnostics" "line-numbers" "spacer" "diff" ];
+        gutters = [
+          "diagnostics"
+          "line-numbers"
+          "spacer"
+          "diff"
+        ];
 
         statusline = {
           left = [
@@ -100,7 +116,12 @@ in {
             "spinner"
             "file-name"
           ];
-          right = [ "file-encoding" "file-type" "selections" "position" ];
+          right = [
+            "file-encoding"
+            "file-type"
+            "selections"
+            "position"
+          ];
         };
 
         whitespace.characters = {
@@ -131,7 +152,10 @@ in {
         "{" = "goto_prev_paragraph";
         "}" = "goto_next_paragraph";
         "D" = [ "kill_to_line_end" ];
-        "esc" = [ "collapse_selection" "keep_primary_selection" ];
+        "esc" = [
+          "collapse_selection"
+          "keep_primary_selection"
+        ];
 
         # "X" = "extend_line_above";
         "X" = "select_line_above";
@@ -141,7 +165,11 @@ in {
         space.w = ":w";
         space.q = ":bc";
 
-        "C-j" = [ "extend_to_line_bounds" "delete_selection" "paste_after" ];
+        "C-j" = [
+          "extend_to_line_bounds"
+          "delete_selection"
+          "paste_after"
+        ];
         "C-k" = [
           "extend_to_line_bounds"
           "delete_selection"
@@ -149,7 +177,6 @@ in {
           "paste_before"
         ];
 
-       
         # Insert empty lines
         "C-h" = [ "add_newline_above" ];
         "C-l" = [ "add_newline_below" ];
