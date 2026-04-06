@@ -14,7 +14,7 @@
     ../../modules/home-manager/scripts
 
     ../../modules/home-manager/alacritty.nix
-    ../../modules/home-manager/anki.nix
+    # ../../modules/home-manager/anki.nix
     ../../modules/home-manager/cheatsheets.nix
     # ../../modules/home-manager/direnv.nix
     # ../../modules/home-manager/devenv.nix
@@ -25,8 +25,8 @@
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/gnupg.nix
     ../../modules/home-manager/gtk.nix
-    ../../modules/home-manager/goldendict.nix
-    ../../modules/home-manager/gum.nix
+    # ../../modules/home-manager/goldendict.nix
+    # ../../modules/home-manager/gum.nix
     ../../modules/home-manager/lazygit.nix
     # ../../modules/home-manager/lf
     # ../../modules/home-manager/mime-apps.nix
@@ -45,7 +45,7 @@
     ../../modules/home-manager/syncVault.nix
     # ../../modules/home-manager/transmission.nix
     # ../../modules/home-manager/telegram.nix
-    ../../modules/home-manager/whatsapp.nix
+    # ../../modules/home-manager/whatsapp.nix
     ../../modules/home-manager/wallpaper.nix
     ../../modules/home-manager/yubikey.nix
     ../../modules/home-manager/zk
