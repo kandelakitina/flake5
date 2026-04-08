@@ -15,12 +15,14 @@ let
     ${builtins.readFile ./deno.toml}
     ${builtins.readFile ./yaml_toml.toml}
     ${builtins.readFile ./svelte.toml}
+    ${builtins.readFile ./vue.toml}
   '';
 in
 {
   home.file.".config/helix/languages.toml".source = combined;
 
   home.packages = with pkgs; [
+    vue-language-server
     svelte-language-server
     biome
     # treefmt

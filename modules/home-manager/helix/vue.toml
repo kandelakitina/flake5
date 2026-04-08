@@ -1,0 +1,12 @@
+[language-server.volar]
+command = "vue-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "vue"
+auto-format = true
+language-servers = [
+  "volar",
+  "typescript-language-server",
+  "tailwindcss-language-server",
+]
