@@ -1,9 +1,6 @@
 {
   inputs,
   outputs,
-  lib,
-  config,
-  pkgs,
   ...
 }:
 {
@@ -32,6 +29,7 @@
     # ../../modules/nixos/mullvad.nix
     ../../modules/nixos/nix.nix
     ../../modules/nixos/qt.nix
+    ../../modules/nixos/sing-box.nix
     ../../modules/nixos/sops.nix
     ../../modules/nixos/sound.nix
     ../../modules/nixos/ssh.nix
