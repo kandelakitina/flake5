@@ -22,7 +22,7 @@ rec {
   };
   node = {
     path = ./node;
-    description = "Minimal nodeJS env with node2nix and just";
+    description = "Minimal nodeJS env with biome";
   };
   node-mongo = {
     path = ./node-mongo;
