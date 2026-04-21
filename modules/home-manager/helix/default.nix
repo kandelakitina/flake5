@@ -12,11 +12,11 @@ let
   combined = builtins.toFile "languages.toml" ''
     ${builtins.readFile ./nix.toml}
     ${builtins.readFile ./biome.toml}
-    ${builtins.readFile ./deno.toml}
     ${builtins.readFile ./yaml_toml.toml}
     ${builtins.readFile ./svelte.toml}
     ${builtins.readFile ./vue.toml}
   '';
+    # ${builtins.readFile ./deno.toml}
 in
 {
   home.file.".config/helix/languages.toml".source = combined;
