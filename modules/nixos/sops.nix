@@ -1,4 +1,10 @@
-{ pkgs, inputs, config, ... }: {
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
+{
   imports = [ inputs.sops-nix.nixosModules.sops ];
 
   # secrets will be output to /run/secrets
@@ -40,14 +46,23 @@
     group = config.users.users.boticelli.group;
   };
 
+  sops.secrets.OPENROUTER_API_KEY = {
+    mode = "0440";
+    owner = config.users.users.boticelli.name;
+    group = config.users.users.boticelli.group;
+  };
+
   environment = {
     variables = {
       OPENAI_API_KEY = "$(cat ${config.sops.secrets.OPENAI.path})";
       MISTRAL_API_KEY = "$(cat ${config.sops.secrets.MISTRAL_API_KEY.path})";
-      CODESTRAL_API_KEY =
-        "$(cat ${config.sops.secrets.CODESTRAL_API_KEY.path})";
+      CODESTRAL_API_KEY = "$(cat ${config.sops.secrets.CODESTRAL_API_KEY.path})";
+      OPENROUTER_API_KEY = "$(cat ${config.sops.secrets.OPENROUTER_API_KEY.path})";
     };
-    systemPackages = with pkgs; [ sops age ];
+    systemPackages = with pkgs; [
+      sops
+      age
+    ];
   };
 
 }

@@ -34,7 +34,7 @@
     ../../modules/nixos/sound.nix
     ../../modules/nixos/ssh.nix
     ../../modules/nixos/system.nix
-    ../../modules/nixos/v2ray.nix
+    # ../../modules/nixos/v2ray.nix
     # ../../modules/nixos/vial.nix
     # ../../modules/nixos/virtualisation.nix
     ../../modules/nixos/yubikey.nix

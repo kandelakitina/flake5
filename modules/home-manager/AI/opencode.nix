@@ -1,12 +1,17 @@
+{ config, ... }:
 {
   programs.opencode = {
     enable = true;
     settings = {
       theme = "system";
-      # Get the models' names at https://models.dev
-      # model = "opencode/grok-code";
-      model = "mistral/codestral-latest";
-      # small_model = "mistral/devstral-small-2507";
+      model = "openrouter/qwen/qwen3.5-397b-a17b";
+      provider = {
+        openrouter = {
+          options = {
+            apiKey = "{env:OPENROUTER_API_KEY}";
+          };
+        };
+      };
     };
   };
 }
