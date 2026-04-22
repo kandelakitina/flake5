@@ -30,7 +30,7 @@
       swayidle
       # swaylock
       wl-gammarelay-rs
-      inputs.pyprland.packages.${pkgs.system}.pyprland
+      inputs.pyprland.packages.${pkgs.stdenv.hostPlatform.system}.pyprland
     ];
   };
 
@@ -97,7 +97,7 @@
           "${pkgs.yubikey-touch-detector}/bin/yubikey-touch-detector" # # -libnotify
           "${pkgs.blueman}/bin/blueman-applet &"
           "${pkgs.bluez}/bin/bluetoothctl power on" # Ensures Bluetooth is turned on
-          "${inputs.pyprland.packages.${pkgs.system}.pyprland}/bin/pypr"
+          "${inputs.pyprland.packages.${pkgs.stdenv.hostPlatform.system}.pyprland}/bin/pypr"
         ];
         # cursor = { inactive_timeout = 4; };
         general = {
