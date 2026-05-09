@@ -21,11 +21,11 @@
           tag = "vless-out";
           server = "82.23.173.213";
           server_port = 443;
-          uuid = "5642a2ba-4baa-4401-93c7-ae7e84e8e37e";
+          uuid = "6e01fdfa-a7d3-4894-a543-5168014dc2c4";
           flow = "xtls-rprx-vision";
           tls = {
             enabled = true;
-            server_name = "www.annamiller.cam";
+            server_name = "www.yahoo.com";
             utls = {
               enabled = true;
               fingerprint = "chrome";
