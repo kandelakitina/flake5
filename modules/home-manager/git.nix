@@ -19,6 +19,7 @@
       push = {
         default = "current";
         autoSetupRemote = true;
+        followTags = true;
       };
 
       init.defaultBranch = "main";
