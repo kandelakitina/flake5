@@ -19,6 +19,11 @@
     fsType = "none";
     options = [ "bind" ];
   };
+  fileSystems."/var/lib/NetworkManager" = {
+    device = "/persist/var/lib/NetworkManager";
+    fsType = "none";
+    options = [ "bind" ];
+  };
 
   programs.fuse.userAllowOther = true;
 
