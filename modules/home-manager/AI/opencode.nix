@@ -2,8 +2,8 @@
 {
   programs.opencode = {
     enable = true;
+    tui.theme = "system";
     settings = {
-      theme = "system";
       model = "openrouter/qwen/qwen3.5-397b-a17b";
       provider = {
         openrouter = {
