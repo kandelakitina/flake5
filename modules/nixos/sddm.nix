@@ -1,10 +1,23 @@
-{ config, pkgs, inputs, ... }: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   imports = [ inputs.silentSDDM.nixosModules.default ];
 
   programs.silentSDDM = {
     enable = true;
     theme = "rei";
-    settings.General.scale = 2.0;
+    profileIcons = {
+      boticelli = ../../misc/BillMurrey.png;
+    };
+    settings = {
+      General = {
+        scale = 1.5;
+      };
+    };
   };
 
   services.displayManager = {
