@@ -19,6 +19,7 @@
     inputs.disko.nixosModules.disko
     (import ../../diskoConfigs/btfrs.nix {device = "/dev/vda";})
 
+    inputs.preservation.nixosModules.preservation
     ../../modules/nixos/impermanence.nix
     ../../modules/nixos/gnome.nix
     # ../../modules/nixos/xfce.nix

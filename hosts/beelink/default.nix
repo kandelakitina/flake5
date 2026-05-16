@@ -10,6 +10,7 @@
     inputs.disko.nixosModules.disko
     (import ../../diskoConfigs/DualbootWinNixLuksBtfrs.nix { device = "/dev/nvme0n1";} )
 
+    inputs.preservation.nixosModules.preservation
     ../../modules/nixos/sddm.nix
     # ../../modules/nixos/greetd.nix
     # ../../modules/nixos/gnome.nix

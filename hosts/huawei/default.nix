@@ -1,6 +1,7 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   imports = [
     inputs.hardware.nixosModules.huawei-machc-wa
+    inputs.preservation.nixosModules.preservation
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.lenovo-thinkpad-x1-7th-gen
 

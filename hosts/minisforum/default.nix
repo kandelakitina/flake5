@@ -6,6 +6,7 @@
 {
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
+    inputs.preservation.nixosModules.preservation
     # inputs.hardware.nixosModules.lenovo-thinkpad-x1-7th-gen
 
     # Import your generated (nixos-generate-config) hardware configuration
