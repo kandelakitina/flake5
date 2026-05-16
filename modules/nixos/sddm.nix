@@ -3,7 +3,8 @@
 
   programs.silentSDDM = {
     enable = true;
-    theme = "catppuccin-mocha";
+    theme = "rei";
+    settings.General.scale = 2.0;
   };
 
   services.displayManager = {
