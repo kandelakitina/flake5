@@ -82,6 +82,9 @@
       "SUPER,apostrophe,workspace,previous"
       "SUPERSHIFT,apostrophe,workspace,next"
 
+      "SUPER,Tab,exec,workspace-cycle next"
+      "SUPERSHIFT,Tab,exec,workspace-cycle prev"
+
       "SUPER,u,togglespecialworkspace"
       "SUPERSHIFT,u,movetoworkspacesilent,special"
 

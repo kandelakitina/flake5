@@ -54,6 +54,9 @@ let
   show-keybinds =
     pkgs.writeScriptBin "show-keybinds" (builtins.readFile ./keybinds.sh);
 
+  workspace-cycle = pkgs.writeScriptBin "workspace-cycle"
+    (builtins.readFile ./workspace-cycle.sh);
+
   # vm-start = pkgs.writeScriptBin "vm-start" (builtins.readFile ./scripts/vm-start.sh);
 
   # ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
@@ -89,6 +92,8 @@ in {
     shutdown-script
 
     show-keybinds
+
+    workspace-cycle
 
     # vm-start
 
