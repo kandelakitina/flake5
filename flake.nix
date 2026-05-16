@@ -50,6 +50,11 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # hyprland = {
     #   url = "github:hyprwm/hyprland";
     #   inputs.nixpkgs.follows = "nixpkgs";
